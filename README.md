@@ -1,3 +1,17 @@
+Why do we want/need to build the product
+UX Design
+  - User Stories
+  - Wireframes
+  - Structure (Code & Database)
+  - Fonts
+  - Colors
+Features
+Technologies
+Testing & Validation
+Deployment, forking, cloning
+References
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome USER_NAME,
