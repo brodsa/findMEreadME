@@ -1,122 +1,60 @@
+# findMEreadME
+
 Why do we want/need to build the product
-UX Design
+
+
+# UX Design
+
   - User Stories
   - Wireframes
   - Structure (Code & Database)
   - Fonts
   - Colors
-Features
-Technologies
-Testing & Validation
-Deployment, forking, cloning
-References
 
 
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Features
 
-Welcome brodsa,
+# Technologies
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# Testing & Validation
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+# Deployment
+The webpage was developed using GitPod and GitHub. The webpage was deployed on [Heroku](https://www.heroku.com/platform) and can be visited [here](https://findme-readme-10d0bfb3ba28.herokuapp.com/).
 
-## Gitpod Reminders
+## Initial Deployment
+The following steps were follow to make the initial deployment:
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Local environment
+1. Create env.py containing the following keys `SECRET_KEY, DATABASE_URL, CLOUDINARY_URL`
+2. In `settings.py`, import env only if env.py exists.
+3. Set the following kes: 
+  - `DEBUG = 'DEVELOPMENT' in os.environ` 
+  - `SECRET_KEY = os.environ.get('SECRET_KEY')`
+4. Set the directories for template, static and media files
+5. Set up the DATABASE key for ElephantSQL Database
+6. Set ALLOWED_HOST for your local and heroku apps in the list.
+7. Create a Profile with the command to migrate automatically and to start the web app.
 
-`python3 -m http.server`
+### Heroku environment
+1. Login to Heroku
+2. Go to Heroku personal Dashboard. In the left top, select 'New' > 'Create New App'
+3. Type a unique project name, i.e. findMEreadME. Select a region, i.e. Europe.
+4. After the Heroku app is created, navigate to the 'Settings' Tab > 'Config Vars'. Following variables were configured: `SECRET_KEY, DATABASE_URL, CLOUDINARY_URL`
+4. After the Heroku app is created, go to the Deploy Tab of the app and connect the app with app GitHub repository.
+5. Deploy the app manually. After successful deployment, click on 'Enable automatic deployments'.
 
-A blue button should appear to click: _Make Public_,
+### Forking the repository
+To fork the repository to propose changes or use the code, follow the steps bellow:
+1. Go to the GitHub repository you would like to fork.
+2. On the right hand side at the top, click on 'Fork' button.
+3. The fork repository is ready to use, after creating a full duplicate of the original repository. 
 
-Another blue button should appear to click: _Open Browser_.
+### Cloning the repository
+To clone (the fork) repository or to collaborate, following steps are required:
+1. Go to GitHub repository you would like to clone.
+2. On the right side, click on 'Code' button.
+3. Copy the provided URL.
+4. Within the open terminal write, change the directory where to clone the repository and type `git clone <repository.url>`.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# References
 
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
