@@ -25,7 +25,7 @@ The webpage was developed using GitPod and GitHub. The webpage was deployed on [
 The following steps were follow to make the initial deployment:
 
 ### Local environment
-1. Create env.py containing the following keys `SECRET_KEY, DATABASE_URL, CLOUDINARY_URL`
+1. Create env.py containing the following keys `SECRET_KEY, DATABASE_URL, CLOUDINARY_URL`,  `DEVELOPMENT`
 2. In `settings.py`, import env only if env.py exists.
 3. Set the following kes: 
   - `DEBUG = 'DEVELOPMENT' in os.environ` 
