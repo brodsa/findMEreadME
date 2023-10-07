@@ -2,19 +2,46 @@
 
 Why do we want/need to build the product
 
+**Content**
+- [UX Design](#ux-design)
+- [Features](#features)
+- [Testing & Validation](#testing--validation)
+- [Deployment](#deployment)
+- [References](#references)
+
 
 # UX Design
 
   - User Stories
   - Wireframes
   - Structure (Code & Database)
-  - Fonts
-  - Colors
 
+## Fonts
+The following two family fonts were chosen based on the [blog post](https://www.nichepursuits.com/best-fonts-for-blogs/).The selected fonts were taken from Google Fonts and imported into the style sheet.
+- Heading font: Lato
+- Body text font: Fira Sans
+
+## Colors
+The colors were selected based on the colors of the hero image. The resulting color scheme consists of 7 colors (including white and black).
+![Colors](./docs/ux/ux_color.png)
+The used color combination follow the following accessibility matrix.
+![Color Schema](./docs/ux/ux_color_accessibility.png)
+
+## Media
 
 # Features
+## Common Features
+- Navigation Menu
+    - Navigation Menu is displayed on all pages. 
+    - On small devices the menu drops into a hamburger menu
+    - The content depends on the type of users:
+        - Unregistered User: ![Menu for visitors](./docs/features/features_navbar.png)
+        - Registered User:
 
 # Technologies
+[Bootstrap 5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+[cloudinary](https://cloudinary.com/)
+[elephantSQL](https://www.elephantsql.com/)
 
 # Testing & Validation
 
@@ -28,8 +55,8 @@ The following steps were follow to make the initial deployment:
 1. Create env.py containing the following keys `SECRET_KEY, DATABASE_URL, CLOUDINARY_URL`,  `DEVELOPMENT`
 2. In `settings.py`, import env only if env.py exists.
 3. Set the following kes: 
-  - `DEBUG = 'DEVELOPMENT' in os.environ` 
-  - `SECRET_KEY = os.environ.get('SECRET_KEY')`
+    - `DEBUG = 'DEVELOPMENT' in os.environ` 
+    - `SECRET_KEY = os.environ.get('SECRET_KEY')`
 4. Set the directories for template, static and media files
 5. Set up the DATABASE key for ElephantSQL Database
 6. Set ALLOWED_HOST for your local and heroku apps in the list.
