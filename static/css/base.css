@@ -22,12 +22,12 @@ html {
 
     /* Colors */
     --primary-color: #967712;
-    --primary-color-light: #f7c31f;
+    --primary-color-light: #FFC727;
     --secondary-color-light: #465963;
     --secondary-color:#353c3a;
     --bg-white: #DFDFDF;
     --white: #fff;
-    --black: #201F1F;
+    --black: #0E0E0E;
 
     /* Utils */
     --box-shadow:box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -45,7 +45,7 @@ h1, h2, h3, h4 {
 
 /* Header */
 .navbar{
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-light);
 }
 
 .navbar-text, 
