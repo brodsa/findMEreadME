@@ -30,7 +30,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-brodsa-findmereadme-bkc96orn9th.ws-eu105.gitpod.io','findme-readme-10d0bfb3ba28.herokuapp.com/']
+ALLOWED_HOSTS = [
+    '8000-brodsa-findmereadme-bkc96orn9th.ws-eu105.gitpod.io',
+    'findme-readme-10d0bfb3ba28.herokuapp.com'
+    ]
 
 
 # Application definition
