@@ -31,19 +31,30 @@ The used color combination follow the following accessibility matrix.
 
 # Features
 ## Common Features
-- Navigation Menu
+- **Navigation Menu**
     - Navigation Menu is displayed on all pages. 
-    - On small devices the menu drops into a hamburger menu
+    - On small devices the menu drops into a hamburger menu.
     - The content depends on the type of users:
         - Unregistered User: ![Menu for visitors](./docs/features/features_navbar.png)
         - Registered User:
 
-# Technologies
-[Bootstrap 5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
-[cloudinary](https://cloudinary.com/)
-[elephantSQL](https://www.elephantsql.com/)
+- **Footer**
+  - Footer is displayed on all pages, except the pages dedicated for user or book registration.
+  - Footer contains social media links as well as contact on side developer ![Footer](./docs/features/features_footer.png)
 
-# Testing & Validation
+# Technologies
+- [Bootstrap 5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+- [cloudinary](https://cloudinary.com/)
+- [elephantSQL](https://www.elephantsql.com/)
+
+# Testing & Validation (Manual Testing)
+  - Responsivness Testing
+  - Browser Compatibility Testing
+  - User Stories Testing
+  - Features Testing
+  - Bug resolved and unresolved
+  - Code Validation
+  - Lighthouse testing outcomes
 
 # Deployment
 The webpage was developed using GitPod and GitHub. The webpage was deployed on [Heroku](https://www.heroku.com/platform) and can be visited [here](https://findme-readme-10d0bfb3ba28.herokuapp.com/).
