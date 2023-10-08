@@ -42,6 +42,11 @@ The used color combination follow the following accessibility matrix.
   - Footer is displayed on all pages, except the pages dedicated for user or book registration.
   - Footer contains social media links as well as contact on side developer ![Footer](./docs/features/features_footer.png)
 
+
+## Homepage Features
+Homepage consist of 3 sections containing the features described bellow: 
+- **Hero Section** contains text with a brief introduction of the platform and a thematic picture. In addition, a button allows users for immediate registration.
+
 # Technologies
 - [Bootstrap 5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 - [cloudinary](https://cloudinary.com/)
