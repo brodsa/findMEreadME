@@ -107,3 +107,16 @@ a.nav-link{
 .copyright__link{
     color: var(--black);
 }
+
+/* ++++++++++++++ Hero Section ++++++++++++++ */
+.container{
+    max-width: 900px;
+}
+
+.hero__picture{
+    max-width: 500px;
+}
+
+.hero__image{
+    width: 100%;
+}

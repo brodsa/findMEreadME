@@ -1,1 +1,28 @@
 {% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Start: Hero Section -->
+<section class="container pe-5 ps-5 ">
+    <div class="hero pt-5 d-flex flex-column align-items-center flex-md-row gap-md-4">
+        <!-- Hero Text -->
+        <div class="hero__text">
+            <h1 class="text-center fw-bold mb-4 text-md-start">Reading with adventure</h1>
+            <p class="text-center text-md-start">Welcome to findMEreadME! </p>
+            <p class="text-center text-md-start">A platform that gives you the chance to follow the steps of your books around the globe and read books from all over the world. Choose the book, find it, read it, share it with others!</p>
+        </div>
+        <!-- Hero Image -->
+        <div class="hero__picture flex-md-shrink-0">
+            <img class="hero__image" src="{% static 'images/hero.svg' %}" alt="Two people enjoying reading books">
+        </div>
+        
+    </div>
+
+</section>
+<!-- End: Hero Section -->
+
+
+{% endblock %}
