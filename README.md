@@ -48,6 +48,11 @@ Homepage consist of 3 sections containing the features described bellow:
 - **Hero Section** contains text with a brief introduction of the platform and a thematic picture. In addition, a button allows users for immediate registration. ![Hero Section](./docs/features/features_hero.png)
 - **Does this sounds familiar to you?** lists the motivation of users to be part of the platform. ![For you](./docs/features/features_for_you.png)
 
+## User Authentication Pages
+User Authentication pages includes:
+- **Login Page** contains a form to log in via username or email into to the platform. Moreover, a user can choose to remember the login data. User can refresh password, in case he/she forgot it. When user logins, the username is displayed in navigation menu. ![Login](./docs/features/features_login.png)
+
+
 # Technologies
 - [Bootstrap 5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 - [cloudinary](https://cloudinary.com/)
