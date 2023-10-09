@@ -45,7 +45,8 @@ The used color combination follow the following accessibility matrix.
 
 ## Homepage Features
 Homepage consist of 3 sections containing the features described bellow: 
-- **Hero Section** contains text with a brief introduction of the platform and a thematic picture. In addition, a button allows users for immediate registration.
+- **Hero Section** contains text with a brief introduction of the platform and a thematic picture. In addition, a button allows users for immediate registration. ![Hero Section](./docs/features/features_hero.png)
+- **Does this sounds familiar to you?** lists the motivation of users to be part of the platform. ![For you](./docs/features/features_for_you.png)
 
 # Technologies
 - [Bootstrap 5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
