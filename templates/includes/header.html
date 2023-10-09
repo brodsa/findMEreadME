@@ -15,7 +15,7 @@
           <!-- Navigation items -->
           <div class="collapse navbar-collapse" id="navbarNav">
             {% if request.user.is_authenticated %}
-              <span class="me-2"><i class="fa-regular fa-user"></i></span><span class="navbar-text fst-italic">{{ request.user }}</span>
+              <span class="me-2"><i class="fa-regular fa-user"></i></span><span class="navbar-text fst-italic me-3 pb-1">{{ request.user }}</span>
             {% endif %}
             <ul class="navbar-nav">
               <li class="nav-item">
