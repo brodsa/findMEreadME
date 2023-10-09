@@ -18,15 +18,15 @@
               <span class="me-2"><i class="fa-regular fa-user"></i></span><span class="navbar-text fst-italic me-3 pb-1">{{ request.user }}</span>
             {% endif %}
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
-              </li>
               <!-- Logout -->
               {% if request.user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a>
               </li>
               {% else %}
+              <li class="nav-item">
+                <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
               <!-- Login -->
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login">Member Area</a>
