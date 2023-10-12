@@ -51,6 +51,11 @@ Homepage consist of 3 sections containing the features described bellow:
 ## User Authentication Pages
 User Authentication pages includes:
 - **Login Page** contains a form to log in via username or email into to the platform. Moreover, a user can choose to remember the login data. User can refresh password, in case he/she forgot it. When user logins, the username is displayed in navigation menu. ![Login](./docs/features/features_login.png)
+- **Sign Up Page** contains a form to create an account. User can register using both username or email.![Sign Up](./docs/features/features_signup.png)
+- **Log Out Page** asks user to confirm logging out from the platform. ![Log Out](./docs/features/features_logout.png)
+
+## Future & Left Features
+- Successful Registration: The user is redirected to homepage and informed via displayed username in the navigation bar as this is by default. - changed acceptance criteria
 
 
 # Technologies
