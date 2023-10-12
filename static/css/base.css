@@ -31,7 +31,7 @@ html {
 
     /* Utils */
     --border-radius: 10px;
-    --box-shadow:box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
 html, body {
@@ -126,6 +126,12 @@ a.nav-link{
     width: 100%;
 }
 
+.hero__button{
+    width: 170px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--primary-color-light);
+    border-radius: 15px;
+}
 
 /* ++++++++++++++ About Section ++++++++++++++ */
 .about__list{
@@ -182,7 +188,7 @@ a.nav-link{
     display: flex;
     flex-direction: column;
     width: 80%;
-    max-width: 300px;
+    max-width: 350px;
     background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -209,6 +215,8 @@ a.nav-link{
 #hint_id_password1 ul li{
     font-size:10px;
 }
+
+
 
 
 @media screen and  (min-width: 630px){
