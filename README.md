@@ -46,7 +46,8 @@ The used color combination follow the following accessibility matrix.
 ## Homepage Features
 Homepage consist of 3 sections containing the features described bellow: 
 - **Hero Section** contains text with a brief introduction of the platform and a thematic picture. In addition, a button allows users for immediate registration. ![Hero Section](./docs/features/features_hero.png)
-- **Does this sounds familiar to you?** lists the motivation of users to be part of the platform. ![For you](./docs/features/features_for_you.png)
+- **Does this sounds familiar to you? Section** lists the motivation of users to be part of the platform. ![For you](./docs/features/features_for_you.png)
+- **How it works? Page** describes the general procedure for creating a personal or book profile. User has a possibility to sin up directly from this page. ![How it works](./docs/features/features_how_it_works.png) 
 
 ## User Authentication Pages
 User Authentication pages includes:
