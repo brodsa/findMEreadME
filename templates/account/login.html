@@ -7,23 +7,21 @@
 {% block content %}
 
 <div class="container account">
-  <h1 class="account__title">{% trans "Sign In" %}</h1>
 
-  <p class="text-center">{% blocktrans %}Needed an account?
-  <a href="{{ signup_url }}">Sign up</a>.{% endblocktrans %}</p>
+  <h1 class="account__title">{% trans "Sign In" %}</h1>
+  <p class="text-center">{% blocktrans %}Needed an account?<a href="{{ signup_url }}">Sign up</a>{% endblocktrans %}</p>
 
   <div>
-  <form class="login" method="POST" action="{% url 'account_login' %}">
-    {% csrf_token %}
-    {{ form|crispy }}
-    {% if redirect_field_value %}
-    <div>
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      {{ form|crispy }}
+      {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
-    </div>
-    <button class="btn account__button account__button--primary" type="submit">{% trans "Sign In" %}</button>
-    <a class="button secondaryAction d-block text-center account__link" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  </form>
-</div>
+
+      <button class="btn account__button account__button--primary" type="submit">{% trans "Sign In" %}</button>
+      <a class="button secondaryAction d-block text-center account__link" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    </form>
+  </div>
 </div>
 {% endblock content %}
