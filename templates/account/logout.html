@@ -14,13 +14,15 @@
     <form method="post" action="{% url 'account_logout' %}">
       {% csrf_token %}
       {% if redirect_field_value %}
-      
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
       {% endif %}
+      
+      <!-- Buttons -->
       <div class="d-flex flex-column flex-md-row gap-md-2">
         <button type="submit" class="btn account__button account__button--primary w-100 flex-grow-1">{% trans 'Sign Out' %}</button>
         <a class= "btn account__button account__button--secondary w-100 flex-grow-1" href="{% url 'home' %}"> Stay </a>
       </div>
+
     </form>
   </div>
 </div>
