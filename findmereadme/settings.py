@@ -56,10 +56,10 @@ INSTALLED_APPS = [
     'books',
 
     # Other
-    'cloudinary',
-    'cloudinary_storage',
     'crispy_forms',
     'crispy_bootstrap5',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 SITE_ID = 1
