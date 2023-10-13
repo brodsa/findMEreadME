@@ -86,7 +86,7 @@ The following steps were follow to make the initial deployment:
     - `CLOUDINARY_URL`
     - `DEVELOPMENT`
 2. In `settings.py`, import env only if env.py exists and set the following keys: 
-    - `DEBUG = 'DEVELOPMENT' in os.environ` 
+    - `DEBUG = 'DEBUG' in os.environ` 
     - `SECRET_KEY = os.environ.get('SECRET_KEY')`
 4. Set the directories for template, static and media files.
 5. Set up the DATABASE key for ElephantSQL Database
