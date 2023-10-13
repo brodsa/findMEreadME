@@ -129,8 +129,28 @@ a.nav-link{
 .hero__button{
     width: 170px;
     box-shadow: var(--box-shadow);
-    background-color: var(--primary-color-light);
     border-radius: 15px;
+}
+
+.hero__button--primary{
+    width: 170px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--primary-color-light);  
+}
+
+.btn.hero__button--primary:hover{
+    border-color:var(--primary-color);
+}
+
+.hero__button--secondary{
+    border-color:var(--secondary-color);
+    border-radius: 15px;
+}
+
+.btn.hero__button--secondary:hover{
+    
+    background-color: var(--secondary-color-light);
+    color: var(--white);
 }
 
 /* ++++++++++++++ About Section ++++++++++++++ */
@@ -155,7 +175,7 @@ a.nav-link{
 .about__icon{
     flex: 0 0 25%;
     height: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color-light);
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
     display: flex;
@@ -176,10 +196,11 @@ a.nav-link{
     background-color: var(--white);
     color: var(--primary-color);
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
+    border: 1px dotted var(--secondary-color-light);
+    height: 35px;
+    width: 35px;
     text-align: center;
-    padding-top: 6px;
+    padding-top: 7px;
 }
 
 
@@ -224,12 +245,61 @@ a.nav-link{
     color: var(--white);
 }
 
-
-
-
 #hint_id_password1 ul li{
     font-size:10px;
 }
+
+
+/* How it works */
+.timeline{
+    margin-bottom: 20px;
+}
+.card {
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    background: var(--white);
+    border-radius: calc(var(--border-radius)*2);
+    box-shadow: var(--box-shadow);
+    max-width: 400px;
+  }
+  
+  /* Information about the timeline */
+  .card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Title of the card */
+  .card__title {
+    color: var(--black);
+    position: relative;
+  }
+  
+  /* Timeline dot  */
+  .card__title::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    left: -50px;
+  }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background: var(--primary-color);
+    top: 0;
+    bottom: -24px;
+    left: -21px;
+
+  }
+
+
 
 
 

@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}How it works?{% endblock %}
+
+{% block content %}
+
+<section class="container mt-20 d-flex flex-column just-content-center align-items-center pe-5 ps-5 pe-lg-0 ps-lg-0">
+  <h2 class="text-center mt-4">How it works?</h2>
+  <p class="text-center m-2"> With findMEreadME you can both share your books and read the books of others. To share your book, you just need to create a book profile. To read books of other members, you need to search for them and find them.</p>
+  
+  <div class="timeline">
+    <p class="text-center m-2"> Have fun in only a few steps!</p>
+      <div class="card__list">
+        <div class="card">
+          <div class="card__info">
+            <h3 class="card__title">Create Profile</h3>
+            <p> Create your personal profile to have a full access to findMEreadME. List through all registered book and explore them. <a href="{% url 'account_signup' %}">Sign up</a></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__info">
+            <h3 class="card__title">Book Registration</h3>
+            <p> Pick up a book from your bookshelf you wish to share with others. Follow the registration guide to create a book profile. Finally, hide the book or give it to a friend and wait for the reactions!  </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__info">
+            <h3 class="card__title">Book journey</h3>
+            <p> Follow the journey of your book around the world. Read the comments or check the current book location - maybe it will come back to you!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</section>
+{% endblock %}

@@ -13,9 +13,10 @@
         <div class="hero__text d-flex flex-column align-items-center align-items-md-start">
             <h1 class="text-center fw-bold mb-4 text-md-start">Reading with adventure</h1>
             <p class="text-center text-md-start">Welcome to findMEreadME! </p>
-            <p class="text-center text-md-start">A platform that gives you the chance to follow the steps of your books around the globe and read books from all over the world. Choose the book, find it, read it, share it with others!</p>
-            <div class=" align-self-center">
-                <a class= "btn account__button hero__button "href="{% url 'account_signup' %}"> Get Started</a>
+            <p class="text-center text-md-start">A platform that gives you the chance to follow the steps of your books around the globe and read books from all over the world. Choose the book, find it, read it, share it with others and have!</p>
+            <div class="d-flex flex-column flex-sm-row gap-sm-2 just-content-md-left">
+                <a class= "btn hero__button account__button hero__button--primary "href="{% url 'account_signup' %}"> Get Started</a>
+                <a class= "btn hero__button account__button hero__button--secondary "href="{% url 'how' %}"> Learn More</a>
             </div>
         </div>
         <!-- Hero Image -->
@@ -42,7 +43,7 @@
                 </div>
                 <div class="about__item"> 
                     <div class="about__icon"><i class="fa-solid fa-lightbulb"></i></div>
-                    <div class="about__text"><p>You have an interesting book which you think everybody should read it.</p></div>
+                    <div class="about__text"><p>You have an interesting book which you think everybody should read.</p></div>
                 </div>
                 <div class="about__item">
                     <div class="about__icon"><i class="fa-solid fa-trash"></i></div>
