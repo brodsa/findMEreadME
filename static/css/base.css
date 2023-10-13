@@ -203,14 +203,29 @@ a.nav-link{
 .account__button{
     display: block;
     margin: 2px;
-    background-color: var(--primary-color);
-    color:var(--black);
     margin-bottom: 5px;
 }
 
-.btn.account__button:hover{
+.account__button--primary{
+    background-color: var(--primary-color);
+    color:var(--black);
+}
+
+.btn.account__button--primary:hover{
     border-color: var(--primary-color)
 }
+
+.account__button--secondary{
+    border-color: var(--secondary-color-light);
+}
+
+.btn.account__button--secondary:hover{
+    background-color: var(--secondary-color-light);
+    color: var(--white);
+}
+
+
+
 
 #hint_id_password1 ul li{
     font-size:10px;
