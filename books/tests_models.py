@@ -30,3 +30,11 @@ class TestBook(TestCase):
             self.book.image,
             'media/books/placeholder.placeholder.webp'
             )
+
+    def test_image_alt_defaults_to_placeholder(self):
+        """Testing default image alt text placeholder"""
+        print("Test defaults alt image")
+        self.assertEqual(
+            self.book.image_alt,
+            'Placeholder image'
+        )
