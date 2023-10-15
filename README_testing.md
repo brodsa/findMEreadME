@@ -1,24 +1,31 @@
 # Testing & Validation Report
 
 *Content*
-  - Responsivness Testing
-  - Browser Compatibility Testing
-  - User Stories Testing
-  - Features Testing (Manual Testing)
-  - Code Validation
-  - Automated Testing
-  - Lighthouse testing outcomes
-  - Bug resolved and unresolved
+  - [Responsivness Testing](#responsivness-testing)
+  - [Browser Compatibility Testing](#browser-compatibility-testing)
+  - [User Stories Testing](#user-stories-testing)
+  - [Features Testing (Manual Testing)](#feature-testing)
+  - [Code Validation](#code-validation)
+  - [Automated Testing](#automated-testing)
+  - [Bug resolved and unresolved](#bug-resolved-and-unresolved)
 
+
+## Responsivness Testing
+
+## Browser Compatibility Testing
+
+## User Stories Testing
+
+## Feature Testing
 
 ## Code Validation
 The webpage was validated from several perspectives:
 - the markup validity, see [HTML](#html).
 - the css properties, see [CSS](#css).
 - the web accessibility, see [Accessibility](#accessibility).
-- the coding rules of the JavaScript source code, see [JavaScript]
-(#javascript).
+- the coding rules of the JavaScript source code, see [JavaScript](#javascript).
 - the coding rules of Python source code, see [Python](#pep8).
+- the more general quality of the webpage, see [Lighthouse](#lighthouse)
 
 ### HTML 
 The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was used to validate the pages of the webpage. The Checker did not reveal any errors. The detailed reports for each page are below:
@@ -56,7 +63,7 @@ To validate the Python code in terms of PEP8, the [CI Python Linter](https://pep
 The [WAVE](https://wave.webaim.org/) web-based tool was considered for the evaluation of the web accessibility. The detailed reports are below:
 
 
-## Lighthouse
+### Lighthouse
 The Lighthouse in Chrome DevTools evaluates the webpage for performance, accessibility, best practices, and SEO. The detailed reports can be viewed at:
 
 - Desktop evaluation
@@ -71,3 +78,6 @@ The Lighthouse in Chrome DevTools evaluates the webpage for performance, accessi
 |-------------------|--------|------------------|
 | `home`            | <img src="./docs/testing/automated/python_home.png" alt="python_home" width="200"/>   | 100% |
 |`findmereadme`     | <img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 99% |
+
+
+# Bug resolved and unresolved
