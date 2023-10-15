@@ -28,16 +28,16 @@ class Book(models.Model):
         quality=75,
         upload_to="media/books",
         force_format="WEBP",
-        blank=False,
-        null=False,
+        default='media/books/placeholder.placeholder.webp'
         )
-    image_alt = models.CharField(max_length=100, null=False, blank=False)
+    image_alt = models.CharField(max_length=100, default='Placeholder image')
     likes = models.ManyToManyField(
         User, related_name='book_likes', blank=True)
     user = models.ForeignKey(
         User,
         related_name='book_owner',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        null=True
         )
     slug = models.SlugField(max_length=200, unique=True)
     created_on = models.DateField(auto_now_add=True)
