@@ -223,18 +223,19 @@ a.nav-link{
 
 .account__button{
     display: block;
-    width: 100%;
     margin: 2px;
     margin-bottom: 5px;
 }
 
 .account__button--primary{
+    width: 100%;
     background-color: var(--primary-color);
     color:var(--black);
 }
 
 .btn.account__button--primary:hover{
-    border-color: var(--primary-color)
+    width: 100%;
+    border-color: var(--primary-color);
 }
 
 .account__button--secondary{
