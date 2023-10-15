@@ -4,10 +4,11 @@
   - Responsivness Testing
   - Browser Compatibility Testing
   - User Stories Testing
-  - Features Testing
-  - Bug resolved and unresolved
+  - Features Testing (Manual Testing)
   - Code Validation
+  - Automated Testing
   - Lighthouse testing outcomes
+  - Bug resolved and unresolved
 
 
 ## Code Validation
@@ -20,7 +21,7 @@ The webpage was validated from several perspectives:
 - the coding rules of Python source code, see [Python](#pep8).
 
 ### HTML 
-The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was used to validate the pages of the webpage. The detailed reports for each page are below:
+The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was used to validate the pages of the webpage. The Checker did not reveal any errors. The detailed reports for each page are below:
 - [Homepage](https://validator.w3.org/nu/?doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2F)
 - [How It Works](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Fhow)
 - Account Pages
@@ -36,6 +37,20 @@ The [jigsaw](https://jigsaw.w3.org/css-validator/) web-based tool by W3 was used
 ### PEP8
 To validate the Python code in terms of PEP8, the [CI Python Linter](https://pep8ci.herokuapp.com/#) was used.
 
+| Module | Python file               | Report | Results   |
+|--------|---------------------------|--------|-----------|
+|`findmereadme` | `urls.py`          | | |
+|`books`        | `admin.py`         | | |
+|`books`        | `models.py`        | | |
+|`books`        | `tests_models.py`  | | |
+|`books`        | `views.py`         | | |
+|`books`        | `urls.py`          | | |
+|`home`         | `views.py`         | | |
+|`home`         | `urls.py`          | | |
+|`home`         | `tests.py`         | | |
+
+
+
 
 ### Accessibility
 The [WAVE](https://wave.webaim.org/) web-based tool was considered for the evaluation of the web accessibility. The detailed reports are below:
@@ -48,3 +63,11 @@ The Lighthouse in Chrome DevTools evaluates the webpage for performance, accessi
 
 
 - Mobile evaluation 
+
+
+## Automated Testing
+### Python
+| Module            | Report | Total Coverage   |
+|-------------------|--------|------------------|
+| `home`            | <img src="./docs/testing/automated/python_home.png" alt="python_home" width="200"/>   | 100% |
+|`findmereadme`     | <img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 99% |
