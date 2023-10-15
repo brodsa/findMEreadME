@@ -48,11 +48,5 @@ class Book(models.Model):
         ordering = ['title', '-created_on']
 
     def __str__(self):
-        string = f"{self.title} registered on {self.created_on}"
+        string = f"{self.title} published in {self.published_year}"
         return str(string)
-
-    def number_of_likes(self):
-        return self.likes.count()
-
-    def get_likes(self):
-        return self.likes_set.all()
