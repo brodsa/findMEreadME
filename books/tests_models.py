@@ -19,6 +19,14 @@ class TestBook(TestCase):
         print('teardown: TestBook')
 
     def test_language_defaults_to_english(self):
+        """Testing default language"""
         print('Test default language to en')
         self.assertEqual(self.book.language, 'en')
 
+    def test_image_defaults_to_placeholder(self):
+        """Testing default image placeholder"""
+        print('Test default image')
+        self.assertEqual(
+            self.book.image,
+            'media/books/placeholder.placeholder.webp'
+            )
