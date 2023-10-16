@@ -130,8 +130,6 @@ else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
-    
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -167,9 +165,9 @@ USE_TZ = True
 
 # Account Setup
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-#ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
-#ACOUNT_EMAIL_VERIFICATION = 'none'
+# ACOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USER_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'

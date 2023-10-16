@@ -16,9 +16,6 @@ class BookAdmin(admin.ModelAdmin):
         'description',
         'image',
     )
-    prepopulated_fields = {'slug': ('title','user')}
+    prepopulated_fields = {'slug': ('title', 'user')}
     list_filter = ('language',)
     search_fields = ('title', 'author')
-
-
-
