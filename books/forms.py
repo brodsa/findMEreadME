@@ -33,7 +33,7 @@ class BookForm(forms.ModelForm):
             'image_alt': 'Describe cover image',
         }
 
-    # def clean(self):
+    # def clean_year(self):
     #     data = self.cleaned_data["published_year"]
     #     if len(str(data)) != 4:
     #         print('ERROR')
