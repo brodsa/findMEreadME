@@ -1,4 +1,5 @@
 from django import forms
+from django.core.exceptions import ValidationError
 
 from .models import Book
 
@@ -23,11 +24,18 @@ class BookForm(forms.ModelForm):
         }
 
         labels = {
-            'title': 'Book Title',
-            'author': 'Book Author',
+            'title': 'Title',
+            'author': 'Author',
             'published_year': 'Published Year',
             'language': 'Language',
-            'description': 'Short Description of Book',
-            'image': 'Book Cover Image',
-            'image_alt': 'Describe Book Cover Image',
+            'description': 'Description',
+            'image': 'Cover Image',
+            'image_alt': 'Describe cover image',
         }
+
+    # def clean(self):
+    #     data = self.cleaned_data["published_year"]
+    #     if len(str(data)) != 4:
+    #         print('ERROR')
+    #         raise ValidationError('To short year')
+    #     return data
