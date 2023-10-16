@@ -50,13 +50,18 @@ Homepage consist of 3 sections containing the features described bellow:
 - **How it works? Page** describes the general procedure for creating a personal or book profile. User has a possibility to sin up directly from this page. ![How it works](./docs/features/features_how_it_works.png) 
 
 ## User Authentication Pages
-User Authentication pages includes:
+User Authentication pages include:
 - **Login Page** contains a form to log in via username or email into to the platform. Moreover, a user can choose to remember the login data. User can refresh password, in case he/she forgot it. When user logins, the username is displayed in navigation menu. ![Login](./docs/features/features_login.png)
 - **Sign Up Page** contains a form to create an account. User can register using both username or email.![Sign Up](./docs/features/features_signup.png)
 - **Log Out Page** asks user to confirm logging out from the platform. ![Log Out](./docs/features/features_logout.png)
 
+## Book Registration Pages
+Book Registration pages include:
+- **New Book Page** contains a form to register a new book. The required fields are: title, author, published year, language. The user is informed, if these form fields are not filled in. The description, image and image text fields are not required. After a successful book registration, user is redirected to the book overview page. ![New Book](./docs/features/features_book_registration.png)
+
 ## Future & Left Features
 - Successful Registration: The user is redirected to homepage and informed via displayed username in the navigation bar as this is by default. - changed acceptance criteria
+- Overview of filled in information in the form to register a new book - next iteration - not needed for MVP. - changed acceptance criteria
 
 
 # Technologies
