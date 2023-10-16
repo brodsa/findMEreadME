@@ -6,8 +6,8 @@
 
 {% block content %}
 
-<div class="container account">
-  <h1 class="account__title">{% trans "Sign Up" %}</h1>
+<div class="container form-container form-account">
+  <h1 class="form__title">{% trans "Sign Up" %}</h1>
   
   <p class="text-center">{% blocktrans %}Already have an account? <a href="{{ login_url }}">Sign in</a>{% endblocktrans %}</p>
   <div>
@@ -19,7 +19,7 @@
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
 
-      <button class="btn account__button account__button--primary" type="submit">Sign Up</button>
+      <button class="btn form__button form__button--primary" type="submit">Sign Up</button>
    
     </form>
   </div>

@@ -4,5 +4,16 @@
 {% block title %}Register Book{% endblock %}
 
 {% block content %}
-<h1>Add Book</h1>
+<div class="container form-container form-book">
+    <h1 class="account__title">New Book</h1>
+    <form method="POST" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        {{ form.media }} 
+        {{ form|crispy }}
+        <!-- Buttons -->
+        <div class="d-flex flex-column flex-md-row gap-md-2">
+            <button type="submit" class="btn form__button form__button--primary w-100 flex-grow-1">Register Book</button>
+        </div>
+    </form>
+</div>
 {% endblock %}
