@@ -36,7 +36,7 @@ class TestBook(TestCase):
         print("Test defaults alt image")
         self.assertEqual(
             self.book.image_alt,
-            'Placeholder image'
+            'Cover image'
         )
 
     def test_str_representation_of_created_book_object(self):

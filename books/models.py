@@ -22,15 +22,20 @@ class Book(models.Model):
         max_length=10,
         choices=LANGUAGE_TYPE,
         default='en')
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     image = ResizedImageField(
         size=[400, None],
         quality=75,
         upload_to="media/books",
         force_format="WEBP",
-        default='media/books/placeholder.placeholder.webp'
+        default='media/books/placeholder.placeholder.webp',
+        blank=True
         )
-    image_alt = models.CharField(max_length=100, default='Placeholder image')
+    image_alt = models.CharField(
+        max_length=100,
+        default='Cover image',
+        blank=True
+        )
     likes = models.ManyToManyField(
         User, related_name='book_likes', blank=True)
     user = models.ForeignKey(
