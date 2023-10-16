@@ -1,3 +1,4 @@
+import datetime
 from django import forms
 from django.core.exceptions import ValidationError
 
@@ -33,9 +34,12 @@ class BookForm(forms.ModelForm):
             'image_alt': 'Describe cover image',
         }
 
-    # def clean_year(self):
-    #     data = self.cleaned_data["published_year"]
-    #     if len(str(data)) != 4:
-    #         print('ERROR')
-    #         raise ValidationError('To short year')
-    #     return data
+    def clean(self):
+        year = self.cleaned_data["published_year"]
+        current_year = datetime.datetime.now().year
+        if year > int(current_year):
+            raise ValidationError('Invalid year.')
+        elif year < 1900:
+            raise ValidationError('Invalid year, please contact us if needed.')
+        else: 
+            return year
