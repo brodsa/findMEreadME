@@ -47,6 +47,7 @@ To validate the Python code in terms of PEP8, the [CI Python Linter](https://pep
 | Module | Python file               | Report | Results   |
 |--------|---------------------------|--------|-----------|
 |`findmereadme` | `urls.py`          | | |
+|`findmereadme` | `settings.py`      | | |
 |`books`        | `admin.py`         | | |
 |`books`        | `models.py`        | | |
 |`books`        | `tests_models.py`  | | |
@@ -80,4 +81,12 @@ The Lighthouse in Chrome DevTools evaluates the webpage for performance, accessi
 |`findmereadme`     | <img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 99% |
 
 
-# Bug resolved and unresolved
+# Bugs & Issus
+
+Using two databases for dev and prod led to missing up debugging mode and creating a super user. Two superusers were created, one for prod and one for dev. In addition a debug config variable was created, this can be switch on/off in both production and dev environment.
+
+The slug field was prepoluted only for admin panel. The slug field consists of user and title. In the method `form_valid()` of `RegisterBook` class add the slug creation. `form.instance.slug = slugify(f"{self.request.POST.get('title')} {self.request.user}")`, hint from [StackOverflow](https://stackoverflow.com/questions/837828/how-do-i-create-a-slug-in-django) 
+
+new feature: Validation of user input in form: check the year, check the length of description field.
+
+
