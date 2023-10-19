@@ -21,7 +21,8 @@ class Book(models.Model):
     language = models.CharField(
         max_length=10,
         choices=LANGUAGE_TYPE,
-        default='en')
+        default='en',
+        blank=False)
     description = models.TextField(null=True, blank=True)
     image = ResizedImageField(
         size=[400, None],

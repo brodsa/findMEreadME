@@ -41,5 +41,5 @@ class BookForm(forms.ModelForm):
             raise ValidationError('Invalid year.')
         elif year < 1900:
             raise ValidationError('Invalid year, please contact us if needed.')
-        else: 
+        else:
             return year
