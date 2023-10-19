@@ -64,6 +64,12 @@ Book Registration pages include:
 - Overview of filled in information in the form to register a new book - next iteration - not needed for MVP. - changed acceptance criteria
 
 
+## Added Features - goes in Agile
+new feature: Validation of user input in form: check the year, check the length of description field, same book for the one user.
+
+member area should be in drop down
+
+
 # Technologies
 - [Bootstrap 5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 - [cloudinary](https://cloudinary.com/)
