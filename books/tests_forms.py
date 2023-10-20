@@ -1,6 +1,6 @@
 from django.test import TestCase
 from .forms import BookForm
-
+from django.contrib.auth.models import User
 
 class TestBookForm(TestCase):
     """A class to test book form"""
@@ -88,3 +88,6 @@ class TestBookForm(TestCase):
                     'image',
                     'image_alt']
                 ))
+
+    def test_form_valid_with_user(self):
+        print(self.form)
