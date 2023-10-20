@@ -77,9 +77,13 @@ The Lighthouse in Chrome DevTools evaluates the webpage for performance, accessi
 ### Python
 | Module            | Report | Total Coverage   |
 |-------------------|--------|------------------|
-| `home`            | <img src="./docs/testing/automated/python_home.png" alt="python_home" width="200"/>   | 100% |
+| `home`            | <img src="./docs/testing/automated/python_home.png" alt="python_home" width="200"/>   | 79% |
 |`findmereadme`     | <img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 99% |
 
+
+Todo: Testing 
+- form_valid()  of CreateView
+- clean() of FormModel
 
 # Bugs & Issus
 
