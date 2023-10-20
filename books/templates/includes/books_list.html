@@ -1,5 +1,5 @@
 {% load static %}
-<a href="" class="book" aria-label="Click to see more details for {{ book.title }}">
+<a href="{% url 'book_detail' book.id %}" class="book" aria-label="Click to see more details for {{ book.title }}">
     <div class="card">
 
         <!-- Book Image: Default Image has to be set manually due to cloudinary -->
@@ -16,8 +16,9 @@
         <div class="card-body">
           <h2 class="card-title">{{ book.title|truncatechars:30 }}</h2>
           <p class="card-author">{{ book.author|truncatechars:30 }}</p> 
-          <p class="card-text">{{ book.description|truncatechars:70 }}</p>
+          <p class="card-text">{{ book.description|truncatechars:100 }}</p>
           <!-- <a href="#" class="btn btn-primary">Delete</a> -->
+          
         </div>
       </div>
 </a>
