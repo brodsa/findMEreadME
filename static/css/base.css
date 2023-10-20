@@ -269,7 +269,7 @@ a.nav-link{
 .timeline{
     margin-bottom: 20px;
 }
-.card {
+.timeline-card {
     position: relative;
     margin: 20px;
     padding: 20px;
@@ -279,18 +279,18 @@ a.nav-link{
     max-width: 400px;
   }
   
-.card__info {
+.timeline-card__info {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.card__title {
+.timeline-card__title {
     color: var(--black);
     position: relative;
 }
 
-.card__title::before {
+.timeline-card__title::before {
     content: "";
     position: absolute;
     width: 20px;
@@ -300,7 +300,7 @@ a.nav-link{
     left: -50px;
 }
 
-.card::after {
+.timeline-card::after {
     content: "";
     position: absolute;
     width: 1px;
