@@ -36,7 +36,7 @@ The used color combination follow the following accessibility matrix.
     - On small devices the menu drops into a hamburger menu.
     - The content depends on the type of users:
         - Unregistered User: ![Menu for visitors](./docs/features/features_navbar.png)
-        - Registered User:
+        - Registered User: ![Menu for users](./docs/features/features_navbar_user.png)
 
 - **Footer**
   - Footer is displayed on all pages, except the pages dedicated for user or book registration.
@@ -58,6 +58,7 @@ User Authentication pages include:
 ## Book Registration Pages
 Book Registration pages include:
 - **New Book Page** contains a form to register a new book. The required fields are: title, author, published year, language. The user is informed, if these form fields are not filled in. The description, image and image text fields are not required. After a successful book registration, user is redirected to the book overview page. ![New Book](./docs/features/features_book_registration.png)
+- **Latest Book Page** contains an overview of registered books. The authenticated users can see the entire content, while unregistered users have limited excess. The only visitors can view the four latest books and are asked to register if they wish to see more. ![Latest Books](./docs/features/features_book_latest_books.png)
 
 ## Future & Left Features
 - Successful Registration: The user is redirected to homepage and informed via displayed username in the navigation bar as this is by default. - changed acceptance criteria
