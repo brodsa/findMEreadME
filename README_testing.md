@@ -28,12 +28,16 @@ The webpage was validated from several perspectives:
 - the more general quality of the webpage, see [Lighthouse](#lighthouse)
 
 ### HTML 
-The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was used to validate the pages of the webpage. The Checker did not reveal any errors. The detailed reports for each page are below:
+The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was used to validate the pages of the webpage. The Checker did not reveal any errors. The source code of pages requiring login was checked directly via text input. Other pages were tested via provided page URL. The detailed reports for each page are below:
 - [Homepage](https://validator.w3.org/nu/?doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2F)
 - [How It Works](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Fhow)
 - Account Pages
     - [Log In](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Faccounts%2Flogin)
     - [Sing up](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Faccounts%2Fsignup%2F)
+    - [Logout](./docs/testing/html/html_logout.png)
+- Books
+    - [Register Book](./docs/testing/html/html_register_book.png)
+    - [Latest Books](./docs/testing/html/html_books.png)
 
 
 
