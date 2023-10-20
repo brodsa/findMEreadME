@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.text import slugify
 
@@ -12,6 +12,13 @@ class Books(ListView):
     model = Book
     context_object_name = 'books'
     
+
+class BookDetail(DetailView):
+    """ Book Detail View to see book details """
+    template_name = 'books/book_detail.html'
+    model = Book
+    context_object_name = 'book'
+
 
 class RegisterBook(LoginRequiredMixin, CreateView):
     """ Register book view """
