@@ -10,6 +10,7 @@ class TestBookViews(TestCase):
 
     def setUp(self):
         """ Setup test """
+        print("Setup: Test Book Views")
         username = os.environ.get('ADMIN_USERNAME')
         password = os.environ.get('ADMIN_KEY')
         user_model = get_user_model()
@@ -30,10 +31,21 @@ class TestBookViews(TestCase):
             published_year=2000,
             language='en')
 
+    def tearDown(self):
+        print("tearDown: Test Book Views")
+
     def test_register_book(self):
-        """Test request and used template"""
+        """Test request and used template for registering a new book"""
+        print("Testing New Book template and request")
         response = self.client.get('/books/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'books/register_book.html')
+
+    def test_book_list(self):
+        """Test request and used template for Latest Book Page"""
+        print("Testing Latest Book template and request")
+        response = self.client.get('/books/books/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'books/books.html')
 
         
