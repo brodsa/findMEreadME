@@ -1,1 +1,29 @@
-<p>Book Detail</p>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Book Detail|{{ book.title }}{% endblock %}
+
+{% block content %}
+
+<div class="book-detail">
+    <h1 class="text-center pt-5">{{book.title}}</h1>
+    <p class="book-detail__user"> Registered by {{user.username}}</p>
+
+    <div class="container">
+        <div class="book-detail__header" >
+            <div class="book-detail__picture">
+                <img src="{{ book.image.url }}" alt="{{ book.image_alt }}">
+            </div>
+            <div class="book-detail__info">
+                <p><strong>Author</strong>: {{ book.author }}</p>
+                <p><strong>Published year</strong>: {{ book.published_year }}</p>
+                <p><strong>Language</strong>: {{ book.language|title }}</p>
+            </div>
+        </div>
+        <div class="book-detail__description">
+            <p>{{ book.description }}</p>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
