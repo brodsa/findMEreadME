@@ -1,3 +1,4 @@
+import os
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from .models import Book
@@ -9,8 +10,8 @@ class TestBookViews(TestCase):
 
     def setUp(self):
         """ Setup test """
-        username = "admin-findme-readme"
-        password = "PP4-ci"
+        username = os.environ.get('ADMIN_USERNAME')
+        password = os.environ.get('ADMIN_KEY')
         user_model = get_user_model()
 
         # Create USER
@@ -30,11 +31,9 @@ class TestBookViews(TestCase):
             language='en')
 
     def test_register_book(self):
+        """Test request and used template"""
         response = self.client.get('/books/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'books/register_book.html')
 
-    # def test_form_instance(self):
-    #     response = self.client.get('/books/')
-    #     print(response.request)
-    #     self.assertContains(response, 'Steve Jobs')
+        

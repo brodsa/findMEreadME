@@ -1,6 +1,9 @@
+import os
+
 from django.test import TestCase
 from .forms import BookForm
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+
 
 class TestBookForm(TestCase):
     """A class to test book form"""
@@ -15,7 +18,17 @@ class TestBookForm(TestCase):
                 'language': 'en'
             }
         )
+        username = os.environ.get('ADMIN_USERNAME')
+        password = os.environ.get('ADMIN_KEY')
+        user_model = get_user_model()
 
+        # Create USER
+        self.user = user_model.objects.create_user(
+            username=username,
+            password=password,
+            is_superuser=True
+        )
+        
     def tearDown(self):
         print('teardown: BookForm')
 
@@ -89,5 +102,6 @@ class TestBookForm(TestCase):
                     'image_alt']
                 ))
 
-    def test_form_valid_with_user(self):
-        print(self.form)
+    # def test_form_valid_with_user(self):
+    #     print("Test for valid form")
+    #     print(self.form.instance)

@@ -14,6 +14,7 @@ class RegisterBook(LoginRequiredMixin, CreateView):
     success_url = '/books/'
 
     def form_valid(self, form):
+        """ Method which creates instances after valid form data were POST"""
         form.instance.user = self.request.user
         form.instance.slug = slugify(
             f"{self.request.POST.get('title')} {self.request.user}"
