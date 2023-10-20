@@ -7,31 +7,21 @@
 
 <h1 class="text-center p-5">Latest Books</h1>
 <div class="books-container">
-    
     {% for book in books %}
-        <a href="" class="book" aria-label="Click to see more details for {{ book.title }}">
-            <div class="card">
-
-                <!-- Book Image: Default Image has to be set manually due to cloudinary -->
-                {% if book.image == 'media/books/placeholder.placeholder.webp' %}
-                <div class="card-img-container align-self-center">
-                        <img src="https://res.cloudinary.com/dqtlflps3/image/upload/v1697374709/media/books/placeholder.webp" alt="{{ book.image_alt }}">
-                    {% else %}
-                <div class="card-img-container">
-                        <img src="{{ book.image.url }}" class="card-img-top" alt="{{ book.image_alt }}">
-                    {% endif %}
-                </div>
-                
-
-                <div class="card-body">
-                  <h2 class="card-title">{{ book.title|truncatechars:30 }}</h2>
-                  <p class="card-author">{{ book.author|truncatechars:30 }}</p> 
-                  <p class="card-text">{{ book.description|truncatechars:70 }}</p>
-                  <!-- <a href="#" class="btn btn-primary">Delete</a> -->
-                </div>
-              </div>
-        </a>
+    {% if request.user.is_authenticated %}
+        {% include 'includes/books_list.html' %}
+    {% else %}
+        {% if forloop.counter < 5 %}
+            {% include 'includes/books_list.html' %}
+        {% endif %}
+    {% endif %}
     {% endfor %}
+
+    {% if not request.user.is_authenticated %}
+    <div class="d-flex flex-column flex-sm-row gap-sm-2 just-content-md-left pt-2">
+        <a class= "btn hero__button account__button hero__button--primary" href="{% url 'account_signup' %}"> See More</a>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock %}
