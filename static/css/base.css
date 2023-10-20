@@ -311,6 +311,49 @@ a.nav-link{
 
 }
 
+/* Books List */
+.books-container{
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 15px;
+    padding-bottom: 20px;
+
+}
+
+.book{
+    text-decoration: none;
+    color: var(--black);
+}
+
+.book:hover{
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    scale: 1.01;
+    color: black
+}
+
+div.card{
+    height: 600px;
+    width: 16rem;
+}
+
+div.card-img-container{
+    flex: 0 0 350px;
+    height: 100px;
+}
+
+img.card-img-top{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+div.card-body{
+    flex: 0 1 250px;
+}
 
 
 
@@ -320,6 +363,10 @@ a.nav-link{
     .about__list{
         grid-template-columns: 1fr 1fr; 
         margin-bottom: 20px;
+    }
+
+    .books-container{
+        padding: 20px 0 40px;
     }
 }
 
