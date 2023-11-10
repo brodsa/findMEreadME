@@ -60,6 +60,11 @@ Book Registration pages include:
 - **New Book Page** contains a form to register a new book. The required fields are: title, author, published year, language. The user is informed, if these form fields are not filled in. The description, image and image text fields are not required. After a successful book registration, user is redirected to the book overview page. ![New Book](./docs/features/features_book_registration.png)
 - **Latest Book Page** contains an overview of registered books. The authenticated users can see the entire content, while unregistered users have limited excess. The only visitors can view the four latest books and are asked to register if they wish to see more. ![Latest Books](./docs/features/features_book_latest_books.png)
 
+# Book Detail Page
+Book Detail Page displays general information about the book as in a book card overview, except there is a full book description. The further shown information depends on user authentication. 
+
+- **Registered Book without contribution** shows only basic book information and the user who added the book. ![Basic Book Detail](./docs/features/feature_book_detail_basic.png) 
+
 ## Future & Left Features
 - Successful Registration: The user is redirected to homepage and informed via displayed username in the navigation bar as this is by default. - changed acceptance criteria
 - Overview of filled in information in the form to register a new book - next iteration - not needed for MVP. - changed acceptance criteria
