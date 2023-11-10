@@ -32,6 +32,7 @@ DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-brodsa-findmereadme-bkc96orn9th.ws-eu105.gitpod.io',
+    '8000-brodsa-findmereadme-bkc96orn9th.ws-eu106.gitpod.io',
     'findme-readme-10d0bfb3ba28.herokuapp.com'
     ]
 
