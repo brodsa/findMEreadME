@@ -48,4 +48,13 @@ class TestBookViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'books/books.html')
 
+    def test_book_detail(self):
+        """Test request and used template for Book Detail Page"""
+        print("Testing Book Detail template and request")
+        response = self.client.get('/books/1/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'books/book_detail.html')
+
+    
+
         
