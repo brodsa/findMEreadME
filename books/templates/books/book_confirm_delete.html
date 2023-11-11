@@ -1,2 +1,25 @@
-<h1 class="form__title">Book Deletion</h1>
+{% extends "base.html" %}
+{% load static %}
 
+{% block title %}Delete book: {{ object.title }}{% endblock title %}
+
+{% block content %}
+<div class="container form-container form-account">
+    <h1 class="form__title">Book Deletion</h1>
+  
+    <p class="text-center">Are you sure you want to delete the book</p>
+    <p class="text-center text-uppercase">{{ object.title }}?</p>
+    <div>
+      <form method="post">
+        {% csrf_token %}
+        <!-- Buttons -->
+        <div class="d-flex flex-column flex-md-row gap-md-2">
+          <button type="submit" class="btn form__button form__button--primary w-100 flex-grow-1">Delete</button>
+          <a class= "btn form__button form__button--secondary w-100 flex-grow-1" href="{% url 'home' %}"> Go back </a>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
