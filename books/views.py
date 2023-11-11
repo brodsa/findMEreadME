@@ -35,7 +35,7 @@ class RegisterBook(LoginRequiredMixin, CreateView):
     template_name = 'books/register_book.html'
     model = Book
     form_class = BookForm
-    success_url = '/books/'
+    success_url = '/books/books/'
 
     def form_valid(self, form):
         """ Method which creates instances after valid form data were POST"""
@@ -49,7 +49,7 @@ class RegisterBook(LoginRequiredMixin, CreateView):
 class DeleteBook(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Delete a recipe """
     model = Book
-    success_url = '/books/'
+    success_url = '/books/books/'
 
     def test_func(self):
         return self.request.user == self.get_object().user
