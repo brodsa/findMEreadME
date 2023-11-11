@@ -34,12 +34,12 @@ class BookForm(forms.ModelForm):
             'image_alt': 'Describe cover image',
         }
 
-    def clean(self):
-        year = self.cleaned_data["published_year"]
-        current_year = datetime.datetime.now().year
-        if year > int(current_year):
-            raise ValidationError('Invalid year.')
-        elif year < 1900:
-            raise ValidationError('Invalid year, please contact us if needed.')
-        else:
-            return year
+    # def clean(self):
+    #     year = self.cleaned_data["published_year"]
+    #     current_year = datetime.datetime.now().year
+    #     if year > int(current_year):
+    #         raise ValidationError('Invalid year.')
+    #     elif year < 1900:
+    #         raise ValidationError('Invalid year, please contact us if needed.')
+    #     else:
+    #         return year
