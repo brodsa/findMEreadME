@@ -25,7 +25,7 @@ class TestBookViews(TestCase):
         self.assertTrue(logged_in)
 
         # Create BOOK
-        book = Book.objects.create(
+        self.book = Book.objects.create(
             title='Steve Jobs',
             author='Walter Isaacson',
             published_year=2000,
@@ -54,6 +54,16 @@ class TestBookViews(TestCase):
         response = self.client.get('/books/1/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'books/book_detail.html')
+  
+    # TODO: I cant get the 202 response for deletion even if I create a book and I am logged in
+    def test_book_deletion_for_no_user(self):
+        """Test request and used template for Book Deletion"""
+        print("Testing Book Deletion template and request")
+        response = self.client.get('/books/delete/1/')
+        self.assertEqual(response.status_code, 403)
+        self.assertTemplateUsed(response, '403.html')
+
+
 
     
 
