@@ -35,9 +35,11 @@ The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was use
     - [Log In](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Faccounts%2Flogin)
     - [Sing up](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Faccounts%2Fsignup%2F)
     - [Logout](./docs/testing/html/html_logout.png)
-- Books
+- Book Pages
     - [Register Book](./docs/testing/html/html_register_book.png)
     - [Latest Books](./docs/testing/html/html_books.png)
+    - [Book Detail](./docs/testing/html/html_book_detail.png)
+    - [Book Deletion](./docs/testing/html/html_book_delete.png)
 
 
 
@@ -82,7 +84,7 @@ The Lighthouse in Chrome DevTools evaluates the webpage for performance, accessi
 | Module            | Report | Total Coverage   |
 |-------------------|--------|------------------|
 | `home`            | <img src="./docs/testing/automated/python_home.png" alt="python_home" width="200"/>   | 100% |
-|`books`     | <img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 98% |
+|`books`     | <img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 99% |
 
 
 Todo: Testing 
