@@ -95,7 +95,11 @@ Using two databases for dev and prod led to missing up debugging mode and creati
 
 The slug field was prepopulated only for admin panel. The slug field consists of user and title. In the method `form_valid()` of `RegisterBook` class add the slug creation. `form.instance.slug = slugify(f"{self.request.POST.get('title')} {self.request.user}")`, hint from [StackOverflow](https://stackoverflow.com/questions/837828/how-do-i-create-a-slug-in-django) 
 
-WHile testing the form, an error occurred related to clean method of the form class, which I was not able to solve. Error message can be viewed here. To test the rest of the code, this method was temporally remove. Therefore, the coverage report must be taken with caution.
+clean method of BookForm does not work - possible solution look at the model and add min and max value
+
+WHile testing the form, an error occurred related to clean method of the form class, which I was not able to solve. Error message can be viewed here. To test the rest of the code, this method was temporally remove. Therefore, the coverage report must be taken with caution. 
+
+
 
 
 
