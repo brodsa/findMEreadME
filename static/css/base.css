@@ -398,6 +398,19 @@ div.card-body{
 
 
 
+.action__button{
+    width: 92px;
+    background-color: var(--primary-color);
+    color: var(--black);
+    box-shadow: var(--box-shadow);
+}
+
+.action__button:hover{
+    border-color: var(--primary-color);
+}
+
+
+
 @media screen and  (min-width: 630px){
     .about__list{
         grid-template-columns: 1fr 1fr; 

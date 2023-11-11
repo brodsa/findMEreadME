@@ -7,22 +7,40 @@
 
 <div class="book-detail">
     <h1 class="text-center pt-5">{{book.title}}</h1>
-    <p class="book-detail__user"> Registered by {{user.username}}</p>
+    <p class="book-detail__user"> Registered by {{ book.user}}</p>
 
     <div class="container">
         <div class="book-detail__header" >
+            <!-- Book Image: Default Image has to be set manually due to cloudinary -->
+            {% if book.image == 'media/books/placeholder.placeholder.webp' %}
+            <div class="book-detail__picture align-self-center">
+                <img src="https://res.cloudinary.com/dqtlflps3/image/upload/v1697374709/media/books/placeholder.webp" alt="{{ book.image_alt }}">
+            {% else %}
             <div class="book-detail__picture">
                 <img src="{{ book.image.url }}" alt="{{ book.image_alt }}">
+            {% endif %}
             </div>
-            <div class="book-detail__info">
-                <p><strong>Author</strong>: {{ book.author }}</p>
-                <p><strong>Published year</strong>: {{ book.published_year }}</p>
-                <p><strong>Language</strong>: {{ book.language|title }}</p>
+            <div class="book-detail__panel">
+                <div class="book-detail__info">
+                    <p><strong>Author</strong>: {{ book.author }}</p>
+                    <p><strong>Published year</strong>: {{ book.published_year }}</p>
+                    <p><strong>Language</strong>: {{ book.language|title }}</p>
+                </div>
+                
             </div>
         </div>
+        {% if request.user.is_authenticated and  book.user == request.user %}
+        <div class="buttons d-flex flex-column aling-items-end pb-3">
+            <div class="d-flex flex-row flex-grow-0 gap-2 justify-content-end">
+                <a href="#" class="btn action__button"> <i class="far fa-edit"> </i> Edit</a>
+                <a href="{% url 'delete_book' book.id %}" class="btn action__button"> <i class="fa-solid fa-trash"> </i> Delete</a>
+            </div>
+        </div>
+        {% endif %}
         <div class="book-detail__description">
             <p>{{ book.description }}</p>
         </div>
+
 
     </div>
 </div>
