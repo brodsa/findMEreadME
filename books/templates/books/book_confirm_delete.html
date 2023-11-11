@@ -15,7 +15,7 @@
         <!-- Buttons -->
         <div class="d-flex flex-column flex-md-row gap-md-2">
           <button type="submit" class="btn form__button form__button--primary w-100 flex-grow-1">Delete</button>
-          <a class= "btn form__button form__button--secondary w-100 flex-grow-1" href="{% url 'home' %}"> Go back </a>
+          <a class= "btn form__button form__button--secondary w-100 flex-grow-1" href="{{ request.META.HTTP_REFERER }}"> Go back </a>
         </div>
   
       </form>
