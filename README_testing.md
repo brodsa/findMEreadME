@@ -40,6 +40,7 @@ The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was use
     - [Latest Books](./docs/testing/html/html_books.png)
     - [Book Detail](./docs/testing/html/html_book_detail.png)
     - [Book Deletion](./docs/testing/html/html_book_delete.png)
+    - [Book Editing](./docs/testing/html/html_book_edit.png)
 
 
 
@@ -57,6 +58,8 @@ To validate the Python code in terms of PEP8, the [CI Python Linter](https://pep
 |`books`        | `admin.py`         | | |
 |`books`        | `models.py`        | | |
 |`books`        | `tests_models.py`  | | |
+|`books`        | `tests_forms.py`   | | |
+|`books`        | `tests_views .py`  | | |
 |`books`        | `views.py`         | | |
 |`books`        | `urls.py`          | | |
 |`home`         | `views.py`         | | |
