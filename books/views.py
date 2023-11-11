@@ -2,7 +2,8 @@ from django.views.generic import (
     CreateView,
     ListView,
     DetailView,
-    DeleteView
+    DeleteView,
+    UpdateView
     )
 
 from django.contrib.auth.mixins import (
@@ -47,8 +48,19 @@ class RegisterBook(LoginRequiredMixin, CreateView):
 
 
 class DeleteBook(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    """ Delete a recipe """
+    """ Delete a book """
     model = Book
+    success_url = '/books/books/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
+
+
+class EditBook(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """ Edit a book """
+    template_name = 'books/edit_book.html'
+    model = Book
+    form_class = BookForm
     success_url = '/books/books/'
 
     def test_func(self):
