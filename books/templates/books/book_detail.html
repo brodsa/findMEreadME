@@ -32,7 +32,7 @@
         {% if request.user.is_authenticated and  book.user == request.user %}
         <div class="buttons d-flex flex-column aling-items-end pb-3">
             <div class="d-flex flex-row flex-grow-0 gap-2 justify-content-end">
-                <a href="#" class="btn action__button"> <i class="far fa-edit"> </i> Edit</a>
+                <a href="{% url 'edit_book' book.id %}" class="btn action__button"> <i class="far fa-edit"> </i> Edit</a>
                 <a href="{% url 'delete_book' book.id %}" class="btn action__button"> <i class="fa-solid fa-trash"> </i> Delete</a>
             </div>
         </div>
