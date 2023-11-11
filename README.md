@@ -63,7 +63,10 @@ Book Registration pages include:
 # Book Detail Page
 Book Detail Page displays general information about the book as in a book card overview, except there is a full book description. The further shown information depends on user authentication. 
 
-- **Registered Book without contribution** shows only basic book information and the user who added the book. ![Basic Book Detail](./docs/features/feature_book_detail_basic.png) 
+- **Registered Book (owner)** shows only basic book information and the user who added the book. In addition, there are two buttons to edit or delete the book. ![Basic Book Detail](./docs/features/features_book_detail_basic.png) 
+
+- **Registered Book (viewer/contributer)** shows only basic book information and the user who added the book. The deletion or edition of the book is not allowed ![Basic Book Detail](./docs/features/features_book_detail_basic_viewer.png) 
+
 
 ## Future & Left Features
 - Successful Registration: The user is redirected to homepage and informed via displayed username in the navigation bar as this is by default. - changed acceptance criteria
