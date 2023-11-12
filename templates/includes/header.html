@@ -3,48 +3,62 @@
   {% with request.resolver_match.url_name as url_name %}
     <!-- Navigation menu -->
     <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <!-- logo   -->
-          <a class="navbar-brand fs-2" href="{% url 'home' %}">
-            <span class="navbar-text navbar-text-bold">find</span><span class="navbar-text">ME</span><span class="navbar-text navbar-text-bold">read</span><span class="navbar-text">ME</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <div class="container-fluid">
+        <!-- logo   -->
+        <a class="navbar-brand fs-2" href="{% url 'home' %}">
+          <span class="navbar-text navbar-text-bold">find</span><span class="navbar-text">ME</span><span class="navbar-text navbar-text-bold">read</span><span class="navbar-text">ME</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
           <!-- Navigation items -->
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- User Name if logged in -->
             {% if request.user.is_authenticated %}
               <span class="me-2"><i class="fa-regular fa-user"></i></span><span class="navbar-text fst-italic me-3 pb-1">{{ request.user }}</span>
             {% endif %}
+
+            <!-- Menu Items -->
             <ul class="navbar-nav">
-              <!-- Logout -->
-              {% if request.user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a>
-              </li>
-              {% else %}
+              <!-- Home -->
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
-              <!-- Login -->
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login">Member Area</a>
-              </li>
-              {% endif %}
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'register_book' %}active{% endif %}" href="{% url 'register_book' %}">New Book</a>
-              </li>
+
+              <!-- Member Area -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Member Area
+                </a>
+                <ul class="dropdown-menu">
+                  {% if request.user.is_authenticated %}
+                    <!-- New Book -->
+                    <li><a class="dropdown-item {% if url_name == 'register_book' %}active{% endif %}" href="{% url 'register_book' %}">New Book</a></li>
+                    <!-- Log out -->
+                    <li><a class="dropdown-item {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a></li>
+                  {% else %}
+                    <!-- Login -->
+                    <li><a class="dropdown-item {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login">Login</a></li>
+                    <!-- Register -->
+                    <li><a class="dropdown-item {% if url_name == 'accounts_signup' %}active{% endif %}"  href="/accounts/signup">Register</a> </li>
+                  {% endif %} 
+                </ul>
+
+
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'books' %}active{% endif %}" href="{% url 'books' %}">Books</a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link {% if url_name == 'how' %}active{% endif %}" href="{% url 'how' %}">How It Works</a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
               
+              <!-- Contact -->
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
               </li>

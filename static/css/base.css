@@ -79,14 +79,48 @@ footer{
     font-weight: bold;
 }
 
+/* Start: Customize bootstrap styles */
 a.nav-link{
     color: var(--black);
     font-family: var(--title-font);
+    padding: 8px;
 }
 
 .navbar-expand-lg .navbar-collapse{
     justify-content: end;
 }
+
+.navbar-nav .nav-link:focus, 
+.navbar-nav .nav-link:hover, 
+.dropdown-item:hover {
+    color: var(--primary-color-light);
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+
+ul.dropdown-menu.show{
+    background: var(--primary-color-light);
+    border-width: 0;
+    padding:0;
+    margin: 0;
+}
+
+ul.dropdown-menu li a.dropdown-item{
+    padding: 8px 16px;
+}
+
+a.nav-link.active{
+    color: var(--primary-color-light);
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.navbar-nav .nav-link.active{
+    color: var(--primary-color-light);
+}
+
+/* End: Customize bootstrap styles */
+
 
 /* ++++++++++++++ Footer +++++++++++++++++ */
 .footer{
