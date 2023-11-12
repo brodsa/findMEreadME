@@ -49,7 +49,7 @@ Homepage consist of 3 sections containing the features described bellow:
 - **Does this sounds familiar to you? Section** lists the motivation of users to be part of the platform. ![For you](./docs/features/features_for_you.png)
 - **How it works? Page** describes the general procedure for creating a personal or book profile. User has a possibility to sin up directly from this page. ![How it works](./docs/features/features_how_it_works.png) 
 
-## User Authentication Pages
+## User Authentication Pages 
 User Authentication pages include:
 - **Login Page** contains a form to log in via username or email into to the platform. Moreover, a user can choose to remember the login data. User can refresh password, in case he/she forgot it. When user logins, the username is displayed in navigation menu. ![Login](./docs/features/features_login.png)
 - **Sign Up Page** contains a form to create an account. User can register using both username or email.![Sign Up](./docs/features/features_signup.png)
@@ -63,6 +63,10 @@ Book pages include:
 - **Book Page for unauthorized user** shows only basic book information and the user who added the book. The deletion or edition of the book is not allowed. ![Basic Book Detail](./docs/features/features_book_detail_basic_viewer.png) 
 - **Book Edit Page** contains a form to edit a registered book. ![Edit Book Page](./docs/features/features_book_edit.png)
 - **Book Delete Confirm Page** displays a text box with the confirmation for the book deletion. ![Delete Book Page](./docs/features/features_book_delete.png)
+
+
+## Hidden Pages
+- **403 Unauthorized Actions** informs the user in case of conducting unauthorized actions. The user can use the Home Button to return to the homepage. ![403 Error](./docs/features/features_error_403.png)
 
 ## Future & Left Features
 - Successful Registration: The user is redirected to homepage and informed via displayed username in the navigation bar as this is by default. - changed acceptance criteria
