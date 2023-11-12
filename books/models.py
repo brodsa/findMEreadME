@@ -45,7 +45,6 @@ class Book(models.Model):
         on_delete=models.CASCADE,
         null=True
         )
-    slug = models.SlugField(max_length=200, unique=True)
     created_on = models.DateField(auto_now_add=True)
     updated_on = models.DateField(auto_now_add=True)
 
