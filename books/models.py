@@ -6,9 +6,9 @@ from django.contrib.auth.models import User
 
 
 LANGUAGE_TYPE = [
-    ('en', 'English'),
-    ('cs', 'Czech'),
-    ('de', 'German')]
+    ('English', 'English'),
+    ('Czech', 'Czech'),
+    ('German', 'German')]
 
 
 class Book(models.Model):
@@ -51,7 +51,7 @@ class Book(models.Model):
 
     class Meta:
         """ Order by title and create date """
-        ordering = ['title', '-created_on']
+        ordering = ['-created_on', 'title',]
 
     def __str__(self):
         string = f"{self.title} published in {self.published_year}"
