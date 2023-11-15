@@ -104,6 +104,8 @@ clean method of BookForm does not work - possible solution look at the model and
 
 WHile testing the form, an error occurred related to clean method of the form class, which I was not able to solve. Error message can be viewed here. To test the rest of the code, this method was temporally remove. Therefore, the coverage report must be taken with caution. 
 
+All books in Latest Books Page can be viewed by logged in and not logged in user. 
+
 
 
 
