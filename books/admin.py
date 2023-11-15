@@ -15,6 +15,7 @@ class BookAdmin(admin.ModelAdmin):
         'language',
         'description',
         'image',
+        'key'
     )
     
     list_filter = ('language',)

@@ -1,3 +1,5 @@
+from random import randrange
+
 from django.db import models
 from django_resized import ResizedImageField
 
@@ -45,9 +47,10 @@ class Book(models.Model):
         on_delete=models.CASCADE,
         null=True
         )
+    key = models.CharField(max_length=10, default='23')
     created_on = models.DateField(auto_now_add=True)
     updated_on = models.DateField(auto_now_add=True)
-
+    
     class Meta:
         """ Order by title and create date """
         ordering = ['-created_on', 'title',]
@@ -55,3 +58,20 @@ class Book(models.Model):
     def __str__(self):
         string = f"{self.title} published in {self.published_year}"
         return str(string)
+
+    def generate_key(self):
+        key = self.title + '123' + str(randrange(10))
+        return key
+
+    def save(self, *args, **kwargs):
+        self.key = self.generate_key()
+        super(Book, self).save(*args, **kwargs)
+
+"""     
+    @property
+    def generate_key(self):
+        key = self.title + '123' + str(randrange(10))
+        return key 
+"""
+
+
