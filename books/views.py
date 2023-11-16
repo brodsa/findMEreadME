@@ -11,6 +11,8 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin
 )
 
+from django.urls import reverse_lazy
+
 from .models import Book
 from .forms import BookForm
 
@@ -59,7 +61,20 @@ class EditBook(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'books/edit_book.html'
     model = Book
     form_class = BookForm
-    success_url = '/books/books/'
+    # overwriting get_success_url containing pk
+    # https://stackoverflow.com/questions/51123269/django-formview-pass-pk-in-success-url
+    # https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-editing/
+    pk = None
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+    def form_valid(self, form):
+        """ Set up pk for the success url  """
+        item = form.save()
+        self.pk = item.pk
+        return super(EditBook, self).form_valid(form)
+
+    def get_success_url(self):
+        """ Set up the books/id as success url"""
+        return reverse_lazy('book_detail', kwargs={'pk': self.pk})
