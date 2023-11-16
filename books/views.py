@@ -32,11 +32,16 @@ class BookDetail(DetailView):
     model = Book
     context_object_name = 'book'
 
-class BookKey(DetailView):
+
+class BookKey(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     """ Book Detail View to display Book Key """
     template_name = 'books/book_key.html'
     model = Book
     context_object_name = 'book'
+    success_url = '/books/books/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
 
 
 class RegisterBook(LoginRequiredMixin, CreateView):
@@ -44,13 +49,25 @@ class RegisterBook(LoginRequiredMixin, CreateView):
     template_name = 'books/register_book.html'
     model = Book
     form_class = BookForm
-    success_url = '/books/books/'
+    # overwriting get_success_url containing pk
+    # https://stackoverflow.com/questions/51123269/django-formview-pass-pk-in-success-url
+    # https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-editing/
+    pk = None
+    #success_url = '/books/books/'
 
     def form_valid(self, form):
         """ Method which creates instances after valid form data were POST"""
         form.instance.user = self.request.user
+        # generate key after posting
         form.instance.key = generate_key()
+        # success_url
+        item = form.save()
+        self.pk = item.pk
         return super(RegisterBook, self).form_valid(form)
+
+    def get_success_url(self):
+        """ Set up the books/key/id as success url"""
+        return reverse_lazy('book_key', kwargs={'pk': self.pk})
 
 
 class DeleteBook(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
