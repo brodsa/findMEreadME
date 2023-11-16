@@ -5,7 +5,8 @@ from .views import (
     Books,
     BookDetail,
     DeleteBook,
-    EditBook
+    EditBook,
+    BookKey
 )
 
 
@@ -15,4 +16,5 @@ urlpatterns = [
     path('<slug:pk>/', BookDetail.as_view(), name='book_detail'),
     path('delete/<slug:pk>/', DeleteBook.as_view(), name='delete_book'),
     path('edit/<slug:pk>/', EditBook.as_view(), name='edit_book'),
+    path('key/<slug:pk>/', BookKey.as_view(), name='book_key'),
 ]

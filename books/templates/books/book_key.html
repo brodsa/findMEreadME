@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Book Key{% endblock %}
+
+{% block content %}
+
+<div class="book-detail">
+    <h1 class="text-center pt-5">Book Key</h1>
+    <p class="book-detail__user"> </p>
+
+    <div class="container">
+        <p> Generated Book Key: {{ book.key }}</p>
+
+
+    </div>
+</div>
+{% endblock %}

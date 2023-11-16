@@ -32,6 +32,12 @@ class BookDetail(DetailView):
     model = Book
     context_object_name = 'book'
 
+class BookKey(DetailView):
+    """ Book Detail View to display Book Key """
+    template_name = 'books/book_key.html'
+    model = Book
+    context_object_name = 'book'
+
 
 class RegisterBook(LoginRequiredMixin, CreateView):
     """ Register book view """
