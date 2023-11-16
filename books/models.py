@@ -4,8 +4,6 @@ from django_resized import ResizedImageField
 
 from django.contrib.auth.models import User
 
-from .helpers import generate_key
-
 
 LANGUAGE_TYPE = [
     ('English', 'English'),
@@ -49,6 +47,7 @@ class Book(models.Model):
         )
     created_on = models.DateField(auto_now_add=True)
     updated_on = models.DateField(auto_now_add=True)
+    key = models.CharField(max_length=10, default='23')
     
     class Meta:
         """ Order by title and create date """
@@ -58,24 +57,5 @@ class Book(models.Model):
         string = f"{self.title} published in {self.published_year}"
         return str(string)
 
-
-class BookKey(models.Model):
-    """
-    A model to create a book key
-    """
-    key = models.CharField(max_length=10, default='23')
-    book = models.ForeignKey(
-        Book,
-        related_name='book_key',
-        on_delete=models.CASCADE,
-        null=True
-        )
-
-    def generate_key(self):
-        return generate_key()
-
-    def save(self, *args, **kwargs):
-        self.key = self.generate_key()
-        super(BookKey, self).save(*args, **kwargs)
 
 

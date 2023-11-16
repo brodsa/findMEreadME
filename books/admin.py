@@ -1,6 +1,6 @@
 from django.contrib import admin
 from rangefilter.filters import DateRangeFilter
-from .models import Book, BookKey
+from .models import Book
 
 
 @admin.register(Book)
@@ -14,22 +14,9 @@ class BookAdmin(admin.ModelAdmin):
         'published_year',
         'language',
         'description',
-        'image'
+        'image',
+        'key'
     )
     
     list_filter = ('language',)
     search_fields = ('title', 'author')
-
-
-@admin.register(BookKey)
-class BookKeyAdmin(admin.ModelAdmin):
-    """
-    A Class to add and customize book key table on admin panel
-    """
-    list_display = (
-        'key',
-        'book'
-    )
-    
-    list_filter = ('key',)
-    search_fields = ('key',)
