@@ -2,7 +2,7 @@ import datetime
 from django import forms
 from django.core.exceptions import ValidationError
 
-from .models import Book
+from .models import Book, BookKey
 
 
 class BookForm(forms.ModelForm):
@@ -43,3 +43,17 @@ class BookForm(forms.ModelForm):
     #         raise ValidationError('Invalid year, please contact us if needed.')
     #     else:
     #         return year
+
+
+class BookKeyForm(forms.ModelForm):
+    """ Form to generate Book Key """
+    class Meta:
+        """ Define model, fields, widget and labels """
+        model = BookKey
+        fields = [
+            'key'
+        ]
+
+        labels = {
+            'key': 'Book Key'
+        }

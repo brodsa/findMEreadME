@@ -11,8 +11,8 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin
 )
 
-from .models import Book
-from .forms import BookForm
+from .models import Book, BookKey
+from .forms import BookForm, BookKeyForm
 
 
 class Books(ListView):
@@ -60,3 +60,16 @@ class EditBook(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+
+# class GenerateBookKey(LoginRequiredMixin, CreateView):
+#     """ Generate book key view """
+#     template_name = 'books/register_book_key.html'
+#     model = BookKey
+#     form_class = BookKeyForm
+#     success_url = '/books/books/'
+
+#     def form_valid(self, form):
+#         """ Method which creates instances after valid form data were POST"""
+#         form.instance.book = self.request.book
+#         return super(GenerateBookKey, self).form_valid(form)
