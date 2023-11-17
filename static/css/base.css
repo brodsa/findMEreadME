@@ -443,6 +443,18 @@ div.card-body{
     border-color: var(--primary-color);
 }
 
+.book-key-container{
+    text-align: center;
+    max-width: 400pt;
+}
+
+.book-key {
+    font-weight: bold;
+    letter-spacing: 2pt;
+    background-color: var(--primary-color-light);
+    margin: 20px;
+    border-radius: var(--border-radius);
+}
 
 
 @media screen and  (min-width: 630px){

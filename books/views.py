@@ -37,7 +37,7 @@ class BookKey(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     """ Book Detail View to display Book Key """
     template_name = 'books/book_key.html'
     model = Book
-    context_object_name = 'book'
+    context_object_name = 'key'
     success_url = '/books/books/'
 
     def test_func(self):
