@@ -93,6 +93,9 @@ The Lighthouse in Chrome DevTools evaluates the webpage for performance, accessi
 Todo: Testing 
 - form_valid()  of CreateView
 - clean() of FormModel
+- book key status 302
+- redirected pages
+
 
 # Bugs & Issus
 

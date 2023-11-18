@@ -1,6 +1,9 @@
 import os
 from django.test import TestCase
 from django.contrib.auth import get_user_model
+from django.urls import reverse_lazy
+
+
 from .models import Book
 
 
@@ -35,7 +38,7 @@ class TestBookViewsLoggedUser(TestCase):
             title='Steve Jobs',
             author='Walter Isaacson',
             published_year=2000,
-            language='en')
+            language='English')
 
     def tearDown(self):
         print("tearDown: Test Book Views")
@@ -45,7 +48,16 @@ class TestBookViewsLoggedUser(TestCase):
         print("Testing New Book template and request")
         response = self.client.get('/books/')
         self.assertEqual(response.status_code, 200)
+        print(response)
         self.assertTemplateUsed(response, 'books/register_book.html')
+
+    # def test_book_key(self):
+    #     """ Test request and used template for book key"""
+    #     print("Testing Book Key template and request")
+    #     self.client.force_login(self.user)
+    #     response = self.client.get('/books/key/1')
+    #     print(response)
+    #     self.assertEqual(response.status_code, 202)
 
     def test_book_list(self):
         """ Test request and used template for Latest Book Page"""
@@ -74,7 +86,7 @@ class TestBookViewsLoggedUser(TestCase):
         response = self.client.get('/books/edit/1/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'books/edit_book.html')
-
+   
 
 class TestBookViewsUnAuthorizedUser(TestCase):
     """ 
@@ -132,7 +144,13 @@ class TestBookViewsUnAuthorizedUser(TestCase):
         self.assertTemplateUsed(response, '403.html')
 
 
-
+class TestRedirectViews(TestCase):
+    """ Test views which are used as redirects"""
+    def test_book_key(self):
+        """ Test request and used template for book key"""
+        print("Testing Book Key template and request")
+        response = self.client.get('/books/key/1')
+        self.assertEqual(response.status_code, 301)
     
 
         
