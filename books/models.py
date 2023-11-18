@@ -8,7 +8,19 @@ from django.contrib.auth.models import User
 LANGUAGE_TYPE = [
     ('English', 'English'),
     ('Czech', 'Czech'),
-    ('German', 'German')]
+    ('German', 'German')
+    ]
+
+CITY = [
+    ('Vienna', 'Vienna'),
+    ('Prague', 'Prague'),
+    ('Dublin','Dublin')
+    ]
+
+LOCATION = [
+    ('by a friend','by a friend '), 
+    ('to be found', 'to be found')
+    ]
 
 
 class Book(models.Model):
@@ -21,7 +33,7 @@ class Book(models.Model):
     language = models.CharField(
         max_length=10,
         choices=LANGUAGE_TYPE,
-        default='en',
+        default='English',
         blank=False)
     description = models.TextField(null=True, blank=True)
     image = ResizedImageField(
@@ -58,4 +70,36 @@ class Book(models.Model):
         return str(string)
 
 
-
+class BookContribution(models.Model):
+    """ A model to create a book contribution """
+    user = models.ForeignKey(
+        User,
+        related_name='book_contributor',
+        on_delete=models.CASCADE,
+        null=True
+        )
+    book = models.ForeignKey(
+        Book,
+        related_name='book_contribution',
+        on_delete=models.CASCADE,
+        null=True
+        )
+    user_status = models.CharField(
+        max_length=20,
+        default='contributor',
+        blank=False
+        )
+    city = models.CharField(
+        max_length=50,
+        choices=CITY,
+        blank=False,
+        null=False
+    )
+    location = models.CharField(
+        max_length=20,
+        choices=LOCATION,
+        blank=False,
+        null=False
+        )
+    location_hidden = models.TextField(null=False, blank=False)
+    comment = models.TextField(null=True, blank=True)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from rangefilter.filters import DateRangeFilter
-from .models import Book
+from .models import Book, BookContribution
 
 
 @admin.register(Book)
@@ -20,3 +20,17 @@ class BookAdmin(admin.ModelAdmin):
     
     list_filter = ('language',)
     search_fields = ('title', 'author')
+
+@admin.register(BookContribution)
+class BookContributionAdmin(admin.ModelAdmin):
+    """ A class to add and customize book contribution on admin panel """
+    list_display = (
+        'user_status',
+        'city',
+        'location',
+        'location_hidden',
+        'comment'
+    )
+
+    list_filter = ('city', 'user_status', 'location')
+    search_fields = ('city',)
