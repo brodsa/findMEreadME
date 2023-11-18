@@ -10,17 +10,18 @@ class TestBookForm(TestCase):
 
     def setUp(self):
         print('setup: BookForm')
+        username = os.environ.get('ADMIN_USERNAME')
+        password = os.environ.get('ADMIN_KEY')
+        user_model = get_user_model()
+
         self.form = BookForm(
             {
                 'title': 'Title',
                 'author': 'Author',
                 'published_year': 2000,
-                'language': 'en'
+                'language': 'English'
             }
         )
-        username = os.environ.get('ADMIN_USERNAME')
-        password = os.environ.get('ADMIN_KEY')
-        user_model = get_user_model()
 
         # Create USER
         self.user = user_model.objects.create_user(
