@@ -37,6 +37,7 @@ The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was use
     - [Logout](./docs/testing/html/html_logout.png)
 - Book Pages
     - [Register Book](./docs/testing/html/html_register_book.png)
+    - [Book Key](./docs/testing/html/html_book_key.png)
     - [Latest Books](./docs/testing/html/html_books.png)
     - [Book Detail](./docs/testing/html/html_book_detail.png)
     - [Book Deletion](./docs/testing/html/html_book_delete.png)
