@@ -1,5 +1,4 @@
 from django.contrib import admin
-from rangefilter.filters import DateRangeFilter
 from .models import Book, BookContribution
 
 
@@ -17,13 +16,15 @@ class BookAdmin(admin.ModelAdmin):
         'image',
         'key'
     )
-    
+   
     list_filter = ('language',)
     search_fields = ('title', 'author')
+
 
 @admin.register(BookContribution)
 class BookContributionAdmin(admin.ModelAdmin):
     """ A class to add and customize book contribution on admin panel """
+
     list_display = (
         'user_status',
         'city',
