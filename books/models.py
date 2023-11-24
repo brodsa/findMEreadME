@@ -14,17 +14,17 @@ LANGUAGE_TYPE = [
 CITY = [
     ('Vienna', 'Vienna'),
     ('Prague', 'Prague'),
-    ('Dublin','Dublin')
+    ('Dublin', 'Dublin')
     ]
 
 LOCATION = [
-    ('by a friend','by a friend '), 
+    ('by a friend', 'by a friend '),
     ('to be found', 'to be found')
     ]
 
 USER_STATUS = [
     ('owner', 'owner'),
-    ('contributor','contributor')
+    ('contributor', 'contributor')
 ]
 
 
@@ -65,10 +65,10 @@ class Book(models.Model):
     created_on = models.DateField(auto_now_add=True)
     updated_on = models.DateField(auto_now_add=True)
     key = models.CharField(max_length=10, default='23')
-    
+
     class Meta:
         """ Order by title and create date """
-        ordering = ['-created_on', 'title',]
+        ordering = ['-created_on', 'title', ]
 
     def __str__(self):
         string = f"{self.title} published in {self.published_year}"
@@ -91,7 +91,7 @@ class BookContribution(models.Model):
         )
     user_status = models.CharField(
         max_length=20,
-        choices = USER_STATUS,
+        choices=USER_STATUS,
         default='contributor',
         blank=False
         )

@@ -88,7 +88,7 @@ The Lighthouse in Chrome DevTools evaluates the webpage for performance, accessi
 | Module            | Report | Total Coverage   |
 |-------------------|--------|------------------|
 | `home`            | <img src="./docs/testing/automated/python_home.png" alt="python_home" width="200"/>   | 100% |
-|`books`     | <img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 99% |
+|`books`     | <img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 92% |
 
 
 Todo: Testing 
