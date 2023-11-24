@@ -107,5 +107,19 @@ class BookContribution(models.Model):
         blank=False,
         null=False
         )
-    location_hidden = models.TextField(null=False, blank=False)
-    comment = models.TextField(null=True, blank=True)
+    location_hidden = models.TextField(
+        null=False,
+        blank=False,
+        placeholder='''
+            Give the details about the hidden place, i.e. gps coordinates. 
+            This will help the other user to find the book.'''
+            )
+    comment = models.TextField(
+        null=True,
+        blank=True,
+        placeholder='''
+            You can comment on the book. 
+            What did you like or not like?
+            Was it ease to read?
+            Did you have AHA or WOW moment?'''
+            )

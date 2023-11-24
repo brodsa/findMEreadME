@@ -49,7 +49,7 @@ class BookContributionForm(forms.ModelForm):
     """ A class for Book Contribution Form to contribute """
     class Meta:
         """ Define model, fields, widget and labels """
-        model = Book
+        model = BookContribution
         fields = [
             'city',
             'location',
@@ -65,5 +65,6 @@ class BookContributionForm(forms.ModelForm):
         labels = {
             'city': 'City',
             'location': 'Where is the book?',
-            'location_hidden': 'Describe the hidden place',
+            'location_hidden': 'Describe the hidden place!',
+            'comment': 'How did you like the book?'
         }
