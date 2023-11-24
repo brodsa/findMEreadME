@@ -2,7 +2,7 @@ import datetime
 from django import forms
 from django.core.exceptions import ValidationError
 
-from .models import Book
+from .models import Book, BookContribution
 
 
 class BookForm(forms.ModelForm):
@@ -44,3 +44,26 @@ class BookForm(forms.ModelForm):
     #     else:
     #         return year
 
+
+class BookContributionForm(forms.ModelForm):
+    """ A class for Book Contribution Form to contribute """
+    class Meta:
+        """ Define model, fields, widget and labels """
+        model = Book
+        fields = [
+            'city',
+            'location',
+            'location_hidden',
+            'comment',
+        ]
+
+        widgets = {
+            "location_hidden": forms.Textarea(attrs={"cols": 3, "rows": 3}),
+            "comment": forms.Textarea(attrs={"cols": 3, "rows": 3}),
+        }
+
+        labels = {
+            'city': 'City',
+            'location': 'Where is the book?',
+            'location_hidden': 'Describe the hidden place',
+        }

@@ -19,7 +19,7 @@ CITY = [
 
 LOCATION = [
     ('by a friend', 'by a friend '),
-    ('to be found', 'to be found')
+    ('at a hidden place', 'at a hidden place')
     ]
 
 USER_STATUS = [
