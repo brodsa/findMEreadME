@@ -4,12 +4,12 @@ import os
 
 
 def get_id():
-    with open("./books/book_key_seed.txt",'r') as file:
+    with open("./books/data/book_key_seed.txt",'r') as file:
         id_seed = file.read()
         return id_seed
 
 def update_id(new_id_seed):
-    with open("./books/book_key_seed.txt",'w') as file:
+    with open("./books/data/book_key_seed.txt",'w') as file:
         file.write(new_id_seed)
 
 def generate_key(key_length=8):
