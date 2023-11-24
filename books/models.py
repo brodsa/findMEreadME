@@ -22,6 +22,11 @@ LOCATION = [
     ('to be found', 'to be found')
     ]
 
+USER_STATUS = [
+    ('owner', 'owner'),
+    ('contributor','contributor')
+]
+
 
 class Book(models.Model):
     """
@@ -86,6 +91,7 @@ class BookContribution(models.Model):
         )
     user_status = models.CharField(
         max_length=20,
+        choices = USER_STATUS,
         default='contributor',
         blank=False
         )

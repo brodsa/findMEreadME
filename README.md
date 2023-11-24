@@ -5,6 +5,7 @@ Why do we want/need to build the product
 **Content**
 - [UX Design](#ux-design)
 - [Features](#features)
+- [Structure](#structure)
 - [Testing & Validation](#testing--validation)
 - [Deployment](#deployment)
 - [References](#references)
@@ -79,6 +80,12 @@ Book pages include:
 new feature: Validation of user input in form: check the year, check the length of description field, same book for the one user.
 
 member area should be in drop down
+
+
+# Structures
+## Database model
+- book
+- contributionBook
 
 
 # Technologies
