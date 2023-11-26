@@ -74,8 +74,10 @@ class Book(models.Model):
         ordering = ['-created_on', 'title', ]
 
     def __str__(self):
-        string = f"{self.title} published in {self.published_year}"
-        return str(string)
+        return str(self.title)
+
+    def __repr__(self):
+        return str(self.title)
 
     def clean(self):
         year = self.published_year
@@ -137,3 +139,21 @@ class BookContribution(models.Model):
             raise ValidationError(
                 "Please, provide a full description of the hidden place"
                 )
+
+        # invalid book key
+        books = Book.objects.values_list('key', flat=True)
+        if self.book_key not in books:
+            raise ValidationError(
+                "The provided book key is invalid."
+            )
+
+        # the key does not match with the book key
+        book_titles = Book.objects.filter(
+            title=self.book,
+            key=self.book_key).values('title')
+
+        if self.book not in book_titles:
+            raise ValidationError(
+                "The provided key does not match with the book key."
+            )
+        

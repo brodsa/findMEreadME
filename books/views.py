@@ -103,12 +103,23 @@ class EditBook(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return reverse_lazy('book_detail', kwargs={'pk': self.pk})
 
 
-class AddBookContribution(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+class AddBookContribution(LoginRequiredMixin, CreateView):
     """ Book Contribution Create View to add new Contribution """
-    template_name = 'books/add_contribution.html'
+    template_name = 'books/new_contribution.html'
     model = BookContribution
     form_class = BookContributionForm
     success_url = '/books/books/'
+
+    def get_initial(self):
+        # code solution: https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data
+        """
+        Returns the initial data to use for forms on this view.
+        """
+        initial = super().get_initial()
+        id_book = int(str(self.request).split('/')[-2])
+        book = Book.objects.get(id=id_book)
+        initial['book'] = book
+        return initial
 
     def test_func(self):
         return self.request.user == self.get_object().user
@@ -117,6 +128,7 @@ class AddBookContribution(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         """ Method which creates instances after valid form data were POST"""
         # post username
         form.instance.user = self.request.user
+
         # post book title
         item = form.save(commit=False)
         id_book = int(str(self.request).split('/')[-2])

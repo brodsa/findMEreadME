@@ -36,4 +36,4 @@ class BookContributionAdmin(admin.ModelAdmin):
     )
 
     list_filter = ('city', 'user_status', 'location')
-    search_fields = ('city',)
+    search_fields = ('city', 'book_key')

@@ -53,6 +53,7 @@ class BookContributionForm(forms.ModelForm):
         """ Define model, fields, widget and labels """
         model = BookContribution
         fields = [
+            'book',
             'book_key',
             'city',
             'location',
@@ -85,6 +86,7 @@ class BookContributionForm(forms.ModelForm):
         }
 
         labels = {
+            'book': 'Book Title',
             'book_key': 'Book Key',
             'city': 'City',
             'location': 'Where is the book?',
