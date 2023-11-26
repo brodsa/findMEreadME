@@ -100,3 +100,13 @@ class BookContributionForm(forms.ModelForm):
             'location_hidden': 'Describe the hidden place!',
             'comment': 'How did you like the book?'
         }
+
+        def clean(self):
+            cleaned_data = super().clean()
+            location = cleaned_data.get("location")
+            location_hidden = cleaned_data.get("location_hidden")
+
+            if location=='at a hidden place' and len(location_hidden)<5:
+                raise ValidationError(
+                    "Please provide the description of the place."
+                    )
