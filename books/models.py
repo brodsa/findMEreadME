@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django_resized import ResizedImageField
 from django.core.exceptions import ValidationError
@@ -76,7 +78,7 @@ class Book(models.Model):
         return str(string)
 
     def clean(self):
-        year = self.cleaned_data["published_year"]
+        year = self.published_year
         current_year = datetime.datetime.now().year
         if year > int(current_year):
             raise ValidationError('Invalid year.')
@@ -100,6 +102,13 @@ class BookContribution(models.Model):
         on_delete=models.CASCADE,
         null=True
         )
+    book_key = models.ForeignKey(
+        Book,
+        related_name='book_key',
+        on_delete=models.CASCADE,
+        null=True
+    )
+    #slug = models.SlugField(default="", null=False)
     user_status = models.CharField(
         max_length=20,
         choices=USER_STATUS,

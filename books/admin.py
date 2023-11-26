@@ -26,12 +26,16 @@ class BookContributionAdmin(admin.ModelAdmin):
     """ A class to add and customize book contribution on admin panel """
 
     list_display = (
+        'book_key',
+        'slug',
         'user_status',
         'city',
         'location',
         'location_hidden',
-        'comment'
+        'comment',
+        
     )
 
     list_filter = ('city', 'user_status', 'location')
     search_fields = ('city',)
+    prepopulated_fields = {"slug": ("book_key",)}

@@ -1,4 +1,3 @@
-import datetime
 from django import forms
 from django.core.exceptions import ValidationError
 
@@ -54,6 +53,7 @@ class BookContributionForm(forms.ModelForm):
         """ Define model, fields, widget and labels """
         model = BookContribution
         fields = [
+            'book_key',
             'city',
             'location',
             'location_hidden',
@@ -85,6 +85,7 @@ class BookContributionForm(forms.ModelForm):
         }
 
         labels = {
+            'book_key': 'Book Key',
             'city': 'City',
             'location': 'Where is the book?',
             'location_hidden': 'Describe the hidden place!',
