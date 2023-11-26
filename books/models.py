@@ -102,11 +102,10 @@ class BookContribution(models.Model):
         on_delete=models.CASCADE,
         null=True
         )
-    book_key = models.ForeignKey(
-        Book,
-        related_name='book_key',
-        on_delete=models.CASCADE,
-        null=True
+    book_key = models.CharField(
+        max_length=20,
+        null=False,
+        blank=False
     )
     slug = models.SlugField(default="", null=False)
     user_status = models.CharField(
