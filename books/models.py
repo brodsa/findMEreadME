@@ -108,7 +108,7 @@ class BookContribution(models.Model):
         on_delete=models.CASCADE,
         null=True
     )
-    #slug = models.SlugField(default="", null=False)
+    slug = models.SlugField(default="", null=False)
     user_status = models.CharField(
         max_length=20,
         choices=USER_STATUS,
