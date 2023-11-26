@@ -115,9 +115,14 @@ class AddBookContribution(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
     def form_valid(self,form):
         """ Method which creates instances after valid form data were POST"""
+        # post username
         form.instance.user = self.request.user
+        # post book title
         item = form.save(commit=False)
         id_book = int(str(self.request).split('/')[-2])
         item.book = Book.objects.get(id=id_book)
+        # post owner status
+        if self.request.user == self.get_object().user:
+            item.user_status = 'owner'
         item.save()
         return super(AddBookContribution, self).form_valid(form)
