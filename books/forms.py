@@ -92,4 +92,6 @@ class BookContributionForm(forms.ModelForm):
             'comment': 'How did you like the book?'
         }
 
+
+
         

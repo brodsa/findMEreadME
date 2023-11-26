@@ -18,5 +18,5 @@ urlpatterns = [
     path('delete/<slug:pk>/', DeleteBook.as_view(), name='delete_book'),
     path('edit/<slug:pk>/', EditBook.as_view(), name='edit_book'),
     path('key/<slug:pk>/', BookKey.as_view(), name='book_key'),
-    path('add_contribution/<slug:slug>/', AddBookContribution.as_view(), name='add_contribution')
+    path('add_contribution/<slug:pk>/', AddBookContribution.as_view(), name='add_contribution')
 ]

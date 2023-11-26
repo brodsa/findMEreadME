@@ -27,7 +27,6 @@ class BookContributionAdmin(admin.ModelAdmin):
 
     list_display = (
         'book_key',
-        'slug',
         'user_status',
         'city',
         'location',
@@ -38,4 +37,3 @@ class BookContributionAdmin(admin.ModelAdmin):
 
     list_filter = ('city', 'user_status', 'location')
     search_fields = ('city',)
-    prepopulated_fields = {"slug": ("book_key",)}

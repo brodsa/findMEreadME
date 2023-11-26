@@ -107,7 +107,6 @@ class BookContribution(models.Model):
         null=False,
         blank=False
     )
-    slug = models.SlugField(default="", null=False)
     user_status = models.CharField(
         max_length=20,
         choices=USER_STATUS,
