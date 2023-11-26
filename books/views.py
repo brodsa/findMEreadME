@@ -13,8 +13,8 @@ from django.contrib.auth.mixins import (
 
 from django.urls import reverse_lazy
 
-from .models import Book
-from .forms import BookForm
+from .models import Book, BookContribution
+from .forms import BookForm, BookContributionForm
 
 from .helpers import generate_key
 
@@ -101,3 +101,23 @@ class EditBook(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def get_success_url(self):
         """ Set up the books/id as success url"""
         return reverse_lazy('book_detail', kwargs={'pk': self.pk})
+
+
+class AddBookContribution(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+    """ Book Contribution Create View to add new Contribution """
+    template_name = 'books/add_contribution.html'
+    model = BookContribution
+    form_class = BookContributionForm
+    success_url = '/books/books/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
+
+    def form_valid(self,form):
+        """ Method which creates instances after valid form data were POST"""
+        form.instance.user = self.request.user
+        item = form.save(commit=False)
+        id_book = int(str(self.request).split('/')[-2])
+        item.book = Book.objects.get(id=id_book)
+        item.save()
+        return super(AddBookContribution, self).form_valid(form)
