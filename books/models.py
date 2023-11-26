@@ -107,5 +107,5 @@ class BookContribution(models.Model):
         blank=False,
         null=False
         )
-    location_hidden = models.TextField(null=True, blank=False)
+    location_hidden = models.TextField(null=True, blank=True, default='missing')
     comment = models.TextField(null=True, blank=True)
