@@ -58,8 +58,24 @@ class BookContributionForm(forms.ModelForm):
         ]
 
         widgets = {
-            "location_hidden": forms.Textarea(attrs={"cols": 3, "rows": 3}),
-            "comment": forms.Textarea(attrs={"cols": 3, "rows": 3}),
+            "location_hidden": forms.Textarea(
+                attrs={
+                    "cols": 3, 
+                    "rows": 3,
+                    "placeholder":'''
+                    Give the details about the hidden place, i.e. gps coordinates. 
+                    This will help the other user to find the book.'''
+                    }),
+            "comment": forms.Textarea(
+                attrs={
+                    "cols": 3,
+                    "rows": 3,
+                    "placeholder":'''
+                    You can comment on the book. 
+                    What did you like or not like?
+                    Was it ease to read?
+                    Did you have AHA or WOW moment?'''
+                    }),
         }
 
         labels = {
