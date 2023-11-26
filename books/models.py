@@ -1,5 +1,6 @@
 from django.db import models
 from django_resized import ResizedImageField
+from django.core.exceptions import ValidationError
 
 
 from django.contrib.auth.models import User
@@ -74,6 +75,16 @@ class Book(models.Model):
         string = f"{self.title} published in {self.published_year}"
         return str(string)
 
+    def clean(self):
+        year = self.cleaned_data["published_year"]
+        current_year = datetime.datetime.now().year
+        if year > int(current_year):
+            raise ValidationError('Invalid year.')
+        elif year < 1900:
+            raise ValidationError('Invalid year, please contact us if needed.')
+        else:
+            return year
+
 
 class BookContribution(models.Model):
     """ A model to create a book contribution """
@@ -109,3 +120,13 @@ class BookContribution(models.Model):
         )
     location_hidden = models.TextField(null=True, blank=True)
     comment = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        string = f"{self.user} contributed to {self.book}"
+        return str(string)
+
+    def clean(self):
+        if self.location == "at a hidden place" and len(self.location_hidden)<5:
+            raise ValidationError(
+                "Please, provide a full description of the hidden place"
+                )

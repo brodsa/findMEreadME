@@ -46,16 +46,6 @@ class BookForm(forms.ModelForm):
             'image_alt': 'Describe cover image',
         }
 
-    # def clean(self):
-    #     year = self.cleaned_data["published_year"]
-    #     current_year = datetime.datetime.now().year
-    #     if year > int(current_year):
-    #         raise ValidationError('Invalid year.')
-    #     elif year < 1900:
-    #         raise ValidationError('Invalid year, please contact us if needed.')
-    #     else:
-    #         return year
-
 
 class BookContributionForm(forms.ModelForm):
     """ A class for Book Contribution Form to contribute """
@@ -101,12 +91,4 @@ class BookContributionForm(forms.ModelForm):
             'comment': 'How did you like the book?'
         }
 
-        def clean(self):
-            cleaned_data = super().clean()
-            location = cleaned_data.get("location")
-            location_hidden = cleaned_data.get("location_hidden")
-
-            if location=='at a hidden place' and len(location_hidden)<5:
-                raise ValidationError(
-                    "Please provide the description of the place."
-                    )
+        
