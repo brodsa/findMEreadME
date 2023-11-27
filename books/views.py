@@ -58,11 +58,11 @@ class RegisterBook(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         """ Method which creates instances after valid form data were POST"""
         form.instance.user = self.request.user
-        # generate key after posting
-        form.instance.key = generate_key()
         # success_url
         item = form.save()
         self.pk = item.pk
+        # generate key after posting
+        form.instance.key = generate_key(self.pk)
         return super(RegisterBook, self).form_valid(form)
 
     def get_success_url(self):
@@ -109,6 +109,7 @@ class AddBookContribution(LoginRequiredMixin, CreateView):
     model = BookContribution
     form_class = BookContributionForm
     success_url = '/books/books/'
+    context_object_name = 'contribution'
 
     def get_initial(self):
         # code solution: https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data

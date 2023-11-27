@@ -12,10 +12,13 @@
     <div class="container book-key-container">
         <p>The following unique key was assigned to your book.</p>
         <p class="p-3 book-key"> {{ key.key }}</p>
-        <p>Please, note the unique key down and use it together with the template below. Fix the filled in template inside the book so that everyone can find it. This will make sure that others can contribute to the journey of your book and share their experience.</p>
+        <p>Please, note the unique key down, you will need in the next step. Also, use it together with the template below. Fix the filled in template inside the book so that everyone can find it. This will make sure that others can contribute to the journey of your book and share their experience.</p>
         <a href="../../../static/pdf/registration_book_key_instructions.pdf" target="_blank" class="btn action__button mb-3">Template</a>
-
-
+    </div>
+    <div class="buttons d-flex flex-column aling-items-end pb-3">
+        <div class="d-flex flex-row gap-2">
+            <a href="{% url 'new_contribution' 1 %}" class="btn action__button">Next</a>
+        </div>
     </div>
 </div>
 {% endblock %}
