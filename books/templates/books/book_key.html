@@ -7,7 +7,6 @@
 
 <div class="book-detail">
     <h1 class="text-center pt-5">Book Key</h1>
-    <p class="book-detail__user"> </p>
 
     <div class="container book-key-container">
         <p>The following unique key was assigned to your book.</p>
@@ -17,7 +16,7 @@
     </div>
     <div class="buttons d-flex flex-column aling-items-end pb-3">
         <div class="d-flex flex-row gap-2">
-            <a href="{% url 'new_contribution' 1 %}" class="btn action__button">Next</a>
+            <a href="{% url 'new_contribution' key.id %}" class="btn action__button">Next</a>
         </div>
     </div>
 </div>

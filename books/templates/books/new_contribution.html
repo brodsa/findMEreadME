@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Contribution{% endblock %}
+{% block title %}Add Contribution{% endblock %}
 
 {% block content %}
 <div class="container form-container form-book">
-    <h1 class="form__title">Contribution</h1>
+    <h1 class="form__title">Add Contribution</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.media }} 
