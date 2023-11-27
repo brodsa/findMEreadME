@@ -430,8 +430,6 @@ div.card-body{
     flex: 0 0 80%;
 }
 
-
-
 .action__button{
     width: 92px;
     background-color: var(--primary-color);
@@ -443,9 +441,23 @@ div.card-body{
     border-color: var(--primary-color);
 }
 
+.action__button--primary{
+    background-color: var(--white);
+    color: var(--secondary-color-light);
+    border-color: var(--secondary-color-light);
+
+}
+
+.action__button--primary:hover{
+    background-color: var(--secondary-color-light);
+    color:var(--white);
+
+}
+
+
 .book-key-container{
     text-align: center;
-    max-width: 400pt;
+    max-width: 300pt;
 }
 
 .book-key {
