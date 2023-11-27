@@ -59,6 +59,7 @@ class BookContributionForm(forms.ModelForm):
             'location',
             'location_hidden',
             'comment',
+            'book_key_id',
         ]
 
         widgets = {
@@ -83,6 +84,8 @@ class BookContributionForm(forms.ModelForm):
                         COMMENT_TXT4]
                     )
                     }),
+            'book_key_id': forms.TextInput(attrs={'readonly': True}),
+            #'book': forms.Select(attrs={'readonly': True})
         }
 
         labels = {
@@ -91,7 +94,8 @@ class BookContributionForm(forms.ModelForm):
             'city': 'City',
             'location': 'Where is the book?',
             'location_hidden': 'Describe the hidden place!',
-            'comment': 'How did you like the book?'
+            'comment': 'How did you like the book?',
+            'book_key_id': 'Book ID',
         }
 
 

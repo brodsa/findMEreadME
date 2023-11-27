@@ -109,7 +109,7 @@ class BookContribution(models.Model):
         null=False,
         blank=False
     )
-    book_key_id = models.IntegerField(default=9999)
+    book_key_id = models.IntegerField()
     user_status = models.CharField(
         max_length=20,
         choices=USER_STATUS,
@@ -136,6 +136,7 @@ class BookContribution(models.Model):
         return str(string)
 
     def clean(self):
+        # missing description 
         if self.location == "at a hidden place" and len(self.location_hidden)<5:
             raise ValidationError(
                 "Please, provide a full description of the hidden place"
@@ -148,13 +149,20 @@ class BookContribution(models.Model):
                 "The provided book key is invalid."
             )
 
-        # the key does not match with the book key
-        book_titles = Book.objects.filter(
-            title=self.book,
-            key=self.book_key).values('title')
-
-        if self.book not in book_titles:
+        # the key does not match with the book key 
+        provided_key = self.book_key
+        true_key = Book.objects.filter(
+            id=self.book_key_id).values('key')[0]["key"]
+        if provided_key != true_key:
             raise ValidationError(
                 "The provided key does not match with the book key."
             )
-        
+
+        # the title not match with book id - given url
+        provided_book = self.book
+        true_book = Book.objects.filter(
+            id=self.book_key_id).values('title')[0]["title"]
+        if str(provided_book) != true_book:
+            raise ValidationError(
+                "The provided book title does not match with the queried."
+            )

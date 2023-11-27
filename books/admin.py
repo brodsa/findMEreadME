@@ -27,6 +27,7 @@ class BookContributionAdmin(admin.ModelAdmin):
 
     list_display = (
         'book_key',
+        'book_key_id',
         'user_status',
         'city',
         'location',
