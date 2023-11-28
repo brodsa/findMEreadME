@@ -42,6 +42,7 @@ The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was use
     - [Book Detail](./docs/testing/html/html_book_detail.png)
     - [Book Deletion](./docs/testing/html/html_book_delete.png)
     - [Book Editing](./docs/testing/html/html_book_edit.png)
+    - [Add Contribution](./docs/testing/html/html_book_add_contribution.png)
 
 
 
@@ -91,11 +92,14 @@ The Lighthouse in Chrome DevTools evaluates the webpage for performance, accessi
 |`books`     | <img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 92% |
 
 
-Todo: Testing 
+Question: Testing 
 - form_valid()  of CreateView
-- clean() of FormModel
-- book key status 302
-- redirected pages
+- book key: redirected pages
+
+Todo: Testing
+- Contribution: Model
+- Contribution: Form
+- Contribution: view
 
 
 # Bugs & Issus
