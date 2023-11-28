@@ -99,5 +99,16 @@ class BookContributionForm(forms.ModelForm):
         }
 
 
+# class BookContributionInsertKey(forms.ModelForm):
+#     """ A class for Inserting the Book Key Form to contribute """
 
+#     class Meta:
+#         """ Define model, fields, widget and labels """
+#         model = BookContribution
+#         fields = [
+#             'book_key',
+#         ]
+#         labels = {
+#             'book_key': 'Book Key',
+#         }
         
