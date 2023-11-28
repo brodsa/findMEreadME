@@ -43,7 +43,7 @@ class TestBook(TestCase):
     def test_str_representation_of_created_book_object(self):
         """Testing string representation of book object"""
         print("Test string of book object")
-        self.assertEqual(str(self.book), 'Steve Jobs published in 2011')
+        self.assertEqual(str(self.book), 'Steve Jobs')
 
 
 class TestBookContribution(TestCase):

@@ -1,4 +1,5 @@
 import os
+import datetime
 
 from django.test import TestCase
 from .forms import BookForm
@@ -62,6 +63,21 @@ class TestBookForm(TestCase):
             form.errors['published_year'][0], 'This field is required.'
             )
 
+    def test_published_year_cannot_be_larger_than_current_year(self):
+        """Testing valid published year: larger than current"""
+        print('Test valid year: larger than current')
+        current_year = datetime.datetime.now().year
+        form = BookForm({'published_year': current_year + 1})
+        self.assertFalse(form.is_valid())
+        self.assertRaisesMessage(Exception, 'Invalid year.')
+
+    def test_published_year_cannot_be_smaller_than_1900(self):
+        """Testing valid published year: smaller than 1900"""
+        print('Test valid year: smaller than 1900')
+        form = BookForm({'published_year': 1900})
+        self.assertFalse(form.is_valid())
+        self.assertRaisesMessage(Exception, 'Invalid year, please contact us if needed.')
+
     def test_language_is_required(self):
         """Testing required language"""
         print('Test language to be required')
@@ -102,7 +118,3 @@ class TestBookForm(TestCase):
                     'image',
                     'image_alt']
                 ))
-
-    # def test_form_valid_with_user(self):
-    #     print("Test for valid form")
-    #     print(self.form.instance)

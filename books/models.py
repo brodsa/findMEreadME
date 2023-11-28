@@ -80,9 +80,9 @@ class Book(models.Model):
         return str(self.title)
 
     def clean(self):
-        year = self.published_year
+        year = self.published_year if self.published_year is not None else 0
         current_year = datetime.datetime.now().year
-        if year > int(current_year):
+        if int(year) > int(current_year):
             raise ValidationError('Invalid year.')
         elif year < 1900:
             raise ValidationError('Invalid year, please contact us if needed.')
@@ -109,7 +109,7 @@ class BookContribution(models.Model):
         null=False,
         blank=False
     )
-    book_key_id = models.IntegerField()
+    book_key_id = models.IntegerField(default=9999)
     user_status = models.CharField(
         max_length=20,
         choices=USER_STATUS,
