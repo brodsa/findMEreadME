@@ -76,8 +76,45 @@ class Book(models.Model):
     def __str__(self):
         return str(self.title)
 
-    def __repr__(self):
-        return str(self.title)
+    def get_total_readers(self):
+        contributions = BookContribution.objects.filter(book_id=self.id).values()
+        total_contributions = contributions.count()
+        return total_contributions
+
+    def get_num_cities(self):
+        cities = ( 
+            BookContribution
+            .objects
+            .filter(book_id=self.id)
+            .values('city')
+            .annotate(num=models.Count("city") )
+        )
+        num_cities = len(cities)
+        return num_cities
+
+    def get_list_cities(self):
+        cities = ( 
+            BookContribution
+            .objects
+            .filter(book_id=self.id)
+            .values('city')
+            .annotate(num=models.Count("city") )
+        )
+        cities_ls = [city['city'] for city in list(cities)]
+        return cities_ls
+
+    def get_list_comments(self):
+        comments_users = (
+            BookContribution
+            .objects
+            .select_related('user')
+            .filter(book_id=self.id)
+            .values('user__username','comment')
+            )
+        print(list(comments_users))
+        comments_ls = list(comments_users)
+        print(comments_ls)
+        return comments_ls
 
     def clean(self):
         year = self.published_year if self.published_year is not None else 0

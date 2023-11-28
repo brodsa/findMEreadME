@@ -370,7 +370,7 @@ a.nav-link.active{
 }
 
 div.card{
-    height: 620px;
+    height: 640px;
     width: 18rem;
 }
 
@@ -428,6 +428,41 @@ div.card-body{
 
 .book-detail__info{
     flex: 0 0 80%;
+}
+
+.book-statistics{
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+    margin:  0 10px;
+}
+
+.book-stat{
+    padding:2px;
+    margin:2px;
+}
+
+.book-city{
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    padding: 0px 5px;
+    margin: 2px;
+}
+
+.book-detail__comments{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.book-comment{
+    flex: 0 0 100%;
+    background-color: var(--primary-color-light);
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .action__button{
@@ -488,11 +523,12 @@ div.card-body{
         max-width: 200px;
         height: 300px;
         flex: 0 0 40%;
-        align-self: center;
+        align-self: flex-start;
     }
     .book-detail__info{
         flex: 0 0 60%;
     }
+
 }
 
 @media screen and (min-width: 820px){

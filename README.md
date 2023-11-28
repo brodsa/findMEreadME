@@ -148,4 +148,4 @@ To clone (the fork) repository or to collaborate, following steps are required:
 7. Set up and start django app.
 
 # References
-
+[QR code generator](https://qr.io/?gad_source=1&gclid=CjwKCAiAu9yqBhBmEiwAHTx5p7HcvWOK17qLT71iNrkXzWktj-C4jD5FImtELn35-3DKgfMNTSjWxxoCTZYQAvD_BwE)

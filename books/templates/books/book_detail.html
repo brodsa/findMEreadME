@@ -22,11 +22,24 @@
             </div>
             <div class="book-detail__panel">
                 <div class="book-detail__info">
+                    <p class="m-0"><strong>Book Journey</strong></p>
+                    <div class="book-statistics mb-2">
+                        <!-- total number of readers -->
+                        <p class="book-stat"> Readers: <strong>{{ book.get_total_readers }}</strong> <i class="fa-solid fa-user"> </i></p>
+                        <!-- total number of cities and cities list -->
+                        <p class="book-stat"> Cities: <strong> {{ book.get_num_cities }}</strong> <i class="fa-solid fa-location-dot "></i></p>
+                        <p class="book-stat">
+                            {% for city in book.get_list_cities %}
+                                    <span class="book-city"> {{ city }}</span>
+                                {% endfor %}
+                        </p>
+                    </div>
                     <p><strong>Author</strong>: {{ book.author }}</p>
-                    <p><strong>Published year</strong>: {{ book.published_year }}</p>
+                    <p><strong>Published Year</strong>: {{ book.published_year }}</p>
                     <p><strong>Language</strong>: {{ book.language|title }}</p>
+                    
                 </div>
-                
+               
             </div>
         </div>
         {% if request.user.is_authenticated and  book.user == request.user %}
@@ -38,7 +51,17 @@
         </div>
         {% endif %}
         <div class="book-detail__description">
-            <p>{{ book.description }}</p>
+            <p> <strong>Description</strong>: {{ book.description }}</p>
+        </div>
+        <p class="m-0"><strong>Readers Reactions</strong></p>
+        <div class="book-detail__comments">
+            {% for item in book.get_list_comments %}
+                {% if item.comment|length > 1 %}
+                    <div class="book-comment">
+                        <p class="m-0">{{ item.comment }}<span class="book-detail__user">{{ item.user__username }}</span></p>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
 
 
