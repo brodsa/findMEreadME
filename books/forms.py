@@ -65,7 +65,7 @@ class BookContributionForm(forms.ModelForm):
         widgets = {
             "location_hidden": forms.Textarea(
                 attrs={
-                    "cols": 3, 
+                    "cols": 3,
                     "rows": 3,
                     "placeholder": " ".join([
                         LOCATION_TXT1,
@@ -85,7 +85,7 @@ class BookContributionForm(forms.ModelForm):
                     )
                     }),
             'book_key_id': forms.TextInput(attrs={'readonly': True}),
-            #'book': forms.Select(attrs={'readonly': True})
+            # 'book': forms.Select(attrs={'readonly': True})
         }
 
         labels = {
@@ -111,4 +111,3 @@ class BookContributionForm(forms.ModelForm):
 #         labels = {
 #             'book_key': 'Book Key',
 #         }
-        

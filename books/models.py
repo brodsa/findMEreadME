@@ -136,8 +136,10 @@ class BookContribution(models.Model):
         return str(string)
 
     def clean(self):
-        # missing description 
-        if self.location == "at a hidden place" and len(self.location_hidden)<5:
+        # missing description
+        location_con = self.location == "at a hidden place"
+        location_len = len(self.location_hidden) < 5
+        if location_con and location_len:
             raise ValidationError(
                 "Please, provide a full description of the hidden place"
                 )
@@ -149,7 +151,7 @@ class BookContribution(models.Model):
                 "The provided book key is invalid."
             )
 
-        # the key does not match with the book key 
+        # the key does not match with the book key
         provided_key = self.book_key
         true_key = Book.objects.filter(
             id=self.book_key_id).values('key')[0]["key"]

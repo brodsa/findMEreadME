@@ -9,8 +9,8 @@ from .models import Book
 
 # Create your tests here.
 class TestBookViewsLoggedUser(TestCase):
-    """ 
-    Test the book app pages when a user is created and logged in 
+    """
+    Test the book app pages when a user is created and logged in
     """
 
     def setUp(self):
@@ -28,7 +28,7 @@ class TestBookViewsLoggedUser(TestCase):
         )
 
         self.logged_in = self.client.login(
-            username=self.username, 
+            username=self.username,
             password=self.password)
         self.assertTrue(self.logged_in)
 
@@ -86,11 +86,11 @@ class TestBookViewsLoggedUser(TestCase):
         response = self.client.get('/books/edit/1/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'books/edit_book.html')
-   
+
 
 class TestBookViewsUnAuthorizedUser(TestCase):
-    """ 
-    Test the book app pages when a user is not authorized 
+    """
+    Test the book app pages when a user is not authorized
 
     """
     def setUp(self):
@@ -107,12 +107,12 @@ class TestBookViewsUnAuthorizedUser(TestCase):
             is_superuser=True
         )
         self.client.login(
-            username=self.username, 
+            username=self.username,
             password=self.password)
 
         self.test_user = user_model.objects.create_user(
             username='Test',
-            password='SayHiToTestUser' 
+            password='SayHiToTestUser'
         )
 
         # Create BOOK
@@ -125,7 +125,7 @@ class TestBookViewsUnAuthorizedUser(TestCase):
 
     def test_book_deletion_for_unauthorized_user(self):
         """
-        Test request and used template for Book Deletion 
+        Test request and used template for Book Deletion
         in case of unauthorized user
         """
         print("Testing Book Deletion for unauthorized user")
@@ -151,6 +151,3 @@ class TestRedirectViews(TestCase):
         print("Testing Book Key template and request")
         response = self.client.get('/books/key/1')
         self.assertEqual(response.status_code, 301)
-    
-
-        

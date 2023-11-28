@@ -30,7 +30,7 @@ class TestBookForm(TestCase):
             password=password,
             is_superuser=True
         )
-        
+
     def tearDown(self):
         print('teardown: BookForm')
 
@@ -76,7 +76,10 @@ class TestBookForm(TestCase):
         print('Test valid year: smaller than 1900')
         form = BookForm({'published_year': 1900})
         self.assertFalse(form.is_valid())
-        self.assertRaisesMessage(Exception, 'Invalid year, please contact us if needed.')
+        self.assertRaisesMessage(
+            Exception,
+            'Invalid year, please contact us if needed.'
+            )
 
     def test_language_is_required(self):
         """Testing required language"""

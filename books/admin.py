@@ -16,7 +16,7 @@ class BookAdmin(admin.ModelAdmin):
         'image',
         'key'
     )
-   
+
     list_filter = ('language',)
     search_fields = ('title', 'author')
 
@@ -33,7 +33,7 @@ class BookContributionAdmin(admin.ModelAdmin):
         'location',
         'location_hidden',
         'comment',
-        
+
     )
 
     list_filter = ('city', 'user_status', 'location')

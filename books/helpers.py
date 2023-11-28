@@ -4,17 +4,21 @@ import os
 
 
 def get_id():
-    with open("./books/data/book_key_seed.txt",'r') as file:
+    """ Function to get id from text file """
+    with open("./books/data/book_key_seed.txt", 'r') as file:
         id_seed = file.read()
         return id_seed
 
+
 def update_id(new_id_seed):
-    with open("./books/data/book_key_seed.txt",'w') as file:
+    """ Function to update id from text file """
+    with open("./books/data/book_key_seed.txt", 'w') as file:
         file.write(new_id_seed)
 
-def generate_key(id_book,key_length=8):
+
+def generate_key(id_book, key_length=8):
     """
-    Function to generate a key 
+    Function to generate a key
     """
     id_seed = get_id()
     random.seed(id_seed)
