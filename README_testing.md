@@ -106,13 +106,15 @@ Todo: Testing
 
 Using two databases for dev and prod led to missing up debugging mode and creating a super user. Two superusers were created, one for prod and one for dev. In addition a debug config variable was created, this can be switch on/off in both production and dev environment.
 
-The slug field was prepopulated only for admin panel. The slug field consists of user and title. In the method `form_valid()` of `RegisterBook` class add the slug creation. `form.instance.slug = slugify(f"{self.request.POST.get('title')} {self.request.user}")`, hint from [StackOverflow](https://stackoverflow.com/questions/837828/how-do-i-create-a-slug-in-django) 
+During the development, I cope several times migrations conflict. Thanks to the tutor support of CI, this was resolved very quickly. By dropping/resetting database, clearing up the migrations and creating migrations with superuser again.
 
-clean method of BookForm does not work - possible solution look at the model and add min and max value
+Initially, the clean method of BookForm did not work while testing the form. An error occurred related to the clean method of the form class. To omit the clean_data attribute in self object helped.
 
-WHile testing the form, an error occurred related to clean method of the form class, which I was not able to solve. Error message can be viewed here. To test the rest of the code, this method was temporally remove. Therefore, the coverage report must be taken with caution. 
+All books in Latest Books Page can be viewed by logged in and not logged in user. This is not big issues as other information are limited anyway.
 
-All books in Latest Books Page can be viewed by logged in and not logged in user. 
+In Add Contribution Page, there is a prefilled field Book. The initial plan was to disable it such that user cannot change it. THis works only if the user inserts valid data. When the user inserts invalid data the prefilled Book field is empty but the user cannot changed. This is only possible for TextInput field and not for Select field - have not found the solution. Currently, the user can changed the input theoretically but user will be informed that is input is invalid.
+
+
 
 
 
