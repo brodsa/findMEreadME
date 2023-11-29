@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<h1 class="text-center p-5">Latest Books</h1>
+<h1 class="text-center p-5">Books</h1>
 <div class="books-container">
     {% for book in books %}
     {% if request.user.is_authenticated %}

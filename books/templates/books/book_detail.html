@@ -53,6 +53,7 @@
         <div class="book-detail__description">
             <p> <strong>Description</strong>: {{ book.description }}</p>
         </div>
+        {% if request.user.is_authenticated and  book.user == request.user %}
         <p class="m-0"><strong>Readers Reactions</strong></p>
         <div class="book-detail__comments">
             {% for item in book.get_list_comments %}
@@ -63,6 +64,7 @@
                 {% endif %}
             {% endfor %}
         </div>
+        {% endif %}
 
 
     </div>
