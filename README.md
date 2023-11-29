@@ -11,6 +11,16 @@ Why do we want/need to build the product
 - [References](#references)
 
 
+Strategy: goals of users - epics and all stories, agile methodology
+Scope: Product features
+Structure: flow chart, hierarchy of the app, database schema
+Skeleton: wireframes
+Surface: color, text
+Testing & Validation
+Deployment
+References
+
+
 # UX Design
 
   - User Stories
