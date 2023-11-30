@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Error Contribution{% endblock title %}
+
+{% block content %}
+<div class="container form-container form-account">
+    <h1 class="form__title">Error</h1>
+    <h2 class="form__title">Impossible Contribution</h2>
+  
+    <p class="text-center">You have already contributed to this book, please return to the homepage.</p>
+
+    <!-- Buttons -->
+    <div class="d-flex flex-column flex-md-row gap-md-2">
+        <a class= "btn form__button form__button--secondary w-100 flex-grow-1" href="{% url 'home' %}"> Home </a>
+    </div>
+  
+  </div>
+
+{% endblock %}

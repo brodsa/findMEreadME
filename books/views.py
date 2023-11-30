@@ -12,6 +12,8 @@ from django.contrib.auth.mixins import (
 )
 
 from django.urls import reverse_lazy
+from django.db import IntegrityError
+from django.template.response import TemplateResponse
 
 from .models import Book, BookContribution
 from .forms import BookForm, BookContributionForm
@@ -126,21 +128,26 @@ class AddBookContribution(LoginRequiredMixin, CreateView):
         return self.request.user == self.get_object().user
 
     def form_valid(self, form):
-        """ Method which creates instances after valid form data were POST"""
-        # post username
-        form.instance.user = self.request.user
+        try:
+            """ Method which creates instances after valid form data were POST"""
+            # post username
+            form.instance.user = self.request.user
 
-        # populate form before sending it
-        item = form.save(commit=False)
-        # field: book title
-        id_book = int(str(self.request).split('/')[-2])
-        item.book = Book.objects.get(id=id_book)
-        # field: book key id
-        item.book_key_id = id_book
-        form.instance.book_key_id = id_book
-        # field: owner status
-        user_owner = Book.objects.get(id=id_book).user
-        if self.request.user == user_owner:
-            form.instance.user_status = 'owner'
-        item.save()
-        return super(AddBookContribution, self).form_valid(form)
+            # populate form before sending it
+            item = form.save(commit=False)
+            # field: book title
+            id_book = int(str(self.request).split('/')[-2])
+            item.book = Book.objects.get(id=id_book)
+            # field: book key id
+            item.book_key_id = id_book
+            form.instance.book_key_id = id_book
+            # field: owner status
+            user_owner = Book.objects.get(id=id_book).user
+            if self.request.user == user_owner:
+                form.instance.user_status = 'owner'
+            item.save()
+            return super(AddBookContribution, self).form_valid(form)
+        except IntegrityError:
+            return TemplateResponse(
+                self.request, 'books/new_contribution_impossible.html'
+    )
