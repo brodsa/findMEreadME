@@ -15,7 +15,7 @@ Strategy: goals of users - epics and all stories, agile methodology
 Scope: Product features
 Structure: flow chart, hierarchy of the app, database schema
 Skeleton: wireframes
-Surface: color, text
+Surface: color, text, images
 Testing & Validation
 Deployment
 References

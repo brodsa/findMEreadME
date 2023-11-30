@@ -66,7 +66,7 @@ class Book(models.Model):
         null=True
         )
     created_on = models.DateField(auto_now_add=True)
-    updated_on = models.DateField(auto_now_add=True)
+    updated_on = models.DateField(auto_now=True)
     key = models.CharField(max_length=10, default='23')
 
     class Meta:
@@ -77,11 +77,13 @@ class Book(models.Model):
         return str(self.title)
 
     def get_total_readers(self):
+        """ Get the total number of readers using BookContribution class """
         contributions = BookContribution.objects.filter(book_id=self.id).values()
         total_contributions = contributions.count()
         return total_contributions
 
     def get_num_cities(self):
+        """ Get the number of unique cities of the book readers """
         cities = ( 
             BookContribution
             .objects
@@ -93,6 +95,7 @@ class Book(models.Model):
         return num_cities
 
     def get_list_cities(self):
+        """ Get the list of unique cities of the book readers"""
         cities = ( 
             BookContribution
             .objects
@@ -104,6 +107,7 @@ class Book(models.Model):
         return cities_ls
 
     def get_list_comments(self):
+        """ Get the comments of book readers """
         comments_users = (
             BookContribution
             .objects
@@ -117,6 +121,10 @@ class Book(models.Model):
         return comments_ls
 
     def clean(self):
+        """ 
+            Evaluate the user inputs before saving in the database.
+            The year must be between 1900 and current year.
+        """
         year = self.published_year if self.published_year is not None else 0
         current_year = datetime.datetime.now().year
         if int(year) > int(current_year):
@@ -167,13 +175,24 @@ class BookContribution(models.Model):
         )
     location_hidden = models.TextField(null=True, blank=True)
     comment = models.TextField(null=True, blank=True)
+    created_on = models.DateField(auto_now_add=True,null=True)
+    updated_on = models.DateField(auto_now=True,null=True)
+
+    class Meta:
+        """ Order by title and create date """
+        ordering = ['-created_on', ]
 
     def __str__(self):
         string = f"{self.user} contributed to {self.book}"
         return str(string)
 
     def clean(self):
-        # missing description
+        """ 
+            Evaluate the user inputs before saving in the database:
+                - there must be description of hidden place in case of 
+                hidden place is chosen
+                - key validation
+        """
         location_con = self.location == "at a hidden place"
         location_len = len(self.location_hidden) < 5
         if location_con and location_len:
