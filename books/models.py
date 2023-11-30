@@ -181,6 +181,7 @@ class BookContribution(models.Model):
     class Meta:
         """ Order by title and create date """
         ordering = ['-created_on', ]
+        unique_together = ('book','user')
 
     def __str__(self):
         string = f"{self.user} contributed to {self.book}"

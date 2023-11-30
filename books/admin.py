@@ -29,6 +29,7 @@ class BookContributionAdmin(admin.ModelAdmin):
         'book_key',
         'book_key_id',
         'user_status',
+        'user',
         'city',
         'location',
         'location_hidden',
