@@ -3,6 +3,7 @@ import datetime
 from django.db import models
 from django_resized import ResizedImageField
 from django.core.exceptions import ValidationError
+from django.db import IntegrityError
 
 
 from django.contrib.auth.models import User
@@ -181,7 +182,12 @@ class BookContribution(models.Model):
     class Meta:
         """ Order by title and create date """
         ordering = ['-created_on', ]
-        unique_together = ('book','user')
+        constraints = [
+            models.UniqueConstraint(
+                fields=['user', 'book'],
+                name='unique_user_book_contribution',
+            )
+        ]
 
     def __str__(self):
         string = f"{self.user} contributed to {self.book}"
@@ -194,11 +200,16 @@ class BookContribution(models.Model):
                 hidden place is chosen
                 - key validation
         """
+        if IntegrityError:
+            raise ValidationError(
+                "You have read this book already, please find another one."
+                )
+
         location_con = self.location == "at a hidden place"
         location_len = len(self.location_hidden) < 5
         if location_con and location_len:
             raise ValidationError(
-                "Please, provide a full description of the hidden place"
+                "Please, provide a full description of the hidden place."
                 )
 
         # invalid book key
