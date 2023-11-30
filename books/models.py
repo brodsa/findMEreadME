@@ -4,6 +4,7 @@ from django.db import models
 from django_resized import ResizedImageField
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
+from django.contrib import messages
 
 
 from django.contrib.auth.models import User
@@ -108,7 +109,7 @@ class Book(models.Model):
         return cities_ls
 
     def get_list_comments(self):
-        """ Get the comments of book readers """
+        """ Get the list of users and their comments"""
         comments_users = (
             BookContribution
             .objects
@@ -120,6 +121,20 @@ class Book(models.Model):
         comments_ls = list(comments_users)
         print(comments_ls)
         return comments_ls
+
+    def get_list_user_book(self):
+        """ Get the list of users and their books"""
+        users_books = (
+            BookContribution
+            .objects
+            .select_related('user')
+            .filter(book_id=self.id)
+            .values('user__id','book')
+            )
+        print(list(users_books))
+        comments_ls = list(users_books)
+        print(users_books)
+        return users_books
 
     def clean(self):
         """ 
@@ -182,12 +197,12 @@ class BookContribution(models.Model):
     class Meta:
         """ Order by title and create date """
         ordering = ['-created_on', ]
-        constraints = [
-            models.UniqueConstraint(
-                fields=['user', 'book'],
-                name='unique_user_book_contribution',
-            )
-        ]
+        # constraints = [
+        #     models.UniqueConstraint(
+        #         fields=['user', 'book'],
+        #         name='unique_user_book_contribution',
+        #     )
+        # ]
 
     def __str__(self):
         string = f"{self.user} contributed to {self.book}"
@@ -200,11 +215,19 @@ class BookContribution(models.Model):
                 hidden place is chosen
                 - key validation
         """
-        if IntegrityError:
+
+        print(self.user_status)
+        book_user = (
+            BookContribution
+            .objects
+            .filter(user=self.user__username,book=self.book)
+            .exists())
+        if book_user:
             raise ValidationError(
-                "You have read this book already, please find another one."
+                "You have already contributed to this book."
                 )
 
+        # hidden place description
         location_con = self.location == "at a hidden place"
         location_len = len(self.location_hidden) < 5
         if location_con and location_len:
@@ -236,3 +259,5 @@ class BookContribution(models.Model):
             raise ValidationError(
                 "The provided book title does not match with the queried."
             )
+        
+        
