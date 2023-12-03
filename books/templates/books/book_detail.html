@@ -7,8 +7,12 @@
 
 <div class="book-detail">
     <h1 class="text-center pt-5">{{book.title}}</h1>
-    <p class="book-detail__user"> Registered by {{ book.user}}</p>
-
+    {% if book.user == request.user %}
+        <p class="book-detail__user"> You have registered this book</p>
+    {% else %}
+        <p class="book-detail__user"> Registered by {{ book.user}}</p>
+    {% endif %}
+    
     <div class="container">
         <div class="book-detail__header" >
             <!-- Book Image: Default Image has to be set manually due to cloudinary -->
@@ -22,50 +26,78 @@
             </div>
             <div class="book-detail__panel">
                 <div class="book-detail__info">
-                    <p class="m-0"><strong>Book Journey</strong></p>
-                    <div class="book-statistics mb-2">
-                        <!-- total number of readers -->
-                        <p class="book-stat"> Readers: <strong>{{ book.get_total_readers }}</strong> <i class="fa-solid fa-user"> </i></p>
-                        <!-- total number of cities and cities list -->
-                        <p class="book-stat"> Cities: <strong> {{ book.get_num_cities }}</strong> <i class="fa-solid fa-location-dot "></i></p>
-                        <p class="book-stat">
-                            {% for city in book.get_list_cities %}
-                                    <span class="book-city"> {{ city }}</span>
-                                {% endfor %}
-                        </p>
-                    </div>
+                    
                     <p><strong>Author</strong>: {{ book.author }}</p>
                     <p><strong>Published Year</strong>: {{ book.published_year }}</p>
                     <p><strong>Language</strong>: {{ book.language|title }}</p>
+
+                    <!-- Book Description -->
+                    <div class="book-detail__description">
+                        <p> <strong>Description</strong>: {{ book.description }}</p>
+                    </div>
+
+                    <!--Book Edit/Delete Buttons-->
+                    {% if request.user.is_authenticated and  book.user == request.user %}
+                    <div class="buttons d-flex flex-column aling-items-end pb-3">
+                        <div class="d-flex flex-row flex-grow-0 gap-2 justify-content-end">
+                            <a href="{% url 'edit_book' book.id %}" class="btn action__button"> <i class="far fa-edit"> </i> Edit</a>
+                            <a href="{% url 'delete_book' book.id %}" class="btn action__button"> <i class="fa-solid fa-trash"> </i> Delete</a>
+                        </div>
+                    </div>
+                    {% endif %}
                     
                 </div>
                
             </div>
         </div>
-        {% if request.user.is_authenticated and  book.user == request.user %}
-        <div class="buttons d-flex flex-column aling-items-end pb-3">
-            <div class="d-flex flex-row flex-grow-0 gap-2 justify-content-end">
-                <a href="{% url 'edit_book' book.id %}" class="btn action__button"> <i class="far fa-edit"> </i> Edit</a>
-                <a href="{% url 'delete_book' book.id %}" class="btn action__button"> <i class="fa-solid fa-trash"> </i> Delete</a>
+        <div class="book__journey">
+            <!--Book Statistics-->
+            <div class="book__journey--header">
+                <p class="m-0 flex-grow-0"><strong>Book Journey</strong></p>
+                <div class= book__buttons>
+                    {% if book.has_user_contributed %}
+                        <a href="{% url 'edit_book' book.id %}" class="btn book__button"> <i class="far fa-edit"> </i></a>
+                        <a href="{% url 'delete_book' book.id %}" class="btn book__button"> <i class="fa-solid fa-trash"> </i></a>
+                        {% else %}
+                        <a href="{% url 'new_contribution' book.id %}" class="btn book__button"> <i class="fa-solid fa-plus"></i></a> 
+                    {% endif %}
+                </div>
             </div>
-        </div>
-        {% endif %}
-        <div class="book-detail__description">
-            <p> <strong>Description</strong>: {{ book.description }}</p>
-        </div>
-        {% if request.user.is_authenticated and  book.user == request.user %}
-        <p class="m-0"><strong>Readers Reactions</strong></p>
-        <div class="book-detail__comments">
-            {% for item in book.get_list_comments %}
-                {% if item.comment|length > 1 %}
-                    <div class="book-comment">
-                        <p class="m-0">{{ item.comment }}<span class="book-detail__user">{{ item.user__username }}</span></p>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-        {% endif %}
+            <div class="book-statistics">
+                <div>
+                    <!-- total number of readers -->
+                    <p class="book-stat"> Readers: <strong>{{ book.get_total_readers }}</strong> <i class="fa-solid fa-user"> </i></p>
+                    <!-- total number of cities and cities list -->
+                    <p class="book-stat"> Cities: <strong> {{ book.get_num_cities }}</strong> <i class="fa-solid fa-location-dot "></i></p>
+                    <p class="book-stat">
+                        {% for city in book.get_list_cities %}
+                                <span class="book-city"> {{ city }}</span>
+                            {% endfor %}
+                    </p>
+                </div>
 
+
+            </div>
+
+            <!-- Readers Reactions -->
+            {% if request.user.is_authenticated and  book.user == request.user %}
+            <div class="book-detail__comments">
+                
+                {% for item in book.get_list_comments %}
+                    {% if item.comment|length > 1 %}
+        
+                        {% if 'forloop.counter % 2' == 0  %}
+                            <div class="book-comment bubble right">
+                        {% else %}
+                            <div class="book-comment bubble left">
+                        {% endif %}
+                                <p class="m-0 ">{{ item.comment }}<span class="book-detail__user">{{ item.user__username }}</span></p>
+                            </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+    </div>
 
     </div>
 </div>

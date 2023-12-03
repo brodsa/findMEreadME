@@ -116,24 +116,21 @@ class Book(models.Model):
             .filter(book_id=self.id)
             .values('user__username','comment')
             )
-        print(list(comments_users))
         comments_ls = list(comments_users)
-        print(comments_ls)
         return comments_ls
 
-    def get_list_user_book(self):
+    def has_user_contributed(self):
         """ Get the list of users and their books"""
         users_books = (
             BookContribution
             .objects
             .select_related('user')
             .filter(book_id=self.id)
-            .values('user__id','book')
+            .values_list('user__username',flat=True)
             )
-        print(list(users_books))
-        comments_ls = list(users_books)
-        print(users_books)
-        return users_books
+        user = f"{self.user}"
+        users = [item for item in users_books]
+        return user in users
 
     def clean(self):
         """ 
