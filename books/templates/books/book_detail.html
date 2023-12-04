@@ -12,6 +12,13 @@
     {% else %}
         <p class="book-detail__user"> Registered by {{ book.user}}</p>
     {% endif %}
+
+
+    {% for item in book.get_slug %}
+        {% if item.user__username == request.user|stringformat:"s" %}
+            <p>{{ item.user__username|stringformat:"s"  }} {{ request.user|stringformat:"s" }}</p>
+        {% endif %}
+    {% endfor %}
     
     <div class="container">
         <div class="book-detail__header" >
@@ -53,14 +60,18 @@
         <div class="book__journey">
             <!--Book Statistics-->
             <div class="book__journey--header">
-                <p class="m-0 flex-grow-0"><strong>Book Journey</strong></p>
+                <p class="m-0 flex-grow-0"><strong>Book Journey:</strong></p>
+                <p>Contributors: {{ book.has_user_contributed }}</p>
+                
                 <div class= book__buttons>
-                    {% if book.has_user_contributed %}
-                        <a href="{% url 'edit_book' book.id %}" class="btn book__button"> <i class="far fa-edit"> </i></a>
+                    
+                        <a href="{% url 'delete_book' book.id %}" class="btn book__button"> <i class="far fa-edit"> </i></a>
                         <a href="{% url 'delete_book' book.id %}" class="btn book__button"> <i class="fa-solid fa-trash"> </i></a>
-                        {% else %}
+                        
                         <a href="{% url 'new_contribution' book.id %}" class="btn book__button"> <i class="fa-solid fa-plus"></i></a> 
-                    {% endif %}
+                        {% if book.has_user_contributed and book.user != request.user%}
+                        {% else %}
+                        {% endif %}
                 </div>
             </div>
             <div class="book-statistics">
@@ -80,7 +91,7 @@
             </div>
 
             <!-- Readers Reactions -->
-            {% if request.user.is_authenticated and  book.user == request.user %}
+            {% if request.user.is_authenticated %}
             <div class="book-detail__comments">
                 
                 {% for item in book.get_list_comments %}

@@ -1,10 +1,9 @@
 import datetime
 
 from django.db import models
+from django.template.defaultfilters import slugify 
 from django_resized import ResizedImageField
 from django.core.exceptions import ValidationError
-
-
 
 from django.contrib.auth.models import User
 
@@ -121,7 +120,7 @@ class Book(models.Model):
 
     def has_user_contributed(self):
         """ Get the list of users and their books"""
-        users_books = (
+        contributed_users = (
             BookContribution
             .objects
             .select_related('user')
@@ -129,8 +128,21 @@ class Book(models.Model):
             .values_list('user__username',flat=True)
             )
         user = f"{self.user}"
-        users = [item for item in users_books]
+        users = [item for item in contributed_users]
         return user in users
+
+    def get_slug(self):
+        """ Get the list of users and their books"""
+        slug = (
+            BookContribution
+            .objects
+            .select_related('user')
+            .filter(book_id=self.id)
+            .values('user__username','slug')
+        )
+        return slug
+
+
 
     def clean(self):
         """ 
@@ -189,6 +201,7 @@ class BookContribution(models.Model):
     comment = models.TextField(null=True, blank=True)
     created_on = models.DateField(auto_now_add=True,null=True)
     updated_on = models.DateField(auto_now=True,null=True)
+    slug = models.SlugField()
 
     class Meta:
         """ Order by title and create date """
@@ -203,6 +216,16 @@ class BookContribution(models.Model):
     def __str__(self):
         string = f"{self.user} contributed to {self.book}"
         return str(string)
+
+    # code from https://learndjango.com/tutorials/django-slug-tutorial
+    def get_absolute_url(self):
+        return reverse("article_detail", kwargs={"slug": self.slug})
+
+    def save(self, *args, **kwargs):  # new
+        if not self.slug:
+            slug = f"{self.user_id} {self.book_key_id}"
+            self.slug = slugify(slug)
+        return super().save(*args, **kwargs)
 
     def clean(self):
         """ 

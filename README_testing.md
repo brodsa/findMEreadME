@@ -99,7 +99,7 @@ Question: Testing
 Todo: Testing
 - Contribution: Model
 - Contribution: Form
-- Contribution: view
+- Contribution: view add, edit, delete
 
 
 # Bugs & Issus

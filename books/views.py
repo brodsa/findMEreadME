@@ -112,31 +112,32 @@ class AddBookContribution(LoginRequiredMixin, CreateView):
     form_class = BookContributionForm
     success_url = '/books/books/'
 
+    def test_func(self):
+        return self.request.user == self.get_object().user
+
     def get_initial(self):
         # code solution: https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data
         """
         Returns the initial data to use for forms on this view.
         """
         initial = super().get_initial()
-        id_book = int(str(self.request).split('/')[-2])
+        slug = str(self.request).split('/')[-2]
+        id_book = int(slug.split('-')[0])
         book = Book.objects.get(id=id_book)
         initial['book'] = book
         initial['book_key_id'] = id_book
         return initial
 
-    def test_func(self):
-        return self.request.user == self.get_object().user
-
     def form_valid(self, form):
+        """ Method which creates instances after valid form data were POST"""
         try:
-            """ Method which creates instances after valid form data were POST"""
             # post username
             form.instance.user = self.request.user
-
             # populate form before sending it
             item = form.save(commit=False)
             # field: book title
-            id_book = int(str(self.request).split('/')[-2])
+            slug = str(self.request).split('/')[-2]
+            id_book = int(slug.split('-')[0])
             item.book = Book.objects.get(id=id_book)
             # field: book key id
             item.book_key_id = id_book
@@ -150,4 +151,64 @@ class AddBookContribution(LoginRequiredMixin, CreateView):
         except IntegrityError:
             return TemplateResponse(
                 self.request, 'books/new_contribution_impossible.html'
-    )
+                )
+
+
+class EditBookContribution(UpdateView):
+    """ Edit a book contribution """
+    template_name = 'books/change_contribution.html'
+    model = BookContribution
+    form_class = BookContributionForm
+    # overwriting get_success_url containing pk
+    # https://stackoverflow.com/questions/51123269/django-formview-pass-pk-in-success-url
+    # https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-editing/
+    # pk = None
+    success_url = '/books/books/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
+    
+    def get_initial(self):
+        # code solution: https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data
+        """
+        Returns the initial data to use for forms on this view.
+        """
+        initial = super().get_initial()
+        slug = str(self.request).split('/')[-2]
+        id_book = int(slug.split('-')[-1])
+        book = BookContribution.objects.get(slug=slug).book
+        initial['book'] = book
+        initial['book_key_id'] = id_book
+        return initial
+
+    # def get_success_url(self):
+    #     """ Set up the books/id as success url"""
+    #     return reverse_lazy('book_detail', kwargs={'pk': self.pk})
+
+
+
+    def form_valid(self, form):
+        try:
+            """ Method which creates instances after valid form data were POST"""
+            # post username
+            form.instance.user = self.request.user
+            # populate form before sending it
+            item = form.save(commit=False)
+            # field: book title
+            slug = str(self.request).split('/')[-2]
+            id_book = int(slug.split('-')[-1])
+            book = BookContribution.objects.get(slug=slug).book
+            item.book = book
+            # field: book key id
+            item.book_key_id = id_book
+            form.instance.book_key_id = id_book
+            # field: owner status
+            user_owner = Book.objects.get(id=id_book).user
+            if self.request.user == user_owner:
+                form.instance.user_status = 'owner'
+            item.save()
+            return super(EditBookContribution, self).form_valid(form)
+        except IntegrityError:
+            return TemplateResponse(
+                self.request, 'books/new_contribution_impossible.html'
+                )
