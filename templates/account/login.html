@@ -9,7 +9,7 @@
 <div class="container form-container form-account">
 
   <h1 class="form__title">{% trans "Sign In" %}</h1>
-  <p class="text-center">{% blocktrans %}Needed an account?<a href="{{ signup_url }}">Sign up</a>{% endblocktrans %}</p>
+  <p class="text-center">{% blocktrans %}Needed an account? <a href="{{ signup_url }}">Sign up</a>{% endblocktrans %}</p>
 
   <div>
     <form class="login" method="POST" action="{% url 'account_login' %}">

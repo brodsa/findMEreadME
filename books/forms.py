@@ -91,8 +91,8 @@ class BookContributionForm(forms.ModelForm):
         labels = {
             'book': 'Book Title',
             'book_key': 'Book Key',
-            'city': 'City',
-            'location': 'Where is the book?',
+            'city': 'City where you live?',
+            'location': 'Where did you give the book?',
             'location_hidden': 'Describe the hidden place!',
             'comment': 'How did you like the book?',
             'book_key_id': 'Book ID',

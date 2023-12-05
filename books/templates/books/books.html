@@ -16,12 +16,11 @@
         {% endif %}
     {% endif %}
     {% endfor %}
-
-    {% if not request.user.is_authenticated %}
-    <div class="d-flex flex-column flex-sm-row gap-sm-2 just-content-md-left pt-2">
-        <a class= "btn hero__button account__button hero__button--primary" href="{% url 'account_signup' %}"> See More</a>
-    </div>
-    {% endif %}
 </div>
+{% if not request.user.is_authenticated %}
+<div class="d-flex flex-column flex-sm-row gap-sm-2 just-content-md-left pb-4">
+    <a class= "btn hero__button account__button hero__button--primary" href="{% url 'account_signup' %}"> See More</a>
+</div>
+{% endif %}
 
 {% endblock %}
