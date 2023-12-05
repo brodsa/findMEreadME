@@ -43,4 +43,4 @@ class BookContributionAdmin(admin.ModelAdmin):
 
     list_filter = ('city', 'user_status', 'location')
     search_fields = ('city', 'book_key')
-    prepopulated_fields = {"slug": ['user','book_id']}
+    prepopulated_fields = {"slug": ['user','book_key_id']}

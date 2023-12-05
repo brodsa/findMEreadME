@@ -67,7 +67,7 @@ class Book(models.Model):
         )
     created_on = models.DateField(auto_now_add=True)
     updated_on = models.DateField(auto_now=True)
-    key = models.CharField(max_length=10, default='23')
+    key = models.CharField(max_length=20, blank=True)
 
     class Meta:
         """ Order by title and create date """
@@ -78,7 +78,7 @@ class Book(models.Model):
 
     def get_total_readers(self):
         """ Get the total number of readers using BookContribution class """
-        contributions = BookContribution.objects.filter(book_id=self.id).values()
+        contributions = BookContribution.objects.filter(book_key_id=self.id).values()
         total_contributions = contributions.count()
         return total_contributions
 
@@ -87,7 +87,7 @@ class Book(models.Model):
         cities = ( 
             BookContribution
             .objects
-            .filter(book_id=self.id)
+            .filter(book_key_id=self.id)
             .values('city')
             .annotate(num=models.Count("city") )
         )
@@ -99,7 +99,7 @@ class Book(models.Model):
         cities = ( 
             BookContribution
             .objects
-            .filter(book_id=self.id)
+            .filter(book_key_id=self.id)
             .values('city')
             .annotate(num=models.Count("city") )
         )
@@ -112,7 +112,7 @@ class Book(models.Model):
             BookContribution
             .objects
             .select_related('user')
-            .filter(book_id=self.id)
+            .filter(book_key_id=self.id)
             .values('user__username','comment')
             )
         comments_ls = list(comments_users)
@@ -124,7 +124,7 @@ class Book(models.Model):
             BookContribution
             .objects
             .select_related('user')
-            .filter(book_id=self.id)
+            .filter(book_key_id=self.id)
             .values_list('user__username',flat=True)
             )
         user = f"{self.user}"
@@ -137,7 +137,7 @@ class Book(models.Model):
             BookContribution
             .objects
             .select_related('user')
-            .filter(book_id=self.id)
+            .filter(book_key_id=self.id)
             .values('user__username','slug')
         )
         return slug
