@@ -154,15 +154,11 @@ class AddBookContribution(LoginRequiredMixin, CreateView):
                 )
 
 
-class EditBookContribution(UpdateView):
+class EditBookContribution(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """ Edit a book contribution """
     template_name = 'books/change_contribution.html'
     model = BookContribution
     form_class = BookContributionForm
-    # overwriting get_success_url containing pk
-    # https://stackoverflow.com/questions/51123269/django-formview-pass-pk-in-success-url
-    # https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-editing/
-    # pk = None
     success_url = '/books/books/'
 
     def test_func(self):
@@ -180,12 +176,6 @@ class EditBookContribution(UpdateView):
         initial['book'] = book
         initial['book_key_id'] = id_book
         return initial
-
-    # def get_success_url(self):
-    #     """ Set up the books/id as success url"""
-    #     return reverse_lazy('book_detail', kwargs={'pk': self.pk})
-
-
 
     def form_valid(self, form):
         try:
