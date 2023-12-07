@@ -8,7 +8,8 @@ from .views import (
     EditBook,
     BookKey,
     AddBookContribution,
-    EditBookContribution
+    EditBookContribution,
+    DeleteBookContribution
 )
 
 
@@ -22,9 +23,16 @@ urlpatterns = [
     path(
         'new_contribution/<slug:book_id_key>/',
         AddBookContribution.as_view(),
-        name='new_contribution'),
+        name='new_contribution'
+        ),
     path(
         'change_contribution/<slug:slug>/',
         EditBookContribution.as_view(),
-        name='change_contribution')
+        name='change_contribution'
+        ),
+    path(
+        'delete_contribution/<slug:pk>/',
+        DeleteBookContribution.as_view(),
+        name='delete_contribution'
+        )
 ]

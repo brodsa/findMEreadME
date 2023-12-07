@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Delete contribution{% endblock title %}
+
+{% block content %}
+<div class="container form-container form-account">
+    <h1 class="form__title">Contribution Deletion</h1>
+  
+    <p class="text-center">Are you sure you want to delete the contribution to the book with the comment below?</p>
+    <p class="text-center">{{ object.comment }}</p>
+    <div>
+      <form method="post">
+        {% csrf_token %}
+        <!-- Buttons -->
+        <div class="d-flex flex-column flex-md-row gap-md-2">
+          <button type="submit" class="btn form__button form__button--primary w-100 flex-grow-1">Delete</button>
+          <a class= "btn form__button form__button--secondary w-100 flex-grow-1" href="{{ request.META.HTTP_REFERER }}"> Go back </a>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

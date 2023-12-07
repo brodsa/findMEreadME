@@ -137,7 +137,7 @@ class Book(models.Model):
             .objects
             .select_related('user')
             .filter(book_key_id=self.id)
-            .values('user__username','slug')
+            .values('user__username','slug','id')
         )
         return slug
 

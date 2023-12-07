@@ -202,3 +202,11 @@ class EditBookContribution(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return TemplateResponse(
                 self.request, 'books/new_contribution_impossible.html'
                 )
+
+class DeleteBookContribution(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ Delete a book """
+    model = BookContribution
+    success_url = '/books/books/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user

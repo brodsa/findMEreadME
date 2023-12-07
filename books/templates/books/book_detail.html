@@ -56,10 +56,7 @@
         <div class="book__journey">
             <!--Book Statistics-->
             <div class="book__journey--header">
-                <p class="m-0 flex-grow-0" id = "Contribution">
-                    <strong>Book Journey 
-                        {% if request.user.is_authenticated %}<i class="fa-solid fa-circle-info"></i> {% endif %} :
-                    </strong>
+                <p class="m-0 flex-grow-0" id = "Contribution"><strong>Book Journey {% if request.user.is_authenticated %}<i class="fa-solid fa-circle-info"></i> {% endif %} :</strong>
                 </p>
                 <span id="ContributionInfo">Add a new contribution to the book, once you read. Edit or delete your contribution later on.</span>
                 
@@ -68,7 +65,7 @@
                     {% for item in book.get_slug %}
                         {% if request.user|stringformat:"s" in item.user__username %}
                         <a href="{% url 'change_contribution' item.slug %}" class="btn book__button"> <i class="far fa-edit"> </i></a>
-                        <a href="{% url 'delete_book' book.id %}" class="btn book__button"> <i class="fa-solid fa-trash"> </i></a>
+                        <a href="{% url 'delete_contribution' item.id %}" class="btn book__button"> <i class="fa-solid fa-trash"> </i></a>
                         {% endif %}
                     {% endfor %}
 
