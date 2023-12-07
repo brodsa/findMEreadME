@@ -118,7 +118,7 @@ class Book(models.Model):
         comments_ls = list(comments_users)
         return comments_ls
 
-    def has_user_contributed(self):
+    def get_contribution_users(self):
         """ Get the list of users and their books"""
         contributed_users = (
             BookContribution
@@ -127,9 +127,8 @@ class Book(models.Model):
             .filter(book_key_id=self.id)
             .values_list('user__username',flat=True)
             )
-        user = f"{self.user}"
         users = [item for item in contributed_users]
-        return user in users
+        return ''.join(users)
 
     def get_slug(self):
         """ Get the list of users and their books"""
