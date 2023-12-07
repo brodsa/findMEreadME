@@ -40,9 +40,12 @@ The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was use
     - [Book Key](./docs/testing/html/html_book_key.png)
     - [Latest Books](./docs/testing/html/html_books.png)
     - [Book Detail](./docs/testing/html/html_book_detail.png)
-    - [Book Deletion](./docs/testing/html/html_book_delete.png)
+    - [Confirm Book Deletion](./docs/testing/html/html_book_delete.png)
     - [Book Editing](./docs/testing/html/html_book_edit.png)
+- Book Contribution Pages
     - [Add Contribution](./docs/testing/html/html_book_add_contribution.png)
+    - [Edit Contribution](./docs/testing/html/html_book_edit_contribution.png)
+    - [Confirm Delete Contribution](./docs/testing/html/html_delete_contribution.png)
 
 
 
@@ -108,11 +111,16 @@ Using two databases for dev and prod led to missing up debugging mode and creati
 
 During the development, I cope several times migrations conflict. Thanks to the tutor support of CI, this was resolved very quickly. By dropping/resetting database, clearing up the migrations and creating migrations with superuser again.
 
-Initially, the clean method of BookForm did not work while testing the form. An error occurred related to the clean method of the form class. To omit the clean_data attribute in self object helped.
+Initially, the clean method of BookForm did not work while testing the form. An error occurred related to the clean method of the form class. To omit the clean_data attribute in self object helped. FIXED
 
 All books in Latest Books Page can be viewed by logged in and not logged in user. This is not big issues as other information are limited anyway.
 
-In Add Contribution Page, there is a prefilled field Book. The initial plan was to disable it such that user cannot change it. THis works only if the user inserts valid data. When the user inserts invalid data the prefilled Book field is empty but the user cannot changed. This is only possible for TextInput field and not for Select field - have not found the solution. Currently, the user can changed the input theoretically but user will be informed that is input is invalid.
+In Add Contribution Page, there is a prefilled field Book. The initial plan was to disable it such that user cannot change it. THis works only if the user inserts valid data. When the user inserts invalid data the prefilled Book field is empty but the user cannot changed. This is only possible for TextInput field and not for Select field - have not found the solution. Currently, the user can changed the input theoretically but user will be informed that is input is invalid. SOLVED
+
+
+Server error 500 on production database after submitting the form to register the book. The error was caused by the wrongly defined field for key. The initial char length was set to 10 however the real key length can be 14. The field length was set to 20. SOLVED
+
+The comparison in `{% if request.user in item.user__username %}` returns always `False` even if the users are equal. Solution: Add a jinja filter request.user|stringformat:"s" to be able to compare it with the username from the book.get_slug(). SOLVED
 
 
 
