@@ -76,7 +76,7 @@ Book pages include:
 - **Book Page for unauthorized user** shows only basic book information, journey and the user who added the book. The deletion or edition of the book is not allowed. ![Basic Book Detail](./docs/features/features_book_detail_basic_viewer.png) 
 - **Book Edit Page** contains a form to edit a registered book. The user is redirected in the Book Page after submitting the form ![Edit Book Page](./docs/features/features_book_edit.png)
 - **Book Delete Confirm Page** displays a text box with the confirmation for the book deletion. ![Delete Book Page](./docs/features/features_book_delete.png)
-
+- **Contribution Edit Page** contains a form to edit a book contribution. After saving the form, the user is redirected to the Books Page. ![Edit Contribution](./docs/features/features_contribution_edit.png)
 
 
 ## Hidden Pages
