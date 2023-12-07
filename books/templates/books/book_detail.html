@@ -19,11 +19,14 @@
             {% if book.image == 'media/books/placeholder.placeholder.webp' %}
             <div class="book-detail__picture align-self-center">
                 <img src="https://res.cloudinary.com/dqtlflps3/image/upload/v1697374709/media/books/placeholder.webp" alt="{{ book.image_alt }}">
-            {% else %}
+            </div>
+                {% else %}
             <div class="book-detail__picture">
                 <img src="{{ book.image.url }}" alt="{{ book.image_alt }}">
-            {% endif %}
             </div>
+            {% endif %}
+
+            <!--Book Detail -->
             <div class="book-detail__panel">
                 <div class="book-detail__info">
                     
@@ -47,15 +50,20 @@
                     {% endif %}
                     
                 </div>
-               
             </div>
         </div>
+
         <div class="book__journey">
             <!--Book Statistics-->
             <div class="book__journey--header">
-                <p class="m-0 flex-grow-0" id = "Contribution"><strong>Book Journey <i class="fa-solid fa-circle-info"></i> :</strong></p>
+                <p class="m-0 flex-grow-0" id = "Contribution">
+                    <strong>Book Journey 
+                        {% if request.user.is_authenticated %}<i class="fa-solid fa-circle-info"></i> {% endif %} :
+                    </strong>
+                </p>
                 <span id="ContributionInfo">Add a new contribution to the book, once you read. Edit or delete your contribution later on.</span>
                 
+                {% if request.user.is_authenticated %}
                 <div class= book__buttons>
                     {% for item in book.get_slug %}
                         {% if request.user|stringformat:"s" in item.user__username %}
@@ -66,11 +74,9 @@
 
                     {% if request.user|stringformat:"s" not in book.get_contribution_users%}
                         <a href="{% url 'new_contribution' book.id %}" class="btn book__button"> <i class="fa-solid fa-plus"></i></a>
-                    {% endif %}    
-                     
-
-                           
+                    {% endif %}        
                 </div>
+                {% endif %}
             </div>
             <div class="book-statistics">
                 <div>
@@ -84,29 +90,27 @@
                             {% endfor %}
                     </p>
                 </div>
-
-
             </div>
 
             <!-- Readers Reactions -->
-            {% if request.user.is_authenticated %}
             <div class="book-detail__comments">
-                
+            {% if request.user.is_authenticated %}
                 {% for item in book.get_list_comments %}
                     {% if item.comment|length > 1 %}
         
                         {% if 'forloop.counter % 2' == 0  %}
-                            <div class="book-comment bubble right">
-                        {% else %}
-                            <div class="book-comment bubble left">
-                        {% endif %}
-                                <p class="m-0 ">{{ item.comment }}<span class="book-detail__user">{{ item.user__username }}</span></p>
+                            <div class="book-comment bubble right"><p class="m-0 ">{{ item.comment }}<span class="book-detail__user">{{ item.user__username }}</span></p>
                             </div>
+                        {% else %}
+                            <div class="book-comment bubble left"><p class="m-0 ">{{ item.comment }}<span class="book-detail__user">{{ item.user__username }}</span></p>
+                            </div>
+                        {% endif %}
+                                
                     {% endif %}
                 {% endfor %}
-            </div>
             {% endif %}
-    </div>
+            </div>
+        </div>
 
     </div>
 </div>
