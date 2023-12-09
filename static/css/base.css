@@ -476,7 +476,8 @@ div.card-body{
     box-shadow: var(--box-shadow);
 }
 
-#Contribution + #ContributionInfo{
+/* code inspiration from https://www.w3schools.com/css/css_tooltip.asp */
+#contribution + #contributionInfo{
     position: absolute;
     background-color: var(--bg-white);
     border: 1px solid var(--secondary-color);
@@ -487,8 +488,8 @@ div.card-body{
     z-index: 1;
     visibility: hidden;
 }
-#Contribution:hover + #ContributionInfo,
-#Contribution:focus + #ContributionInfo{
+#contribution:hover + #contributionInfo,
+#contribution:focus + #contributionInfo{
     visibility: visible;
 }
 

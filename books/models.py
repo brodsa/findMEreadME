@@ -131,7 +131,7 @@ class Book(models.Model):
         return ''.join(users)
 
     def get_slug(self):
-        """ Get the list of users and their books"""
+        """ Get the list of contributors with the corresponding book id and slug"""
         slug = (
             BookContribution
             .objects
@@ -141,7 +141,20 @@ class Book(models.Model):
         )
         return slug
 
+    def get_last_location(self):
+        """ Get last location"""
 
+        location = (
+            BookContribution
+            .objects
+            .filter(book_key_id=self.id)
+            .order_by('created_on',)
+            .values('city','location','location_hidden','created_on')
+
+        )
+        print(location)
+
+        return True
 
     def clean(self):
         """ 
