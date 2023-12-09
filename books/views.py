@@ -26,6 +26,7 @@ class Books(ListView):
     template_name = 'books/books.html'
     model = Book
     context_object_name = 'books'
+    paginate_by = 8
     
 
 class BookDetail(DetailView):
