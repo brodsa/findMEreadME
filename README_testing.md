@@ -28,32 +28,30 @@ The webpage was validated from several perspectives:
 - the more general quality of the webpage, see [Lighthouse](#lighthouse)
 
 ### HTML 
-The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was used to validate the pages of the webpage. The Checker did not reveal any errors. The source code of pages requiring login was checked directly via text input. Other pages were tested via provided page URL. The detailed reports for each page are below:
-- Home Pages
-    -  [Homepage](https://validator.w3.org/nu/?doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2F)
-    - [How It Works](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Fhow)
-- Account Pages
-    - [Log In](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Faccounts%2Flogin)
-    - [Sing up](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Faccounts%2Fsignup%2F)
-    - [Logout](./docs/testing/html/html_logout.png)
-- Book Pages
-    - [Register Book](./docs/testing/html/html_register_book.png)
-    - [Book Key](./docs/testing/html/html_book_key.png)
-    - [Latest Books](./docs/testing/html/html_books.png)
-    - [Book Detail](./docs/testing/html/html_book_detail.png)
-    - [Confirm Book Deletion](./docs/testing/html/html_book_delete.png)
-    - [Book Editing](./docs/testing/html/html_book_edit.png)
-- Book Contribution Pages
-    - [Add Contribution](./docs/testing/html/html_book_add_contribution.png)
-    - [Edit Contribution](./docs/testing/html/html_book_edit_contribution.png)
-    - [Confirm Delete Contribution](./docs/testing/html/html_delete_contribution.png)
-- Contact Pages
-    - [Contact Page](./docs/testing/html/html_contact.png)
-    - [Thank You Page](./docs/testing/html/html_contact_thank_you.png)
-- Hidden Pages
-    - [403 Error Page](./docs/testing/html/html_error_403.png)
-    - [404 Error Page](./docs/testing/html/html_error_404.png)
-    - [Invalid contribution Error Page](./docs/testing/html/html_error_invalid_contribution.png)
+The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was used to validate the pages of the webpage. **The Checker did not reveal any errors.** The source code of pages requiring login was checked directly via text input. Other pages were tested via provided page URL. The detailed reports for each page are below:
+
+| Page Category | Page Report |
+|----------|-------------|
+| Home | [Homepage](https://validator.w3.org/nu/?doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2F) |
+| | [How It Works](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Fhow) |
+| Account |  [Log In](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Faccounts%2Flogin) |
+| | [Sing up](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Faccounts%2Fsignup%2F)|
+| | [Logout](./docs/testing/html/html_logout.png)|
+| Book | [Register Book](./docs/testing/html/html_register_book.png)|
+| | [Book Key](./docs/testing/html/html_book_key.png) |
+| | [Latest Books](./docs/testing/html/html_books.png) |
+| | [Book Detail](./docs/testing/html/html_book_detail.png) |
+| | [Confirm Book Deletion](./docs/testing/html/html_book_delete.png) |
+| | [Book Editing](./docs/testing/html/html_book_edit.png) |
+| Book Contribution| [Add Contribution](./docs/testing/html/html_book_add_contribution.png) |
+| |[Edit Contribution](./docs/testing/html/html_book_edit_contribution.png) |
+| |[Confirm Delete Contribution](./docs/testing/html/html_delete_contribution.png) |
+| Contact Pages |[Contact Page](./docs/testing/html/html_contact.png) |
+| |[Thank You Page](./docs/testing/html/html_contact_thank_you.png) |
+| Hidden Pages |[403 Error Page](./docs/testing/html/html_error_403.png) |
+| |[404 Error Page](./docs/testing/html/html_error_404.png) |
+| | [Invalid contribution Error Page](./docs/testing/html/html_error_invalid_contribution.png) |
+
 
 
 
