@@ -46,12 +46,15 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    
     'django.contrib.sites',
 
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
 
     # Apps
     'home',
@@ -60,8 +63,8 @@ INSTALLED_APPS = [
     # Other
     'crispy_forms',
     'crispy_bootstrap5',
-    'cloudinary',
-    'cloudinary_storage',
+    
+    
 
 
 
@@ -80,7 +83,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
-CRISPY_ALLOWED_TEMPLATE_PAKCS = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 ROOT_URLCONF = 'findmereadme.urls'
