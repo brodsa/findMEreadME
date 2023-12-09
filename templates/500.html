@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Error 403{% endblock title %}
+
+{% block content %}
+<div class="container form-container form-account">
+    <h1 class="form__title">505</h1>
+    <h2 class="form__title">Internal Server Error</h2>
+  
+    <p class="text-center">Sorry, unexpected error. Don't worry this is us.</p>
+
+    <!-- Buttons -->
+    <div class="d-flex flex-column flex-md-row gap-md-2">
+        <a class= "btn form__button form__button--secondary w-100 flex-grow-1" href="{% url 'home' %}"> Home </a>
+    </div>
+  
+  </div>
+
+{% endblock %}
