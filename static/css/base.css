@@ -477,7 +477,8 @@ div.card-body{
 }
 
 /* code inspiration from https://www.w3schools.com/css/css_tooltip.asp */
-#contribution + #contributionInfo{
+#contribution + #contributionInfo,
+#location + #locationInfo{
     position: absolute;
     background-color: var(--bg-white);
     border: 1px solid var(--secondary-color);
@@ -489,7 +490,9 @@ div.card-body{
     visibility: hidden;
 }
 #contribution:hover + #contributionInfo,
-#contribution:focus + #contributionInfo{
+#contribution:focus + #contributionInfo,
+#location:hover + #locationInfo,
+#location:focus + #locationInfo{
     visibility: visible;
 }
 
@@ -646,6 +649,6 @@ div.card-body{
     }
 
     .book__journey--header{
-        gap: 620px;
+        gap: 500px;
     }
 }

@@ -148,13 +148,13 @@ class Book(models.Model):
             BookContribution
             .objects
             .filter(book_key_id=self.id)
-            .order_by('created_on',)
-            .values('city','location','location_hidden','created_on')
+            .order_by('-created_on',)
+            .first()
 
         )
         print(location)
 
-        return True
+        return location
 
     def clean(self):
         """ 

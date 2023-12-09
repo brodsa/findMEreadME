@@ -56,8 +56,9 @@
         <div class="book__journey">
             <!--Book Statistics-->
             <div class="book__journey--header">
-                <p class="m-0 flex-grow-0" id = "contribution"><strong>Book Journey {% if request.user.is_authenticated %}<i class="fa-solid fa-circle-info"></i> {% endif %}</strong>
-                </p>
+                <h2 class="flex-grow-0" id = "contribution">
+                    Book Journey {% if request.user.is_authenticated %}<i class="fa-solid fa-circle-info fs-3"></i> {% endif %}
+                </h2>
                 <span id="contributionInfo">Once you read the book, add your contribution with reaction here. Edit or delete your contribution later on.</span>
                 
                 {% if request.user.is_authenticated %}
@@ -79,11 +80,17 @@
             <div class="book-statistics">
                 <div>
                     <!-- current location -->
-                    <p class="book-stat"> Current location: </p>
+                    <p class="book-stat"> <strong>Current location</strong>: {{ book.get_last_location.location }} in {{ book.get_last_location.city}} 
+                        {% if book.get_last_location.location == 'at a hidden place' %} 
+                            <i id="location" class="fa-solid fa-circle-info"></i> 
+                            <span id="locationInfo"> {{ book.get_last_location.location_hidden}}</span>
+                        {% endif %} 
+                    </p>
+                    
                     <!-- total number of readers -->
-                    <p class="book-stat"> Readers: <strong>{{ book.get_total_readers }}</strong> <i class="fa-solid fa-user"> </i></p>
+                    <p class="book-stat"> <strong>Readers: {{ book.get_total_readers }}</strong> <i class="fa-solid fa-user"> </i></p>
                     <!-- total number of cities and cities list -->
-                    <p class="book-stat"> Cities: <strong> {{ book.get_num_cities }}</strong> <i class="fa-solid fa-location-dot "></i></p>
+                    <p class="book-stat"> <strong>Cities:  {{ book.get_num_cities }}</strong> <i class="fa-solid fa-location-dot "></i></p>
                     <p class="book-stat">
                         {% for city in book.get_list_cities %}
                                 <span class="book-city"> {{ city }}</span>
