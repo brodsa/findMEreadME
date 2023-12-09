@@ -29,8 +29,9 @@ The webpage was validated from several perspectives:
 
 ### HTML 
 The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was used to validate the pages of the webpage. The Checker did not reveal any errors. The source code of pages requiring login was checked directly via text input. Other pages were tested via provided page URL. The detailed reports for each page are below:
-- [Homepage](https://validator.w3.org/nu/?doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2F)
-- [How It Works](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Fhow)
+- Home Pages
+    -  [Homepage](https://validator.w3.org/nu/?doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2F)
+    - [How It Works](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Fhow)
 - Account Pages
     - [Log In](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Faccounts%2Flogin)
     - [Sing up](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Ffindme-readme-10d0bfb3ba28.herokuapp.com%2Faccounts%2Fsignup%2F)
@@ -46,6 +47,11 @@ The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was use
     - [Add Contribution](./docs/testing/html/html_book_add_contribution.png)
     - [Edit Contribution](./docs/testing/html/html_book_edit_contribution.png)
     - [Confirm Delete Contribution](./docs/testing/html/html_delete_contribution.png)
+
+- Hidden Pages
+    - [403 Error Page](./docs/testing/html/html_error_403.png)
+    - [404 Error Page](./docs/testing/html/html_error_404.png)
+    - [Invalid contribution Error Page](./docs/testing/html/html_error_invalid_contribution.png)
 
 
 
@@ -103,6 +109,8 @@ Todo: Testing
 - Contribution: Model
 - Contribution: Form
 - Contribution: view add, edit, delete
+- Book key redirected pages
+- 404 Page, 403 Page, 505 Page, Invalid Contribution Error
 
 
 # Bugs & Issus

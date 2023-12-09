@@ -86,6 +86,7 @@ Book pages include:
 - **403 Unauthorized Actions** informs the user in case of conducting unauthorized actions. The user can use the Home Button to return to the homepage. ![403 Error](./docs/features/features_error_403.png)
 - **404 Page Not Found** informs the user in case of requesting invalid URL. The user can use the Home Button to return to the homepage. ![404 Error](./docs/features/features_error_404.png)
 - **505 Server Error** informs the user in case of unexpected error occurs. The user can use the Home Button to return to the homepage.
+- **Error Invalid Contribution** informs the user in case of contributing to the book the user has already contributed. The user can use the Home Button to return to the homepage. ![Error Invalid Contribution](./docs/features/features_error_invalid_contribution.png)
 
 ## Future & Left Features
 - Successful Registration: The user is redirected to homepage and informed via displayed username in the navigation bar as this is by default. - changed acceptance criteria
