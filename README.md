@@ -84,6 +84,7 @@ Book pages include:
 
 ## Hidden Pages
 - **403 Unauthorized Actions** informs the user in case of conducting unauthorized actions. The user can use the Home Button to return to the homepage. ![403 Error](./docs/features/features_error_403.png)
+- **404 Page Not Found** informs the user in case of requesting invalid URL. The user can use the Home Button to return to the homepage. ![404 Error](./docs/features/features_error_404.png)
 - **505 Server Error** informs the user in case of unexpected error occurs. The user can use the Home Button to return to the homepage.
 
 ## Future & Left Features
