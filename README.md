@@ -81,6 +81,10 @@ Book pages include:
 - **Contribution Edit Page** contains a form to edit a book contribution. After saving the form, the user is redirected to the Books Page. ![Edit Contribution](./docs/features/features_contribution_edit.png)
 - **Contribution Delete Confirm Page** displays a text box with the confirmation for the contribution deletion. ![Delete Contribution Page](./docs/features/features_contribution_delete.png)
 
+## Contact Pages
+- **Contact Page** contains a form to contact the developer. The form requires to fill in all form fields for successful sending. After the message is sent, the user is redirected to the Thank You Page. ![Contact Page](./docs/features/features_contact.png)
+- **Thank You Page** displays the thank you message for contacting and a button to come back to the homepage. ![Thank You Page](./docs/features/features_contact_thank_you.png)
+
 
 ## Hidden Pages
 - **403 Unauthorized Actions** informs the user in case of conducting unauthorized actions. The user can use the Home Button to return to the homepage. ![403 Error](./docs/features/features_error_403.png)

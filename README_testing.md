@@ -47,7 +47,9 @@ The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was use
     - [Add Contribution](./docs/testing/html/html_book_add_contribution.png)
     - [Edit Contribution](./docs/testing/html/html_book_edit_contribution.png)
     - [Confirm Delete Contribution](./docs/testing/html/html_delete_contribution.png)
-
+- Contact Pages
+    - [Contact Page](./docs/testing/html/html_contact.png)
+    - [Thank You Page](./docs/testing/html/html_contact_thank_you.png)
 - Hidden Pages
     - [403 Error Page](./docs/testing/html/html_error_403.png)
     - [404 Error Page](./docs/testing/html/html_error_404.png)
@@ -111,6 +113,7 @@ Todo: Testing
 - Contribution: view add, edit, delete
 - Book key redirected pages
 - 404 Page, 403 Page, 505 Page, Invalid Contribution Error
+- Contact: Model, Form, CreateView, TemplateView
 
 
 # Bugs & Issus
