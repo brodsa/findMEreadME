@@ -296,3 +296,12 @@ class InsertedKey(models.Model):
 
     def __str__(self):
         return f"{self.inserted_key} inserted on {self.inserted_on}"
+
+    def clean(self):
+        """ Validate the inserted key against existing keys """
+        # invalid book key
+        books = Book.objects.values_list('key', flat=True)
+        if self.inserted_key not in books:
+            raise ValidationError(
+                "The provided book key is invalid."
+            )

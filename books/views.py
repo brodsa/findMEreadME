@@ -15,8 +15,8 @@ from django.urls import reverse_lazy
 from django.db import IntegrityError
 from django.template.response import TemplateResponse
 
-from .models import Book, BookContribution
-from .forms import BookForm, BookContributionForm
+from .models import Book, BookContribution, InsertedKey
+from .forms import BookForm, BookContributionForm, InsertedKeyFrom
 
 from .helpers import generate_key
 
@@ -211,3 +211,28 @@ class DeleteBookContribution(LoginRequiredMixin, UserPassesTestMixin, DeleteView
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+
+class InsertKey(CreateView):
+    """ Insert Book Key """
+    template_name = 'books/insert_key.html'
+    model = InsertedKey
+    form_class = InsertedKeyFrom
+    success_url = '/books/books/'
+    # overwriting get_success_url containing pk
+    # https://stackoverflow.com/questions/51123269/django-formview-pass-pk-in-success-url
+    # https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-editing/
+    pk = None
+
+
+    def form_valid(self, form):
+        """ Set up pk for the success url  """
+        item = form.save()
+        key = item.inserted_key
+        book_id = key.split('-')[0]
+        self.pk = book_id
+        return super(InsertKey, self).form_valid(form)
+
+    def get_success_url(self):
+        """ Set up the books/id as success url"""
+        return reverse_lazy('book_detail', kwargs={'pk': self.pk})

@@ -1,7 +1,7 @@
 from django import forms
-from django.core.exceptions import ValidationError
 
-from .models import Book, BookContribution
+from .models import Book, BookContribution, InsertedKey
+
 
 # placeholders for text fields
 # comment field in BookContribution form
@@ -85,7 +85,6 @@ class BookContributionForm(forms.ModelForm):
                     )
                     }),
             'book_key_id': forms.TextInput(attrs={'readonly': True}),
-            # 'book': forms.Select(attrs={'readonly': True})
         }
 
         labels = {
@@ -99,15 +98,16 @@ class BookContributionForm(forms.ModelForm):
         }
 
 
-# class BookContributionInsertKey(forms.ModelForm):
-#     """ A class for Inserting the Book Key Form to contribute """
+class InsertedKeyFrom(forms.ModelForm):
+    """ A class for Inserting the Book Key Form to contribute """
 
-#     class Meta:
-#         """ Define model, fields, widget and labels """
-#         model = BookContribution
-#         fields = [
-#             'book_key',
-#         ]
-#         labels = {
-#             'book_key': 'Book Key',
-#         }
+    class Meta:
+        """ Define model, fields, widget and labels """
+        model = InsertedKey
+        fields = [
+            'inserted_key',
+        ]
+
+        labels = {
+            'inserted_key': 'Book Key',
+        }
