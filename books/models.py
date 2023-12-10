@@ -281,13 +281,8 @@ class BookContribution(models.Model):
             )
       
 
-class UserInsertedKey(models.Model):
+class InsertedKey(models.Model):
     """ A class to insert book key """
-    user = models.ForeignKey(
-        User,
-        related_name='user_inserted_key',
-        on_delete=models.CASCADE,
-        null=False)
     inserted_key = models.CharField(
         max_length=20,
         null=False,
@@ -300,4 +295,4 @@ class UserInsertedKey(models.Model):
         ordering = ['-inserted_on', ]
 
     def __str__(self):
-        return f"{self.user} inserted {self.inserted_key}"
+        return f"{self.inserted_key} inserted on {self.inserted_on}"
