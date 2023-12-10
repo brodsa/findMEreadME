@@ -1,7 +1,7 @@
 import datetime
 
 from django.db import models
-from django.template.defaultfilters import slugify 
+from django.template.defaultfilters import slugify
 from django_resized import ResizedImageField
 from django.core.exceptions import ValidationError
 
@@ -24,12 +24,13 @@ USER_STATUS = [
     ('contributor', 'contributor')
 ]
 
+
 class City(models.Model):
-    """ 
-    A model to store cities and countries 
     """
-    city = models.CharField(max_length=200,null=True, blank=True)
-    country = models.CharField(max_length=200,null=True, blank=True)
+    A model to store cities and countries
+    """
+    city = models.CharField(max_length=200, null=True, blank=True)
+    country = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return str(self.city)
@@ -84,7 +85,12 @@ class Book(models.Model):
         """
         Get the total number of readers using BookContribution class
         """
-        contributions = BookContribution.objects.filter(book_key_id=self.id).values()
+        contributions = (
+            BookContribution
+            .objects
+            .filter(book_key_id=self.id)
+            .values()
+            )
         total_contributions = contributions.count()
         return total_contributions
 
@@ -92,12 +98,12 @@ class Book(models.Model):
         """
         Get the number of unique cities of the book readers
         """
-        cities = ( 
+        cities = (
             BookContribution
             .objects
             .filter(book_key_id=self.id)
             .values('city')
-            .annotate(num=models.Count("city") )
+            .annotate(num=models.Count("city"))
         )
         num_cities = len(cities)
         return num_cities
@@ -106,12 +112,12 @@ class Book(models.Model):
         """
         Get the list of unique cities of the book readers
         """
-        cities = ( 
+        cities = (
             BookContribution
             .objects
             .filter(book_key_id=self.id)
             .values('city')
-            .annotate(num=models.Count("city") )
+            .annotate(num=models.Count("city"))
         )
         cities_ls = [city['city'] for city in list(cities)]
         return cities_ls
@@ -125,7 +131,7 @@ class Book(models.Model):
             .objects
             .select_related('user')
             .filter(book_key_id=self.id)
-            .values('user__username','comment')
+            .values('user__username', 'comment')
             )
         comments_ls = list(comments_users)
         return comments_ls
@@ -139,7 +145,7 @@ class Book(models.Model):
             .objects
             .select_related('user')
             .filter(book_key_id=self.id)
-            .values_list('user__username',flat=True)
+            .values_list('user__username', flat=True)
             )
         users = [item for item in contributed_users]
         return ''.join(users)
@@ -153,12 +159,12 @@ class Book(models.Model):
             .objects
             .select_related('user')
             .filter(book_key_id=self.id)
-            .values('user__username','slug','id')
+            .values('user__username', 'slug', 'id')
         )
         return slug
 
     def get_last_location(self):
-        """ 
+        """
         Get last location with its description
         """
         location = (
@@ -172,7 +178,7 @@ class Book(models.Model):
         return location
 
     def clean(self):
-        """ 
+        """
             Evaluate the user inputs before saving in the database.
             The year must be between 1900 and current year.
         """
@@ -228,8 +234,8 @@ class BookContribution(models.Model):
         )
     location_hidden = models.TextField(null=True, blank=True)
     comment = models.TextField(null=True, blank=True)
-    created_on = models.DateField(auto_now_add=True,null=True)
-    updated_on = models.DateField(auto_now=True,null=True)
+    created_on = models.DateField(auto_now_add=True, null=True)
+    updated_on = models.DateField(auto_now=True, null=True)
     slug = models.SlugField()
 
     class Meta:
@@ -246,8 +252,7 @@ class BookContribution(models.Model):
         string = f"{self.user} contributed to {self.book}"
         return str(string)
 
-
-    def save(self, *args, **kwargs):  
+    def save(self, *args, **kwargs):
         """ Create a slug field """
         if not self.slug:
             slug = f"{self.user_id} {self.book_key_id}"
@@ -255,9 +260,9 @@ class BookContribution(models.Model):
         return super().save(*args, **kwargs)
 
     def clean(self):
-        """ 
+        """
             Evaluate the user inputs before saving in the database:
-                - there must be description of hidden place in case of 
+                - there must be description of hidden place in case of
                 hidden place is chosen
                 - key validation
         """
@@ -294,10 +299,12 @@ class BookContribution(models.Model):
             raise ValidationError(
                 "The provided book title does not match with the queried."
             )
- 
+
 
 class InsertedKey(models.Model):
-    """ A class to insert book key """
+    """
+    A class to insert book key
+    """
     inserted_key = models.CharField(
         max_length=20,
         null=False,

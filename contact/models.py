@@ -1,10 +1,10 @@
 from django.db import models
 
 
-
 class Contact(models.Model):
-    """ A model to create contact form """
-
+    """
+    A model to create contact form
+    """
     name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(null=False, blank=False)
     subject = models.CharField(max_length=100, null=False, blank=False)

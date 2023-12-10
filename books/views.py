@@ -27,7 +27,7 @@ class Books(ListView):
     model = Book
     context_object_name = 'books'
     paginate_by = 8
-    
+
 
 class BookDetail(DetailView):
     """ Book Detail View to see book details """
@@ -44,6 +44,7 @@ class BookKey(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     success_url = '/books/books/'
 
     def test_func(self):
+        """ Test user with logged user otherwise 403 """
         return self.request.user == self.get_object().user
 
 
@@ -56,7 +57,6 @@ class RegisterBook(LoginRequiredMixin, CreateView):
     # https://stackoverflow.com/questions/51123269/django-formview-pass-pk-in-success-url
     # https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-editing/
     pk = None
-    #success_url = '/books/books/'
 
     def form_valid(self, form):
         """ Method which creates instances after valid form data were POST"""
@@ -79,6 +79,7 @@ class DeleteBook(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = '/books/books/'
 
     def test_func(self):
+        """ Test user with logged user otherwise 403 """
         return self.request.user == self.get_object().user
 
 
@@ -117,7 +118,8 @@ class AddBookContribution(LoginRequiredMixin, CreateView):
         return self.request.user == self.get_object().user
 
     def get_initial(self):
-        # code solution: https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data
+        # code solution:
+        # https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data
         """
         Returns the initial data to use for forms on this view.
         """
@@ -155,7 +157,11 @@ class AddBookContribution(LoginRequiredMixin, CreateView):
                 )
 
 
-class EditBookContribution(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class EditBookContribution(
+        LoginRequiredMixin,
+        UserPassesTestMixin,
+        UpdateView
+        ):
     """ Edit a book contribution """
     template_name = 'books/change_contribution.html'
     model = BookContribution
@@ -163,10 +169,12 @@ class EditBookContribution(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     success_url = '/books/books/'
 
     def test_func(self):
+        """ Test user with logged user otherwise 403 """
         return self.request.user == self.get_object().user
-    
+
     def get_initial(self):
-        # code solution: https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data
+        # code solution:
+        # https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data
         """
         Returns the initial data to use for forms on this view.
         """
@@ -180,7 +188,9 @@ class EditBookContribution(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def form_valid(self, form):
         try:
-            """ Method which creates instances after valid form data were POST"""
+            """
+            Method which creates instances after valid form data were POST
+            """
             # post username
             form.instance.user = self.request.user
             # populate form before sending it
@@ -204,7 +214,12 @@ class EditBookContribution(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
                 self.request, 'books/new_contribution_impossible.html'
                 )
 
-class DeleteBookContribution(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+
+class DeleteBookContribution(
+        LoginRequiredMixin,
+        UserPassesTestMixin,
+        DeleteView
+        ):
     """ Delete a book """
     model = BookContribution
     success_url = '/books/books/'
@@ -223,7 +238,6 @@ class InsertKey(CreateView):
     # https://stackoverflow.com/questions/51123269/django-formview-pass-pk-in-success-url
     # https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-editing/
     pk = None
-
 
     def form_valid(self, form):
         """ Set up pk for the success url  """

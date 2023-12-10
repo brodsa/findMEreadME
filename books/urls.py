@@ -36,5 +36,5 @@ urlpatterns = [
         DeleteBookContribution.as_view(),
         name='delete_contribution'
         ),
-    path('insert_key',InsertKey.as_view(),name='insert_key')
+    path('insert_key', InsertKey.as_view(), name='insert_key')
 ]

@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    
     'django.contrib.sites',
 
     'allauth',
@@ -64,8 +63,6 @@ INSTALLED_APPS = [
     # Other
     'crispy_forms',
     'crispy_bootstrap5',
-    
-
 ]
 
 SITE_ID = 1
