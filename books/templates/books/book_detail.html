@@ -60,20 +60,20 @@
                     Book's Journey <i class="fa-solid fa-circle-info fs-3"></i>
                 </h2>
                 <span id="contributionInfo">Once you read the book, add your contribution with reaction here. Edit or delete your contribution later on.</span>
-                
-                
+            </div>
+            
                 <div class= book__buttons>
                 {% if request.user.is_authenticated %}
 
                     {% for item in book.get_slug %}
                         {% if request.user|stringformat:"s" in item.user__username %}
-                        <a href="{% url 'change_contribution' item.slug %}" class="btn book__button"> <i class="far fa-edit"> </i></a>
-                        <a href="{% url 'delete_contribution' item.id %}" class="btn book__button"> <i class="fa-solid fa-trash"> </i></a>
+                        <a href="{% url 'change_contribution' item.slug %}" class="btn book__button"> <i class="far fa-edit"></i> Change</a>
+                        <a href="{% url 'delete_contribution' item.id %}" class="btn book__button"> <i class="fa-solid fa-trash"></i> Delete</a>
                         {% endif %}
                     {% endfor %}
 
                     {% if request.user|stringformat:"s" not in book.get_contribution_users%}
-                        <a href="{% url 'new_contribution' book.id %}" class="btn book__button"> <i class="fa-solid fa-plus"></i></a>
+                        <a href="{% url 'new_contribution' book.id %}" class="btn book__button"> <i class="fa-solid fa-plus"></i>New</a>
                     {% endif %}        
                 
                 {% else %}
@@ -82,7 +82,7 @@
                     {% endif %} 
                 {% endif %}
                 </div>
-            </div>
+            
             <div class="book-statistics">
                 <div>
                     <!-- current location -->
