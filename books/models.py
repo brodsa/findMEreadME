@@ -14,12 +14,6 @@ LANGUAGE_TYPE = [
     ('German', 'German')
     ]
 
-CITY = [
-    ('Vienna', 'Vienna'),
-    ('Prague', 'Prague'),
-    ('Dublin', 'Dublin')
-    ]
-
 LOCATION = [
     ('by a friend', 'by a friend '),
     ('at a hidden place', 'at a hidden place')
@@ -31,7 +25,9 @@ USER_STATUS = [
 ]
 
 class City(models.Model):
-    """ A model to store cities and coutnries """
+    """ 
+    A model to store cities and countries 
+    """
     city = models.CharField(max_length=200,null=True, blank=True)
     country = models.CharField(max_length=200,null=True, blank=True)
 
@@ -85,13 +81,17 @@ class Book(models.Model):
         return str(self.title)
 
     def get_total_readers(self):
-        """ Get the total number of readers using BookContribution class """
+        """
+        Get the total number of readers using BookContribution class
+        """
         contributions = BookContribution.objects.filter(book_key_id=self.id).values()
         total_contributions = contributions.count()
         return total_contributions
 
     def get_num_cities(self):
-        """ Get the number of unique cities of the book readers """
+        """
+        Get the number of unique cities of the book readers
+        """
         cities = ( 
             BookContribution
             .objects
@@ -103,7 +103,9 @@ class Book(models.Model):
         return num_cities
 
     def get_list_cities(self):
-        """ Get the list of unique cities of the book readers"""
+        """
+        Get the list of unique cities of the book readers
+        """
         cities = ( 
             BookContribution
             .objects
@@ -115,7 +117,9 @@ class Book(models.Model):
         return cities_ls
 
     def get_list_comments(self):
-        """ Get the list of users and their comments"""
+        """
+        Get the list of users and their comments
+        """
         comments_users = (
             BookContribution
             .objects
@@ -127,7 +131,9 @@ class Book(models.Model):
         return comments_ls
 
     def get_contribution_users(self):
-        """ Get the list of users and their books"""
+        """
+        Get the list of users and their books
+        """
         contributed_users = (
             BookContribution
             .objects
@@ -139,7 +145,9 @@ class Book(models.Model):
         return ''.join(users)
 
     def get_slug(self):
-        """ Get the list of contributors with the corresponding book id and slug"""
+        """
+        Get the list of contributors with the corresponding book id and slug
+        """
         slug = (
             BookContribution
             .objects
@@ -150,8 +158,9 @@ class Book(models.Model):
         return slug
 
     def get_last_location(self):
-        """ Get last location"""
-
+        """ 
+        Get last location with its description
+        """
         location = (
             BookContribution
             .objects
@@ -160,8 +169,6 @@ class Book(models.Model):
             .first()
 
         )
-        print(location)
-
         return location
 
     def clean(self):
@@ -180,7 +187,9 @@ class Book(models.Model):
 
 
 class BookContribution(models.Model):
-    """ A model to create a book contribution """
+    """
+    A model to create a book contribution
+    """
     user = models.ForeignKey(
         User,
         related_name='book_contributor',
@@ -237,11 +246,9 @@ class BookContribution(models.Model):
         string = f"{self.user} contributed to {self.book}"
         return str(string)
 
-    # code from https://learndjango.com/tutorials/django-slug-tutorial
-    def get_absolute_url(self):
-        return reverse("article_detail", kwargs={"slug": self.slug})
 
-    def save(self, *args, **kwargs):  # new
+    def save(self, *args, **kwargs):  
+        """ Create a slug field """
         if not self.slug:
             slug = f"{self.user_id} {self.book_key_id}"
             self.slug = slugify(slug)
@@ -287,7 +294,7 @@ class BookContribution(models.Model):
             raise ValidationError(
                 "The provided book title does not match with the queried."
             )
-      
+ 
 
 class InsertedKey(models.Model):
     """ A class to insert book key """
