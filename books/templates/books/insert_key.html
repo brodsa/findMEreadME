@@ -6,6 +6,7 @@
 {% block content %}
 <div class="container form-container form-book">
     <h1 class="form__title">Insert Book Key</h1>
+    <p class="text-center">Here you need to insert the key you found in the findMEreadME book in order to contribution to reactions or locations of the book.</p>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.media }} 
