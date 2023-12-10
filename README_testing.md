@@ -89,7 +89,7 @@ To validate the Python code in terms of PEP8, the [CI Python Linter](https://pep
 
 
 ### Accessibility
-The [WAVE](https://wave.webaim.org/) web-based tool was considered for the evaluation of the web accessibility. The detailed reports are below:
+The [WAVE](https://wave.webaim.org/) web-based tool was considered for the evaluation of the web accessibility. In generally, the validation did not reveal any errors. Two alerts were noticed. A redundant link in navigation as there is a link to homepage attached to both logo and home. The developer intention was to offer both choices. Second alert is related to the PDF link. To increase the accessibility an `arial-label` attribute is present. The detailed reports are below:
 
 | Category | Page Report | Results |
 |----------|-------------|---------|
@@ -100,7 +100,11 @@ The [WAVE](https://wave.webaim.org/) web-based tool was considered for the evalu
 | |  [Log Out](./docs/testing/wave/wave_account_logout.png) | no errors
 | Book |	[Insert Key](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/books/insert_key)|	no errors
 | | [Latest Books](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/books/books)| 	no errors
-| | [Book Detail](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/books/2/)|
+| | [Book Detail](./docs/testing/wave/wave_book_detail.png)| no errors
+| | [Register Book](./docs/testing/wave/wave_new_book.png) | no errors
+| | [Book Key](./docs/testing/wave/wave_book_key.png) |	no error
+| | [Confirm Book Deletion](./docs/testing/wave/wave_book_delete.png) |	no error
+| | [Book Editing](./docs/testing/wave/wave_book_edit.png)|	no error
 
 
 
