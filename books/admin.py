@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, BookContribution
+from .models import Book, BookContribution, InsertedKey
 
 
 @admin.register(Book)
@@ -44,3 +44,15 @@ class BookContributionAdmin(admin.ModelAdmin):
     list_filter = ('city', 'user_status', 'location')
     search_fields = ('city', 'book_key')
     prepopulated_fields = {"slug": ['user','book_key_id']}
+
+
+@admin.register(InsertedKey)
+class InsertedKeyAdmin(admin.ModelAdmin):
+    """ A class to add and customize InsertedKey on admin panel"""  
+
+    list_display = (
+        'inserted_key',
+        'inserted_on',
+    )
+
+    search_fields = ('inserted_key',)
