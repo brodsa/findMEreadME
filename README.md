@@ -78,9 +78,11 @@ Book pages include:
 - **Book Delete Confirm Page** displays a text box with the confirmation for the book deletion. ![Delete Book Page](./docs/features/features_book_delete.png)
 
 ## Contribution Pages
+- **Insert Key Page** contains a form with one input field to insert book key. The form validates the user input. In case there is no match with existing keys, the user is informed about inserting an invalid key. Otherwise, the user is redirected to the book belonging to the inserted key. ![Insert Key](./docs/features/features_insert_key.png)
 - **Add Contribution Page** contains a form to provide a contribution to a book. The form has two prefilled fields (i.e. Book Title and Book ID) in order to keep the form user friendly and fully functional for the desire requirements. In case user inserts invalid book key, a proper message appears on the top of the form. After inserting validate inputs, the user can finish the book registration by clicking on the Save button, which redirects user on the Latest Book Page ![Book Add Contribution](./docs/features/features_book_add_contribution.png)
 - **Contribution Edit Page** contains a form to edit a book contribution. After saving the form, the user is redirected to the Books Page. ![Edit Contribution](./docs/features/features_contribution_edit.png)
 - **Contribution Delete Confirm Page** displays a text box with the confirmation for the contribution deletion. ![Delete Contribution Page](./docs/features/features_contribution_delete.png)
+
 
 ## Contact Pages
 - **Contact Page** contains a form to contact the developer. The form requires to fill in all form fields for successful sending. After the message is sent, the user is redirected to the Thank You Page. ![Contact Page](./docs/features/features_contact.png)
