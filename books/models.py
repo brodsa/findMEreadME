@@ -30,6 +30,33 @@ USER_STATUS = [
     ('contributor', 'contributor')
 ]
 
+class City(models.Model):
+    """ A model to store cities and coutnries """
+    geoname_id = models.IntegerField(null=True, blank=True)
+    name = models.CharField(max_length=200,null=True, blank=True)
+    ascii_name = models.CharField(max_length=200,null=True, blank=True)
+    alternate_names = models.CharField(max_length=200,null=True, blank=True)
+    feature_class = models.CharField(max_length=200,null=True, blank=True)
+    feature_code = models.CharField(max_length=200,null=True, blank=True)
+    country_code = models.CharField(max_length=200,null=True, blank=True)
+    cou_name_en = models.CharField(max_length=200,null=True, blank=True)
+    country_code_2 = models.CharField(max_length=200,null=True, blank=True)
+    admin1_code = models.CharField(max_length=200,null=True, blank=True)
+    admin2_code = models.CharField(max_length=200,null=True, blank=True)
+    admin3_code = models.CharField(max_length=200,null=True, blank=True)
+    admin4_code = models.CharField(max_length=200,null=True, blank=True)
+    population = models.IntegerField(null=True, blank=True)
+    elevation = models.CharField(max_length=200,null=True, blank=True)
+    dem = models.IntegerField(null=True, blank=True)
+    timezone = models.CharField(max_length=200,null=True, blank=True)
+    modification_date = models.CharField(max_length=200,null=True, blank=True)
+    label_en = models.CharField(max_length=200,null=True, blank=True)
+    coordinates_lon = models.FloatField(null=True, blank=True)
+    coordinates_lat = models.FloatField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.name} in {self.ascii_name}"
+
 
 class Book(models.Model):
     """
