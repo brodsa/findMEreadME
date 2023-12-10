@@ -279,5 +279,25 @@ class BookContribution(models.Model):
             raise ValidationError(
                 "The provided book title does not match with the queried."
             )
-        
-        
+      
+
+class UserInsertedKey(models.Model):
+    """ A class to insert book key """
+    user = models.ForeignKey(
+        User,
+        related_name='user_inserted_key',
+        on_delete=models.CASCADE,
+        null=False)
+    inserted_key = models.CharField(
+        max_length=20,
+        null=False,
+        blank=False
+    )
+    inserted_on = models.DateField(auto_now=True)
+
+    class Meta:
+        """ Order by title and create date """
+        ordering = ['-inserted_on', ]
+
+    def __str__(self):
+        return f"{self.user} inserted {self.inserted_key}"
