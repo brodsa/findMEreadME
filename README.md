@@ -39,6 +39,7 @@ The used color combination follow the following accessibility matrix.
 ![Color Schema](./docs/ux/ux_color_accessibility.png)
 
 ## Media
+To create the website a hero picture and icons were used. The hero picture was downloaded as svg from [storyset.com](https://storyset.com/). The icons were copied as html snippet from [fontawesome.com](https://fontawesome.com/search). There are other pictures for registering the book, which were inserted by users.
 
 # Features
 ## Common Features
@@ -169,3 +170,5 @@ To clone (the fork) repository or to collaborate, following steps are required:
 
 # References
 [QR code generator](https://qr.io/?gad_source=1&gclid=CjwKCAiAu9yqBhBmEiwAHTx5p7HcvWOK17qLT71iNrkXzWktj-C4jD5FImtELn35-3DKgfMNTSjWxxoCTZYQAvD_BwE)
+[storyset.com](https://storyset.com/)
+[fontawesome.com](https://fontawesome.com/search)
