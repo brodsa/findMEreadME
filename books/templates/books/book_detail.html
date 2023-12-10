@@ -57,13 +57,14 @@
             <!--Book Statistics-->
             <div class="book__journey--header">
                 <h2 class="flex-grow-0" id = "contribution">
-                    Book Journey {% if request.user.is_authenticated %}<i class="fa-solid fa-circle-info fs-3"></i> {% endif %}
+                    Book's Journey <i class="fa-solid fa-circle-info fs-3"></i>
                 </h2>
                 <span id="contributionInfo">Once you read the book, add your contribution with reaction here. Edit or delete your contribution later on.</span>
                 
-                {% if request.user.is_authenticated %}
+                
                 <div class= book__buttons>
-                    
+                {% if request.user.is_authenticated %}
+
                     {% for item in book.get_slug %}
                         {% if request.user|stringformat:"s" in item.user__username %}
                         <a href="{% url 'change_contribution' item.slug %}" class="btn book__button"> <i class="far fa-edit"> </i></a>
@@ -74,16 +75,23 @@
                     {% if request.user|stringformat:"s" not in book.get_contribution_users%}
                         <a href="{% url 'new_contribution' book.id %}" class="btn book__button"> <i class="fa-solid fa-plus"></i></a>
                     {% endif %}        
-                </div>
+                
+                {% else %}
+                    {% if request.user|stringformat:"s" not in book.get_contribution_users%}
+                    <a href="{% url 'new_contribution' book.id %}" class="btn book__button"> <i class="fa-solid fa-plus"></i></a>
+                    {% endif %} 
                 {% endif %}
+                </div>
             </div>
             <div class="book-statistics">
                 <div>
                     <!-- current location -->
                     <p class="book-stat"> <strong>Current location</strong>: {{ book.get_last_location.location }} in {{ book.get_last_location.city}} 
                         {% if book.get_last_location.location == 'at a hidden place' %} 
-                            <i id="location" class="fa-solid fa-circle-info"></i> 
-                            <span id="locationInfo"> {{ book.get_last_location.location_hidden}}</span>
+                            {% if request.user.is_authenticated %}
+                                <i id="location" class="fa-solid fa-circle-info"></i> 
+                                <span id="locationInfo"> {{ book.get_last_location.location_hidden}}</span>
+                            {% endif %}
                         {% endif %} 
                     </p>
                     
