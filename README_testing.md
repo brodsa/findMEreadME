@@ -56,6 +56,8 @@ The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was use
 
 
 
+
+
 ### CSS
 The [jigsaw](https://jigsaw.w3.org/css-validator/) web-based tool by W3 was used to validate the CSS of the webpage. The course `base.css` file was directly uploaded on [the webpage](https://jigsaw.w3.org/css-validator/#validate_by_upload). The detailed report did not reveal any errors and can be found [here](./docs/testing/css_validation.png).
 
@@ -88,6 +90,19 @@ To validate the Python code in terms of PEP8, the [CI Python Linter](https://pep
 
 ### Accessibility
 The [WAVE](https://wave.webaim.org/) web-based tool was considered for the evaluation of the web accessibility. The detailed reports are below:
+
+| Category | Page Report | Results |
+|----------|-------------|---------|
+| Homepage | [Home](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/) | no errors
+| | [How it works](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/how) | no errors
+| Account	| [Log In](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/accounts/login) | no errors
+| | [Sing Up](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/accounts/signup) |	no errors
+| |  [Log Out](./docs/testing/wave/wave_account_logout.png) | no errors
+| Book |	[Insert Key](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/books/insert_key)|	no errors
+| | [Latest Books](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/books/books)| 	no errors
+| | [Book Detail](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/books/2/)|
+
+
 
 
 ### Lighthouse
