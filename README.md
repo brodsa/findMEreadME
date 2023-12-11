@@ -1,8 +1,12 @@
 # findMEreadME
 
-findMEreadME is a unique platform to share the books and reading experience with other members. The idea is to pass the book to each other and record the members reactions as well as the journey of the book. It is for all who like a bit of adventure and reading. As a side effect, the reading becomes sustainable and the people can read more for free.
+![mockup](./docs/mockup.png)
 
-To become a member, visitor needs to register on findMEreadME. The user can create a book profile a let the book to be discovered by other members. The book profile can be edit or even deleted. Once the other member has the findMEreadME book, her or she can contribute to the book's journey
+findMEreadME is a unique platform to share books and reading experience with other members. The idea is to pass the book to each other and record the members reactions as well as the journey of the book. It is for all who like a bit of adventure and reading. As a side effect, the reading becomes sustainable and the society more educated as the people can read more without buying new books.
+
+To become a member, visitor needs to register on findMEreadME. The user can create a book profile a let the book to be discovered by other members. The book profile can be edited or even deleted. Once the other member has the findMEreadME book, her or she can contribute to the book's journey. The contribution can also be edited or deleted if needed. In this way members can see the journey of their books or list through other registered books.
+
+The side is a django-based webpage with all CRUD functionalities. To keep the MVP concept always in might while development, the agile methodology was used to planned all implemented features. 
 
 Deployed site: [findMEreadME](https://findme-readme-10d0bfb3ba28.herokuapp.com/)
 
@@ -55,6 +59,15 @@ To create the website a hero picture and icons were used. The hero picture was d
 # Agile development
 
 # Features
+The features of the webpage were planned using Agile methodology to ensure Minimum Value Product and to address planned User Stories. The webpage sides can be categorized into several groups:
+- **Homepage Pages** contain the information about the webpage.
+- **Account Pages** consist of sides related to Sign Up, Sign In or Log Out.
+- **Book Pages** are all sides related to register, edit or delete a new book.
+- **Contribution Pages** are all sides where the user can add, edit or delete a book. contribution
+- **Contact Pages** are related to contacting the team or developer of the platform.
+- **Hidden Pages** are all related to errors mainly.
+
+In addition to that, the entire webpage is designed to be responsive to ensure that the webpage is properly displayed on different devices (e.g. a mobile, a desktop). The webpage sides contains several mutual components, i.e. navigation menu and footer. This helps the user to easily navigate through the content of the webpage. As other standard webpage, findMEreadME contains other components or elements which are common practice in web design, i.e. logo, hero picture, copyright notice or external links.
 ## Common Features
 - **Navigation Menu**
     - Navigation Menu is displayed on all pages. 
