@@ -78,7 +78,7 @@
                 
                 {% else %}
                     {% if request.user|stringformat:"s" not in book.get_contribution_users%}
-                    <a href="{% url 'new_contribution' book.id %}" class="btn book__button"> <i class="fa-solid fa-plus"></i></a>
+                    <a href="{% url 'new_contribution' book.id %}" class="btn book__button"> <i class="fa-solid fa-plus"></i>New</a>
                     {% endif %} 
                 {% endif %}
                 </div>

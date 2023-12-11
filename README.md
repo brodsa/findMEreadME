@@ -2,7 +2,7 @@
 
 findMEreadME is a unique platform to share the books and reading experience with other members. The idea is to pass the book to each other and record the members reactions as well as the journey of the book. It is for all who like a bit of adventure and reading. As a side effect, the reading becomes sustainable and the people can read more for free.
 
-To become a member, visitor needs to register on findMEreadME. The user can create a book profile a let the book to be discovered by other members. The book profile can be edit or even deleted. Once the other member has the findMEreadME book, the 
+To become a member, visitor needs to register on findMEreadME. The user can create a book profile a let the book to be discovered by other members. The book profile can be edit or even deleted. Once the other member has the findMEreadME book, her or she can contribute to the book's journey
 
 Deployed site: [findMEreadME](https://findme-readme-10d0bfb3ba28.herokuapp.com/)
 

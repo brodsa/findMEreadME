@@ -300,7 +300,7 @@ a.nav-link.active{
 
 
 /* ++++++++++++++ How it works ++++++++++++++ */
-/* Adjusted code from https://alvarotrigo.com/blog/html-css-timelines/ */
+/* Start: Adjusted code from https://alvarotrigo.com/blog/html-css-timelines/ */
 .timeline{
     margin-bottom: 20px;
 }
@@ -345,6 +345,7 @@ a.nav-link.active{
     left: -21px;
 
 }
+/* end */
 
 /* ++++++++++++++ Books List ++++++++++++++ */
 .books-container{
