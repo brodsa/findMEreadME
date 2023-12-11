@@ -23,9 +23,14 @@ References
 
 # UX Design
 
-  - User Stories
-  - Wireframes
-  - Structure (Code & Database)
+## User Stories
+
+
+## Wireframes
+The wireframes of the website were designed using [Balsamiq](https://balsamiq.com/wireframes/?gad=1&gclid=CjwKCAjwg-GjBhBnEiwAMUvNW8jCWKFMpgnd5PZlvwNQGIt7xJ05Fes_JeSsBSzyr7ToVpReN5VdOBoC80UQAvD_BwE). 
+Two different layouts were mainly considered:
+- [Desktop Wireframe](./docs/ux/wireframe_desktop.png)
+- [Mobile Wireframe](./docs/ux/wireframe_mobile.png)
 
 ## Fonts
 The following two family fonts were chosen based on the [blog post](https://www.nichepursuits.com/best-fonts-for-blogs/).The selected fonts were taken from Google Fonts and imported into the style sheet.
@@ -40,6 +45,8 @@ The used color combination follow the following accessibility matrix.
 
 ## Media
 To create the website a hero picture and icons were used. The hero picture was downloaded as svg from [storyset.com](https://storyset.com/). The icons were copied as html snippet from [fontawesome.com](https://fontawesome.com/search). There are other pictures for registering the book, which were inserted by users. In addition, a book icon form [onlinewebfonts](https://www.onlinewebfonts.com/icon) was used to generate favicon.
+
+## Structure
 
 # Features
 ## Common Features
