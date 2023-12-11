@@ -102,11 +102,17 @@ The [WAVE](https://wave.webaim.org/) web-based tool was considered for the evalu
 | | [Latest Books](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/books/books)| 	no errors
 | | [Book Detail](./docs/testing/wave/wave_book_detail.png)| no errors
 | | [Register Book](./docs/testing/wave/wave_new_book.png) | no errors
-| | [Book Key](./docs/testing/wave/wave_book_key.png) |	no error
-| | [Confirm Book Deletion](./docs/testing/wave/wave_book_delete.png) |	no error
-| | [Book Editing](./docs/testing/wave/wave_book_edit.png)|	no error
-
-
+| | [Book Key](./docs/testing/wave/wave_book_key.png) |	no errors
+| | [Confirm Book Deletion](./docs/testing/wave/wave_book_delete.png) |	no errors
+| | [Book Editing](./docs/testing/wave/wave_book_edit.png)|	no errors
+|Book Contribution |	[Add Contribution	no error](./docs/testing/wave/wave_book_add_contribution.png)| no errors
+| | [Edit Contribution](./docs/testing/wave/wave_contribution_edit.png)|	no errors
+| | [Confirm Delete Contribution](./docs/testing/wave/wave_contribution_delete.png)|	no errors
+|Contact|	[Contact](./docs/testing/wave/wave_contact.png) |	no errors
+| | [Thank You](./docs/testing/wave/wave_contact_thank_you.png)|	no errors
+| Hidden Pages| 	[403 Error](./docs/testing/wave/wave_hidden_403.png)|	no errors
+| | [404 Error](./docs/testing/wave/wave_hidden_404.png)|	no errors
+| | [Invalid contribution Error](./docs/testing/wave/wave_error_invalid_contribution.png) | no errors
 
 
 ### Lighthouse

@@ -469,7 +469,6 @@ div.card-body{
 }
 
 .book__button:hover{
-    width:40px;
     background-color: var(--bg-white);
     color: var(--black);
     border: 1px solid var(--secondary-color);
