@@ -34,6 +34,16 @@ References
 
 ## User Stories
 
+### EPIC 1: Preparation & Planning
+### EPIC 2: General Information
+### EPIC 3: User Registration
+### EPIC 4: Registered User
+### EPIC 5: Book Registration
+### EPIC 6: Book Contribution
+### EPIC 7: Error Pages
+### EPIC 8: Contact
+### EPIC 9: Documentation and Testing
+
 
 ## Wireframes
 The wireframes of the website were designed using [Balsamiq](https://balsamiq.com/wireframes/?gad=1&gclid=CjwKCAjwg-GjBhBnEiwAMUvNW8jCWKFMpgnd5PZlvwNQGIt7xJ05Fes_JeSsBSzyr7ToVpReN5VdOBoC80UQAvD_BwE). 
