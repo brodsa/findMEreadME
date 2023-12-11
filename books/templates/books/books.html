@@ -6,6 +6,22 @@
 {% block content %}
 
 <h1 class="text-center p-5">Books</h1>
+<div class="search__container">
+    <!-- search recipes form -->
+    <form class="d-flex flex-column flex-sm-row align-items-center gap-2" role="search" action="{% url 'books' %}" method="GET">
+        <div class="d-flex flex-column flex-sm-row align-items-center gap-2">
+            <label for="search-input">Search</label>
+            <input class="search__input" type="Search" id="search-input" name="q" aria-label="Search by author or title" placeholder="Books by Title or Author">
+
+        </div>
+        <button class="btn book__button hero__button--primary" type="submit">
+            <i class="fa-solid fa-magnifying-glass"> </i>
+            Search
+        </button>
+    </form>
+    <span class="search-chef"></span>
+</div>
+
 <div class="books-container">
     {% for book in books %}
     {% if request.user.is_authenticated %}

@@ -14,6 +14,7 @@ from django.contrib.auth.mixins import (
 from django.urls import reverse_lazy
 from django.db import IntegrityError
 from django.template.response import TemplateResponse
+from django.db.models import Q
 
 from .models import Book, BookContribution, InsertedKey
 from .forms import BookForm, BookContributionForm, InsertedKeyFrom
@@ -27,6 +28,18 @@ class Books(ListView):
     model = Book
     context_object_name = 'books'
     paginate_by = 8
+
+    def get_queryset(self, **kwargs):
+        """ Searching books by title or author """
+        query = self.request.GET.get('q')
+        if query:
+            books = self.model.objects.filter(
+                Q(title__icontains=query) |
+                Q(author__icontains=query)
+            )
+        else:
+            books = self.model.objects.all()
+        return books
 
 
 class BookDetail(DetailView):
