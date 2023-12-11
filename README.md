@@ -1,9 +1,14 @@
 # findMEreadME
 
-Why do we want/need to build the product
+findMEreadME is a unique platform to share the books and reading experience with other members. The idea is to pass the book to each other and record the members reactions as well as the journey of the book. It is for all who like a bit of adventure and reading. As a side effect, the reading becomes sustainable and the people can read more for free.
+
+To become a member, visitor needs to register on findMEreadME. The user can create a book profile a let the book to be discovered by other members. The book profile can be edit or even deleted. Once the other member has the findMEreadME book, the 
+
+Deployed site: [findMEreadME](https://findme-readme-10d0bfb3ba28.herokuapp.com/)
 
 **Content**
 - [UX Design](#ux-design)
+- [Agile Development](#agile-development)
 - [Features](#features)
 - [Structure](#structure)
 - [Testing & Validation](#testing--validation)
@@ -46,7 +51,8 @@ The used color combination follow the following accessibility matrix.
 ## Media
 To create the website a hero picture and icons were used. The hero picture was downloaded as svg from [storyset.com](https://storyset.com/). The icons were copied as html snippet from [fontawesome.com](https://fontawesome.com/search). There are other pictures for registering the book, which were inserted by users. In addition, a book icon form [onlinewebfonts](https://www.onlinewebfonts.com/icon) was used to generate favicon.
 
-## Structure
+
+# Agile development
 
 # Features
 ## Common Features
@@ -118,6 +124,9 @@ member area should be in drop down
 - book
 - contributionBook
 
+## Webpage structure
+
+
 
 # Technologies
 - [Bootstrap 5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
@@ -151,14 +160,16 @@ The following steps were follow to make the initial deployment:
 4. Set the directories for template, static and media files.
 5. Set up the DATABASE key for ElephantSQL Database
 6. Set ALLOWED_HOST for your local and heroku apps in the list.
-7. Create a Profile with the command to migrate automatically and to start the web app.
+7. Create a Profile with the command to migrate automatically for Heroku and to start the web app.
+8. Make initial migrations, create super user and load the city data set in development database.
 
 ### Heroku (production) environment
 1. Login to Heroku
 2. Go to Heroku personal Dashboard. In the left top, select 'New' > 'Create New App'
 3. Type a unique project name, i.e. findMEreadME. Select a region, i.e. Europe.
-4. After the Heroku app is created, navigate to the 'Settings' Tab > 'Config Vars'. Following variables were configured: `SECRET_KEY, DATABASE_URL, CLOUDINARY_URL`, `PORT`, `DISABLE_COLLECTSTATIC`
+4. After the Heroku app is created, navigate to the 'Settings' Tab > 'Config Vars'. Following variables were configured: `SECRET_KEY, DATABASE_URL, CLOUDINARY_URL`, `PORT`
 4. After the Heroku app is created, go to the Deploy Tab of the app and connect the app with app GitHub repository.
+5. Make initial migrations, create super user and load the city data set in production database.
 5. Deploy the app manually. After successful deployment, click on 'Enable automatic deployments'.
 
 ### Forking the repository
@@ -178,6 +189,19 @@ To clone (the fork) repository or to collaborate, following steps are required:
 7. Set up and start django app.
 
 # References
-[QR code generator](https://qr.io/?gad_source=1&gclid=CjwKCAiAu9yqBhBmEiwAHTx5p7HcvWOK17qLT71iNrkXzWktj-C4jD5FImtELn35-3DKgfMNTSjWxxoCTZYQAvD_BwE)
-[storyset.com](https://storyset.com/)
-[fontawesome.com](https://fontawesome.com/search)
+- [QR code generator](https://qr.io/?gad_source=1&gclid=CjwKCAiAu9yqBhBmEiwAHTx5p7HcvWOK17qLT71iNrkXzWktj-C4jD5FImtELn35-3DKgfMNTSjWxxoCTZYQAvD_BwE)
+- [storyset.com](https://storyset.com/)
+- [fontawesome.com](https://fontawesome.com/search)
+- [Google Fonts]() was used to import the fonts into the style.css file.
+- [Color Pallete](https://coolors.co/353c3a-ffffff-967712-f7c31f-465963) was used to select accessible colors.
+- [Favicon](https://realfavicongenerator.net/) was used to generate the code and files for the webpage favicon.
+- [GitHub](https://github.com/) was used to store the code and host the website.
+- [Gitpod](https://www.gitpod.io/) is an IDE and was used to develop the website.
+- [Mockup Generator](https://techsini.com/multi-mockup/?url=http://www.example.com) was used to generate the mockup for README.
+- [Balsamiq](https://balsamiq.com/wireframes/?gad=1&gclid=CjwKCAjwg-GjBhBnEiwAMUvNW8jCWKFMpgnd5PZlvwNQGIt7xJ05Fes_JeSsBSzyr7ToVpReN5VdOBoC80UQAvD_BwE) was used to create wireframes.
+- [Markdown Generator](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/)
+
+# Credits
+- [Stackoverflow]
+- [django docu]
+- [daisy tutorial]
