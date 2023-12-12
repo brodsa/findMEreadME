@@ -39,7 +39,8 @@ The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was use
 | | [Logout](./docs/testing/html/html_logout.png)| no error |
 | Book | [Register Book](./docs/testing/html/html_register_book.png)| no error |
 | | [Book Key](./docs/testing/html/html_book_key.png) | no error |
-| | [Latest Books](./docs/testing/html/html_books.png) | no error |
+| | [Books Page](./docs/testing/html/html_books.png) | no error |
+| | [Search Books Page](./docs/testing/html/html_search_book.png) | no error |
 | | [Book Detail](./docs/testing/html/html_book_detail.png) | no error |
 | | [Confirm Book Deletion](./docs/testing/html/html_book_delete.png) | no error |
 | | [Book Editing](./docs/testing/html/html_book_edit.png) | no error |
@@ -97,7 +98,8 @@ The [WAVE](https://wave.webaim.org/) web-based tool was considered for the evalu
 | | [Sing Up](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/accounts/signup) |	no errors
 | |  [Log Out](./docs/testing/wave/wave_account_logout.png) | no errors
 | Book |	[Insert Key](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/books/insert_key)|	no errors
-| | [Latest Books](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/books/books)| 	no errors
+| | [Books](https://wave.webaim.org/report#/https://findme-readme-10d0bfb3ba28.herokuapp.com/books/books)| 	no errors
+| | [Search Book ](./docs/testing/wave/wave_search_book)| 	no errors
 | | [Book Detail](./docs/testing/wave/wave_book_detail.png)| no errors
 | | [Register Book](./docs/testing/wave/wave_new_book.png) | no errors
 | | [Book Key](./docs/testing/wave/wave_book_key.png) |	no errors
