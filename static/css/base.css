@@ -392,7 +392,7 @@ a.nav-link.active{
 .book:hover{
     cursor: pointer;
     box-shadow: var(--box-shadow);
-    scale: 1.01;
+    transform: scale(1.01);
     color: black
 }
 
@@ -473,7 +473,7 @@ div.card-body{
     flex-wrap: nowrap;
     gap: 15px;
     justify-content: space-around;
-    align-items: flex-center;
+    align-items: center;
 }
 
 .book__buttons{
@@ -571,7 +571,7 @@ div.card-body{
     --t: 30px; /* the size of the tail */
 
     max-width: 700px;
-    padding: calc(2*var(--r)/3);
+    padding: 20px;
     -webkit-mask: 
         radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
         var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
@@ -580,7 +580,7 @@ div.card-body{
         radial-gradient(50% 50%,#000 98%,#0000 101%) 
         0 0/var(--r) var(--r) space padding-box;
     background: var(--bg-white);
-    color: var(var(--white));
+    color: var(--black);
 }
 .bubble:nth-child(odd) {
     --_d: 0%;
