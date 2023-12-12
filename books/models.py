@@ -16,7 +16,8 @@ LANGUAGE_TYPE = [
 
 LOCATION = [
     ('by a friend', 'by a friend '),
-    ('at a hidden place', 'at a hidden place')
+    ('at a hidden place', 'at a hidden place'),
+    ('it is my book','it is my book')
     ]
 
 USER_STATUS = [
