@@ -190,6 +190,8 @@ member area should be in drop down
 - [Gitpod](https://www.gitpod.io/) is an IDE and was used to develop the website.
 - [Balsamiq](https://balsamiq.com/wireframes/?gad=1&gclid=CjwKCAjwg-GjBhBnEiwAMUvNW8jCWKFMpgnd5PZlvwNQGIt7xJ05Fes_JeSsBSzyr7ToVpReN5VdOBoC80UQAvD_BwE) was used to create wireframes.
 - [Markdown Generator](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/) was used to convert excel sheet tables to markdown tables.
+- Chrome LightHouse extension  was used for validating the webpage.
+- [Chrome WAVE Evaluation Tool extension](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) was used to evaluate accessibility of the webpage.
 
 # Testing & Validation (Manual Testing)
   - Responsivness Testing
@@ -253,3 +255,4 @@ To clone (the fork) repository or to collaborate, following steps are required:
 - [Stackoverflow]
 - [django docu]
 - [daisy tutorial]
+- 
