@@ -89,7 +89,7 @@ To validate the Python code in terms of PEP8, the [CI Python Linter](https://pep
 
 
 ### Accessibility
-The [WAVE](https://wave.webaim.org/) web-based tool was considered for the evaluation of the web accessibility. In generally, the validation did not reveal any errors. Two alerts were noticed. A redundant link in navigation as there is a link to homepage attached to both logo and home. The developer intention was to offer both choices. Second alert is related to the PDF link. To increase the accessibility an `arial-label` attribute is present. The detailed reports are below:
+The [WAVE](https://wave.webaim.org/) web-based tool was considered for the evaluation of the web accessibility. For the pages required authentication chrome extension [WAVE Evaluation Tool](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) was used. In generally, the validation did not reveal any errors. Two alerts were noticed. A redundant link in navigation as there is a link to homepage attached to both logo and home. The home item and link was removed from the navigation menu. Second alert is related to the PDF link. To increase the accessibility an `arial-label` attribute is present. The detailed reports are below:
 
 | Category | Page Report | Results |
 |----------|-------------|---------|
