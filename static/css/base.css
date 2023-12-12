@@ -64,6 +64,10 @@ footer{
    flex-shrink: 0; 
 }
 
+.hidden{
+    display: none;
+    color:#000;
+}
 
 /* ++++++++++++++ Header ++++++++++++++ */
 .navbar{
@@ -361,6 +365,14 @@ a.nav-link.active{
     border-radius: var(--border-radius);
 }
 
+.filter__buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+
 .books-container{
     max-width: 1200px;
     display: flex;
@@ -482,7 +494,8 @@ div.card-body{
     box-shadow: var(--box-shadow);
 }
 
-.book__button:hover{
+.book__button:hover,
+.book__button--active{
     background-color: var(--bg-white);
     color: var(--black);
     border: 1px solid var(--secondary-color);
@@ -631,8 +644,9 @@ div.card-body{
         margin-bottom: 20px;
     }
     /* ++++++++++++++ Books ++++++++++++++ */
-    .search__container{
-        margin-bottom: 0px;
+
+    .filter__buttons{
+        flex-direction: row;
     }
 
     .books-container{
@@ -658,6 +672,7 @@ div.card-body{
 }
 
 @media screen and (min-width: 820px){
+
     .about__list{
         grid-template-columns: 1fr 1fr 1fr; 
     }

@@ -62,8 +62,6 @@ class Book(models.Model):
         default='Cover image',
         blank=True
         )
-    likes = models.ManyToManyField(
-        User, related_name='book_likes', blank=True)
     user = models.ForeignKey(
         User,
         related_name='book_owner',
@@ -176,6 +174,17 @@ class Book(models.Model):
 
         )
         return location
+
+    def get_user_status(self):
+        q = (
+            Book
+            .objects
+            .select_related('user')
+            .prefetch_related('book_contribution')
+            .values('title','user__username', 'book_contribution__user__username')
+        )
+        print(q)
+        return q
 
     def clean(self):
         """
