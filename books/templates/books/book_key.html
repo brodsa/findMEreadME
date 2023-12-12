@@ -12,7 +12,7 @@
         <p>The following unique key was assigned to your book.</p>
         <p class="p-3 book-key"> {{ key.key }}</p>
         <p>Use the <strong>Book Key</strong> together with the template below. Fix the filled in template inside the book so that everyone can find it. This will make sure that others can contribute to the journey of your book and share their experience.</p>
-        <a href="https://res.cloudinary.com/dqtlflps3/image/upload/v1702397206/static/pdf/template_instructions.pdf" target="_blank" class="btn action__button--primary" aria-label="PDF with instruction will open in a new tab">Template</a>
+        <a href="https://res.cloudinary.com/dqtlflps3/raw/upload/v1702397206/static/pdf/template_instructions.a9aca483d86d.pdf" target="_blank" class="btn action__button--primary" aria-label="PDF with instruction will open in a new tab">Template</a>
     
         <p class="mt-3">Please, note the unique <strong>Book Key</strong> down, you will need in the next step </p>
         </div>
@@ -20,4 +20,5 @@
         <a href="{% url 'new_contribution' key.id %}" class="btn form__button form__button--primary w-100 flex-grow-1">Next</a>
     </div>
 </div>
+
 {% endblock %}
