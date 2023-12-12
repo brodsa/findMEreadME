@@ -20,15 +20,6 @@ Deployed site: [findMEreadME](https://findme-readme-10d0bfb3ba28.herokuapp.com/)
 - [References](#references)
 
 
-Strategy: goals of users - epics and all stories, agile methodology
-Scope: Product features
-Structure: flow chart, hierarchy of the app, database schema
-Skeleton: wireframes
-Surface: color, text, images
-Testing & Validation
-Deployment
-References
-
 
 # UX Design
 
@@ -108,6 +99,7 @@ Book pages include:
 - **New Book Page** contains a form to register a new book. The required fields are: title, author, published year, language. The user is informed, if these form fields are not filled in or not valid (i.e. year must be between 1900 and current year). The description, image and image text fields are not required. After a successful book registration, user is redirected to the Book Key Page. ![New Book](./docs/features/features_book_registration.png)
 - **Book Key Page** is the next step in registering a new book. It displays the generated unique book key. The key is used to identified the book and is used to contribute to the book journey. The page contains a button to get a template with instructions for other members. The user can proceed with the registration by clicking on the Next button, which redirects user to the Add Contribution Page. ![Book Key Page](./docs/features/features_book_key_generator.png)
 - **Books Page** contains an overview of registered books. The authenticated users can see the entire content, while unregistered users have limited excess. The only visitors can view the four latest books and are asked to register if they wish to see more. ![Latest Books](./docs/features/features_book_books.png)
+- **Search Book** provides the user with searching a book based on title or author. In addition, the user can filter the created or contributed books. ![Search Book](./docs/features/features_search_book.png)
 - **Book Page for authorized user** shows two sections: Book information and Book journey with current location information and reactions of other readers. The user who added the book is also displayed. In addition, there are two buttons to edit or delete the book. In the Book Journey Section, there buttons to add, edit or delete the contribution depending on if the user has already contributed. ![Basic Book Detail](./docs/features/features_book_detail.png) 
 - **Book Page for unauthorized user** shows only basic book information, journey and the user who added the book. The deletion or edition of the book is not allowed. ![Basic Book Detail](./docs/features/features_book_detail_basic_viewer.png) 
 - **Book Edit Page** contains a form to edit a registered book. The user is redirected in the Book Page after submitting the form ![Edit Book Page](./docs/features/features_book_edit.png)
