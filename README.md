@@ -152,9 +152,44 @@ member area should be in drop down
 
 
 # Technologies
-- [Bootstrap 5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
-- [cloudinary](https://cloudinary.com/)
-- [elephantSQL](https://www.elephantsql.com/)
+- Python was used to build web-base application using the Django Framework. The following lists the used packages.
+  - asgiref==3.7.2
+  - cloudinary==1.36.0
+  - coverage==7.3.2
+  - crispy-bootstrap5==0.7
+  - dj-database-url==0.5.0
+  - dj3-cloudinary-storage==0.0.6
+  - Django==3.2.22
+  - django-admin-rangefilter==0.11.2
+  - django-allauth==0.57.0
+  - django-crispy-forms==1.14.0
+  - django-resized==1.0.2
+  - gunicorn==21.2.0
+  - oauthlib==3.2.2
+  - Pillow==10.0.1
+  - psycopg2==2.9.9
+  - PyJWT==2.8.0
+  - python3-openid==3.2.0
+  - requests-oauthlib==1.3.1
+  - sqlparse==0.4.4
+- JavaScript was used to create book filtering in Search Books Page.
+- HTML was used to create templates for the webpage.
+- CSS was used to style the webpage in addition to Bootstrap.
+- [Jinja Django Templating](https://jinja.palletsprojects.com/en/3.1.x/) was used to insert data from the database into the webpage.
+- [Bootstrap 5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/) was used for general layout and easy adjustments.
+- [cloudinary](https://cloudinary.com/) was used to store all static files
+- [elephantSQL](https://www.elephantsql.com/) was used as the database for the production.
+- [Heroku](heroku.com) was used to deploy the webpage.
+- [QR code generator](https://qr.io/?gad_source=1&gclid=CjwKCAiAu9yqBhBmEiwAHTx5p7HcvWOK17qLT71iNrkXzWktj-C4jD5FImtELn35-3DKgfMNTSjWxxoCTZYQAvD_BwE)
+- [storyset.com](https://storyset.com/)
+- [fontawesome.com](https://fontawesome.com/search)
+- [Google Fonts]() was used to import the fonts into the style.css file.
+- [Color Pallete](https://coolors.co/353c3a-ffffff-967712-f7c31f-465963) was used to select accessible colors.
+- [Favicon](https://realfavicongenerator.net/) was used to generate the code and files for the webpage favicon.
+- [GitHub](https://github.com/) was used to store the code and host the website.
+- [Gitpod](https://www.gitpod.io/) is an IDE and was used to develop the website.
+- [Balsamiq](https://balsamiq.com/wireframes/?gad=1&gclid=CjwKCAjwg-GjBhBnEiwAMUvNW8jCWKFMpgnd5PZlvwNQGIt7xJ05Fes_JeSsBSzyr7ToVpReN5VdOBoC80UQAvD_BwE) was used to create wireframes.
+- [Markdown Generator](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/) was used to convert excel sheet tables to markdown tables.
 
 # Testing & Validation (Manual Testing)
   - Responsivness Testing
@@ -212,17 +247,7 @@ To clone (the fork) repository or to collaborate, following steps are required:
 7. Set up and start django app.
 
 # References
-- [QR code generator](https://qr.io/?gad_source=1&gclid=CjwKCAiAu9yqBhBmEiwAHTx5p7HcvWOK17qLT71iNrkXzWktj-C4jD5FImtELn35-3DKgfMNTSjWxxoCTZYQAvD_BwE)
-- [storyset.com](https://storyset.com/)
-- [fontawesome.com](https://fontawesome.com/search)
-- [Google Fonts]() was used to import the fonts into the style.css file.
-- [Color Pallete](https://coolors.co/353c3a-ffffff-967712-f7c31f-465963) was used to select accessible colors.
-- [Favicon](https://realfavicongenerator.net/) was used to generate the code and files for the webpage favicon.
-- [GitHub](https://github.com/) was used to store the code and host the website.
-- [Gitpod](https://www.gitpod.io/) is an IDE and was used to develop the website.
-- [Mockup Generator](https://techsini.com/multi-mockup/?url=http://www.example.com) was used to generate the mockup for README.
-- [Balsamiq](https://balsamiq.com/wireframes/?gad=1&gclid=CjwKCAjwg-GjBhBnEiwAMUvNW8jCWKFMpgnd5PZlvwNQGIt7xJ05Fes_JeSsBSzyr7ToVpReN5VdOBoC80UQAvD_BwE) was used to create wireframes.
-- [Markdown Generator](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/)
+
 
 # Credits
 - [Stackoverflow]
