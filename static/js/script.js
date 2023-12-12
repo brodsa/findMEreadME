@@ -12,7 +12,6 @@ const addListenerOnButtons = () => {
     const btnCreator = document.querySelector('#btnCreator');
 
     // Button All
-    btnAll.classList.add('book__button--active');
     btnAll.addEventListener('click', (e)=>{
         // if all is active
         btnAll.classList.toggle('book__button--active');
