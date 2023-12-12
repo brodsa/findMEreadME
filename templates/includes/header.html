@@ -51,6 +51,8 @@
                   {% if request.user.is_authenticated %}
                     <!-- New Book -->
                     <li><a class="dropdown-item {% if url_name == 'register_book' %}active{% endif %}" href="{% url 'register_book' %}">New Book</a></li>
+                    <!-- Search Book -->
+                    <li><a class="dropdown-item {% if url_name == 'books_search' %}active{% endif %}" href="{% url 'books_search' %}">Search Book</a></li>
                     <!-- Log out -->
                     <li><a class="dropdown-item {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a></li>
                   {% else %}

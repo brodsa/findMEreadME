@@ -3,6 +3,7 @@ from django.urls import path
 from .views import (
     RegisterBook,
     Books,
+    BooksSearch,
     BookDetail,
     DeleteBook,
     EditBook,
@@ -17,6 +18,7 @@ from .views import (
 urlpatterns = [
     path('', RegisterBook.as_view(), name='register_book'),
     path('books/', Books.as_view(), name='books'),
+    path('books_search/', BooksSearch.as_view(), name='books_search'),
     path('<slug:pk>/', BookDetail.as_view(), name='book_detail'),
     path('delete/<slug:pk>/', DeleteBook.as_view(), name='delete_book'),
     path('edit/<slug:pk>/', EditBook.as_view(), name='edit_book'),

@@ -29,6 +29,14 @@ class Books(ListView):
     context_object_name = 'books'
     paginate_by = 8
 
+
+class BooksSearch(LoginRequiredMixin, ListView):
+    """ List Class to search books """
+    template_name = 'books/books_search.html'
+    model = Book
+    context_object_name = 'books'
+    paginate_by = 8
+
     def get_queryset(self, **kwargs):
         """ Searching books by title or author """
         query = self.request.GET.get('q')
