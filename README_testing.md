@@ -11,8 +11,19 @@
 
 
 ## Responsivness Testing
+All pages were tested to ensure responsiveness on various screen size, ranging from 280px up to 1200px. To test the responsiveness the following was considered.
+  - ThinkPad X1 Carbon (DevTool) 
+  - iPhone 8 (iOS 16.5)
+  - Samsung Galaxy A52
 
 ## Browser Compatibility Testing
+The website was tested on different browser (see the list below) to assure that features and responsiveness work accordingly.
+- Safari
+- Chrome
+- Firefox
+- Edge
+
+When the website was tested on Firefox, hero image did not appear. This could be due to some Firefox setting and will be investigated in a next iteration in more detail.
 
 ## User Stories Testing
 
@@ -133,20 +144,6 @@ The Lighthouse in Chrome DevTools evaluates the webpage for performance, accessi
 | `home`            | <img src="./docs/testing/automated/python_home.png" alt="python_home" width="200"/>   | 100% |
 |`books`     | <img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 92% |
 
-
-Question: Testing 
-- form_valid()  of CreateView
-- book key: redirected pages
-
-Todo: Testing
-- Contribution: Model
-- Contribution: Form
-- Contribution: view add, edit, delete
-- Book key redirected pages
-- 404 Page, 403 Page, 505 Page, Invalid Contribution Error
-- Contact: Model, Form, CreateView, TemplateView
-
-
 # Bugs & Issus
 
 Using two databases for dev and prod led to missing up debugging mode and creating a super user. Two superusers were created, one for prod and one for dev. In addition a debug config variable was created, this can be switch on/off in both production and dev environment.
@@ -162,7 +159,7 @@ In Add Contribution Page, there is a prefilled field Book. The initial plan was 
 
 Server error 500 on production database after submitting the form to register the book. The error was caused by the wrongly defined field for key. The initial char length was set to 10 however the real key length can be 14. The field length was set to 20. SOLVED
 
-The comparison in `{% if request.user in item.user__username %}` returns always `False` even if the users are equal. Solution: Add a jinja filter request.user|stringformat:"s" to be able to compare it with the username from the book.get_slug(). SOLVED
+The comparison in `{% if request.user in item.user__username %}` returns always `False` even if the users are equal. Solution: Add a jinja filter `request.user|stringformat:"s"` to be able to compare it with the username from the book.get_slug(). SOLVED
 
 
 
