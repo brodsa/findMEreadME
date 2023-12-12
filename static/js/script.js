@@ -1,17 +1,18 @@
+
 const addListenerOnButtons = () => {
-    let bookAll = document.querySelectorAll('.book');
-    let bookContributor = document.querySelectorAll('[data-book="contributor"]');
-    let bookCreator = document.querySelector('[data-book="creator"]');
-    let bookVisitor = document.querySelector('[data-book="visitor"]');
+    // Function to filter the books based on the button which is clicked on
+    // options are all, created, contributed
+    const bookAll = document.querySelectorAll('.book');
+    const bookContributor = document.querySelectorAll('[data-book="contributor"]');
+    const bookCreator = document.querySelector('[data-book="creator"]');
+    const bookVisitor = document.querySelector('[data-book="visitor"]');
     
     const btnAll = document.querySelector('#btnAll');
     const btnContributor = document.querySelector('#btnContributor');
     const btnCreator = document.querySelector('#btnCreator');
 
-    console.log(bookCreator == null)
-
     // Button All
-    btnAll.classList.add('book__button--active')
+    btnAll.classList.add('book__button--active');
     btnAll.addEventListener('click', (e)=>{
         // if all is active
         btnAll.classList.toggle('book__button--active');
@@ -33,7 +34,6 @@ const addListenerOnButtons = () => {
         btnContributor.classList.toggle('book__button--active');
         // if the button Contributed is active
         if (btnContributor.classList.contains('book__button--active')){
-            console.log('active')
             // display all contributed books
             if(bookContributor !=null ){
                 if (Array.isArray(bookCreator)){
@@ -49,7 +49,7 @@ const addListenerOnButtons = () => {
             
             
             if (bookCreator != null){
-                console.log('hide creator')
+                // hide creator
                 if(Array.isArray(bookCreator)){
                     bookCreator.forEach((book) => book.classList.add('hidden'));
                 }else{
@@ -61,7 +61,7 @@ const addListenerOnButtons = () => {
                 
             }
             if (bookVisitor != null){
-                console.log('hide Visitor')
+               // hide visitor
                 if(Array.isArray(bookVisitor)){
                     bookVisitor.forEach((book) => book.classList.add('hidden'));
                 }else{
@@ -73,7 +73,7 @@ const addListenerOnButtons = () => {
             }
             
         }else{
-            console.log('deactivate')
+            // show all
             bookAll.forEach((book) => book.classList.remove('hidden'));
         }
         
@@ -84,7 +84,6 @@ const addListenerOnButtons = () => {
         btnCreator.classList.toggle('book__button--active');
         // if the button Creator is active
         if (btnCreator.classList.contains('book__button--active')){
-            console.log('active')
             // display all creator books
             if (bookCreator != null){
                 if (Array.isArray(bookCreator)){
@@ -99,7 +98,7 @@ const addListenerOnButtons = () => {
             }
             
             if (bookContributor != null){
-                console.log('hide contribution')
+                // hide contributor
                 if (Array.isArray(bookContributor)){
                     bookContributor.forEach((book) => book.classList.add('hidden'));
                 }else{
@@ -109,7 +108,7 @@ const addListenerOnButtons = () => {
                 }  
             }
             if (bookVisitor != null){
-                console.log('hide Visitor')
+                // hide visitor
                 if(Array.isArray(bookVisitor)){
                     bookVisitor.forEach((book) => book.classList.add('hidden'));
                 }else{
@@ -121,7 +120,7 @@ const addListenerOnButtons = () => {
             }
             
         }else{
-            console.log('deactivate')
+            //show all
             bookAll.forEach((book) => book.classList.remove('hidden'));
         }
 
