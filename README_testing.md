@@ -165,11 +165,11 @@ The Lighthouse in Chrome DevTools evaluates the webpage for performance, accessi
 | How It Works | <img src="./docs/testing/lighthouse/desktop_how.PNG" alt="desktop_how" width="200"/> | <img src="./docs/testing/lighthouse/mobile_how.PNG" alt="mobile_how" width="200"/> |
 
 ## Automated Testing
-### Python
-| Module            | Report | Total Coverage   |
-|-------------------|--------|------------------|
-| `home`            | <img src="./docs/testing/automated/python_home.png" alt="python_home" width="200"/>   | 100% |
-|`books`     | <img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 92% |
+The module were partially tested using django TestCase. In total 24 tests were performed, the coverage report can by see below in the table. Testing other python and javascript functions is considered for next iterations.
+| Module            | Number of Test |Report | Total Coverage   |
+|-------------------|----------------|--------|------------------|
+| `home`       | 2     | <img src="./docs/testing/automated/python_home.png" alt="python_home" width="200"/>   | 100% |
+|`books`     | 22 |<img src="./docs/testing/automated/python_books.png" alt="python_books" width="200"/> | 77% |
 
 # Bugs & Issus
 
