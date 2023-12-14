@@ -17,7 +17,7 @@ Deployed site: [findMEreadME](https://findme-readme-10d0bfb3ba28.herokuapp.com/)
 - [Structure](#structure)
 - [Testing & Validation](#testing--validation)
 - [Deployment](#deployment)
-- [References](#references)
+- [References](#references--credits)
 
 
 
@@ -240,11 +240,12 @@ To clone (the fork) repository or to collaborate, following steps are required:
 6. Set up environmental variables in newly `env.py`, see Section (#local-environment).
 7. Set up and start django app.
 
-# References
-
-
-# Credits
+# References & Credits
 - [Stackoverflow](https://stackoverflow.com/) for all contribution related to django.
 - [django official documentation](https://docs.djangoproject.com/en/3.2/) for all the documentation which was helpful.
 - [daisy tutorial] for creating such a great tutorial which was easily to follow and well explained.
 - [opendatasoft](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/export/?disjunctive.cou_name_en&sort=name&refine.timezone=Europe) for making its data about world cities publicly available.
+
+
+# Acknowledgements
+I would like to thank my mentors, [Gareth McGirr](https://github.com/Gareth-McGirr) and [Daisy McGirr](https://github.com/Daisy-McG), for their guidance through my project and their valuable inputs. And my special thanks go to my husband and son for being supportive during the development of the webpage.
