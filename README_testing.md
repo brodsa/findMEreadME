@@ -66,7 +66,7 @@ The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was use
 | | [Invalid contribution Error Page](./docs/testing/html/html_error_invalid_contribution.png) | no error |
 
 ### Javascript
-The [JShint](https://jshint.com/) static tool was considered to check the code rules of the Javascript source code. The report for `script.js` did not reveal any errors, see ![report js](./docs/js/js_script.png).
+The [JShint](https://jshint.com/) static tool was considered to check the code rules of the Javascript source code. The report for `script.js` did not reveal any errors, see ![report js](./docs/js/js_script.png). However, the code needs to be refactor, by splitting up the function into small functions. This will be done in next iteration, see [backlog](https://github.com/brodsa/findMEreadME/milestone/5).
 
 ### CSS
 The [jigsaw](https://jigsaw.w3.org/css-validator/) web-based tool by W3 was used to validate the CSS of the webpage. The core `base.css` file was directly uploaded on [the webpage](https://jigsaw.w3.org/css-validator/#validate_by_upload). 
