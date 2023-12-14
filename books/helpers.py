@@ -44,7 +44,7 @@ def convert_geonames():
 
         # create records for django json format
         for item in data_js:
-            if item["cou_name_en"] in ('Ireland', 'Czech Republic', 'Austria') and int(item["population"])>30000:
+            if item["cou_name_en"] in ('Ireland', 'Czech Republic', 'Austria') and int(item["population"])>20000:
                 record = {
                     'model': 'books.city',
                     'pk': i,
@@ -57,6 +57,5 @@ def convert_geonames():
                 records.append(record)
 
         # write the new json into new json file
-        print(i)
         with open('./fixtures/cities.json', 'w') as django_js:
             django_js.write(json.dumps(records))

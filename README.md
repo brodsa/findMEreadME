@@ -22,18 +22,108 @@ Deployed site: [findMEreadME](https://findme-readme-10d0bfb3ba28.herokuapp.com/)
 
 
 # UX Design
+The plan all the features and functionalities of the webpage, the agile methodology was considered. The core was to create epics and user stories, which were used through the development. 
 
 ## User Stories
 
 ### EPIC 1: Preparation & Planning
+| US ID  | US Name                             | User Story (US)                                                      |
+| --- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | #1  | Planning                                  | As a side owner, I want to plan the project carefully, so that the web app meets MVP.                                                                     |
+| #2  | Initial Setup                             | As a side owner, I want to setup my workspace so that I can develop and deploy the web app easily.                                                        |
+
 ### EPIC 2: General Information
+
+| US ID  | US Name                             | User Story (US)                                                      |
+| --- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| #3  | Base Template     | As a developer, I need to create the base.html page and structure so that other pages can reuse the layout.                                     |
+| #4  | Navigation Menu   | As a user, I want to easily navigate through the web pages, so that I can find the information fast and intuitively.                   |
+| #5  | Footer            | As a user, I want to know the social media links, so that I can follow the latest update                                                        |
+| #6  | Basic Homepage    | As a (first) user, I want to read some information on website, so that I can make a good picture about the platform.                            |
+| #19 | Limited Access    | As a developer, I want that the first (not registered) user has limited access to the webpage content, so that I can encourage them to register |
+| #10 | Extended Homepage | As a first user, I want to read general information about the procedure.    
+
+
 ### EPIC 3: User Registration
-### EPIC 4: Registered User
+| US ID  | US Name                             | User Story (US)                                                      |
+| --- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| #7  | User Registration | The developer has an access to all users, so that he can modify or delete them via admin panel                                     |
+| #8  | User Registration            | As a user, I want to register with a username so that I can have a full access to the webpage content and be part of the community |
+| #9  | User Login                   | As a user, I want to login with my username, so that I don't have to provide my private information.                               |
+| #37 | Delete User                  | As a user, I want to delete my user account information, so that I can unregister.                                                 |
+| #38 | Edit User                    | As a user, I want to edit my user account information, so that I can change some of it.                                            |
+
+
+### EPIC 4: Registered Users
+
+| US ID  | US Name                             | User Story (US)                                                      |
+| --- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| #14 | Books Overview                            | As a user, I want to see all books which are registered by me or others.                                                                   |
+| #18 | Books ordering                            | As a user, I want to see the latest registered books, so that I am always up to date.                                                      |
+| #25 | Books with owner status                   | As a user, I want to easily see my registered, contributed and all books, so that I have a good overview                                   |
+| #26 | Book Registration Go Back                 | As a user, I want to have the possibility to go back during the book registration step, so that I can change or read the provided details. |
+| #36 | Book rating                               | As a user, I want to rate the book, so that I can give others a better impression about the book.                                          |
+| #42 | Dropdown in Member Area                   | As a user I want to have all navigation links specific for registered user under Member Area, so that I have better overview               |
+| #43 | Message after login                       | As a user, I want to be notified when I logged in so that I know my login was successful.                                         |
+| #49 | Create messages on successful form submit | As a user I want to get a feedback when doing CRUD so that I know the changes were successfully made.                                      |
+| #35 | Search Book | As a user, I want to search on the page a book according to the book name                                      |
+
 ### EPIC 5: Book Registration
+| US ID  | US Name                             | User Story (US)                                                      |
+| --- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| #11 | Book Data Model    | As a developer, I want to have a full control of registered books, so that I can control the provided information                                         |
+| #12 | Book Key generator | As a developer, I want to generate a unique code so that the book can be easily identified                                                                |
+| #16 | Edit Book          | As a user, I want to have the possibility to edit the provided information about my books anytime, so that I can have a full control of what I published. |
+| #17 | Deleting Book      | As a user, I want to have the possibility to delete the registered book, so that I can stop the book journey anytime I want                               |
+| #15 | Book Info          | As a user, I want to know the book information so that I can have a better information about the book.                                                    |
+| #13 | Book Registration  | As a user, I want to add a new book, so that it can start its journey.                                                                                    |
+| #29 | Book card detailed | As a user I want see the details about the book, so that I can make a better picture about the book and its journey                                       |
+| #41 | Form Validation | As a developer, I want to validate the user input, so that the inputs for database are correct and the page is not broken                                       |
+
 ### EPIC 6: Book Contribution
+
+| US ID  | US Name                             | User Story (US)                                                      |
+| --- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| #20 | Contribution Data Model | As a developer, I want to have a full control of book contributions so that I can control the provided information.                         |
+| #21 | Search Book Key         | As a admin, I want that a book is identified based on its key which is inserted in the input field, so that the whole process is secured.   |
+| #22 | Create Contribution     | As a user, I want to contribute the registered book, so that I can share my state with others                                               |
+| #24 | Delete Contribution     | As a user, I want to have the possibility to delete my contribution, so that I can have a full control about the published details.|
+| #23 | Edit Contribution       | As a user, I want to edit my contribution, so that I can change or correct the provided information.                                        |
+| #48 | Cities                  | As a want to find my city in the Contribution Form so that I can fill it.                                                                   |
+| #47 | Display current location | As a registered user I want to know where the book is so that i can find it if it is nearby                         |
+
+
 ### EPIC 7: Error Pages
+
+| US ID  | US Name                             | User Story (US)                                                      |
+| --- | --------- | --------------------------------------------------------------------------------------------------------------------- |
+| #27 | Error 404 | As a developer, I need to implement a 404 error page to alert users when they have accessed a page that doesn't exist |
+| #28 | Error 403 | As a developer, I need to implement a 403 error page to redirect unauthorized users to so that I can secure my views  |
+| #31 | Error 500 | As a developer, I need to implement a 500 error page to alert users when an internal server error occurs.             |
+
+
 ### EPIC 8: Contact
-### EPIC 9: Documentation and Testing
+
+
+| #39 | Contact Form  | As a developer, I want to provide users and visitors with a contact form, so that I can control what information they provide. |
+| #30 | Contact Link | As a user, i want ot have a possibility to contact a developer so that I can provide my feedback. |
+
+
+### EPIC 9: Documenting & Testing
+
+| US ID  | US Name                             | User Story (US)                                                      |
+| --- | --------- | --------------------------------------------------------------------------------------------------------------------- |
+| #34 | Code Validation     | As a developer, I want to validate the code, so that it meets standard coding rules.                   |
+| #33 | Manual Testing      | As a developer, I want to test the webpage, so that the webpage reacts appropriately on users request. |
+| #32 | Final Documentation | As a developer, I want to document the development of the webpage.                                     |
+
+
+### EPIC 10: Deployments
+| US ID  | US Name                             | User Story (US)                                                      |
+| --- | --------- | --------------------------------------------------------------------------------------------------------------------- |
+| #40 | Final Deployment     | As a developer, I wan to the final page is deployed, so that user can use all implemented features                   |
+
+To manage user stories and epics, a Kanban board was created as GitHub Project, see [here](https://github.com/users/brodsa/projects/4). The board is split into three columns, where the user stories are categorized into groups:  Todo, In progress, or Done. Each user story was prioritize and implement in 2 weeks long iterations. The iteration are defined as Milestones. Each epic and priority is defined as a label. ![UX board](./docs/ux/ux_board.png) 
 
 
 ## Wireframes
@@ -57,7 +147,6 @@ The used color combination follow the following accessibility matrix.
 To create the website a hero picture and icons were used. The hero picture was downloaded as svg from [storyset.com](https://storyset.com/). The icons were copied as html snippet from [fontawesome.com](https://fontawesome.com/search). There are other pictures for registering the book, which were inserted by users. In addition, a book icon form [onlinewebfonts](https://www.onlinewebfonts.com/icon) was used to generate favicon.
 
 
-# Agile development
 
 # Features
 The features of the webpage were planned using Agile methodology to ensure Minimum Value Product and to address planned User Stories. The webpage sides can be categorized into several groups:

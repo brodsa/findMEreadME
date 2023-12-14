@@ -35,7 +35,7 @@ class City(models.Model):
 
     class Meta:
         """ Order by city"""
-        ordering = ['-city', ]
+        ordering = ['city', ]
 
     def __str__(self):
         return str(self.city)
