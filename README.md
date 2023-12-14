@@ -244,7 +244,7 @@ To clone (the fork) repository or to collaborate, following steps are required:
 
 
 # Credits
-- [Stackoverflow]
-- [django docu]
-- [daisy tutorial]
-- 
+- [Stackoverflow](https://stackoverflow.com/) for all contribution related to django.
+- [django official documentation](https://docs.djangoproject.com/en/3.2/) for all the documentation which was helpful.
+- [daisy tutorial] for creating such a great tutorial which was easily to follow and well explained.
+- [opendatasoft](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/export/?disjunctive.cou_name_en&sort=name&refine.timezone=Europe) for making its data about world cities publicly available.
