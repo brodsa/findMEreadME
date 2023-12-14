@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
     '8000-brodsa-findmereadme-bkc96orn9th.ws-eu105.gitpod.io',
     '8000-brodsa-findmereadme-bkc96orn9th.ws-eu106.gitpod.io',
     '8000-brodsa-findmereadme-sf6v7s9dm77.ws-eu106.gitpod.io',
+    '8000-brodsa-findmereadme-sf6v7s9dm77.ws-eu107.gitpod.io',
     'findme-readme-10d0bfb3ba28.herokuapp.com'
     ]
 

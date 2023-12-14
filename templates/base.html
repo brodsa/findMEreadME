@@ -32,17 +32,29 @@
     
 </head>
 <body>
-    
+    <!-- Header -->
     {% include 'includes/header.html' %}
 
+    <!-- Messages -->
+    {% if messages %}
+    <div class="toasts">
+        {% for message in messages %}
+        {% include 'includes/toast.html' %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Content -->
     <main>
         {% block content %}
         {% endblock %}
     </main>
    
-
+    <!-- Footer -->
     {% include 'includes/footer.html' %}
 
+
+    <!-- Link Javascripts -->
     {% block extra_js %}
     <script type="module" src="{% static 'js/script.js' %}"></script>
     <!-- font-awesome script -->

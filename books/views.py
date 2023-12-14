@@ -11,6 +11,7 @@ from django.contrib.auth.mixins import (
     UserPassesTestMixin
 )
 
+from django.contrib import messages
 from django.urls import reverse_lazy
 from django.db import IntegrityError
 from django.template.response import TemplateResponse
@@ -81,13 +82,23 @@ class RegisterBook(LoginRequiredMixin, CreateView):
     pk = None
 
     def form_valid(self, form):
-        """ Method which creates instances after valid form data were POST"""
+        """
+            Method which creates instances after valid form data were POST
+            and to show message on successful form submit
+
+        """
         form.instance.user = self.request.user
         # success_url
         item = form.save()
         self.pk = item.pk
         # generate key after posting
         form.instance.key = generate_key(self.pk)
+
+        messages.success(
+            self.request,
+            'Successfully created book'
+        )
+
         return super(RegisterBook, self).form_valid(form)
 
     def get_success_url(self):
@@ -104,6 +115,15 @@ class DeleteBook(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         """ Test user with logged user otherwise 403 """
         return self.request.user == self.get_object().user
 
+    def delete(self, request, *args, **kwargs):
+        """ Display toast success on form submit """
+
+        messages.success(
+            self.request,
+            'Successfully deleted book'
+        )
+        return super().delete(request, *args, **kwargs)
+
 
 class EditBook(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """ Edit a book """
@@ -119,9 +139,17 @@ class EditBook(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user == self.get_object().user
 
     def form_valid(self, form):
-        """ Set up pk for the success url  """
+        """
+            Set up pk for the success url and show toast when form submitted
+        """
         item = form.save()
         self.pk = item.pk
+
+        messages.success(
+            self.request,
+            'Book edited successfully'
+        )
+
         return super(EditBook, self).form_valid(form)
 
     def get_success_url(self):
@@ -143,7 +171,7 @@ class AddBookContribution(LoginRequiredMixin, CreateView):
         # code solution:
         # https://stackoverflow.com/questions/22083218/django-how-to-pre-populate-formview-with-dynamic-non-model-data
         """
-        Returns the initial data to use for forms on this view.
+            Returns the initial data to use for forms on this view.
         """
         initial = super().get_initial()
         slug = str(self.request).split('/')[-2]
@@ -154,7 +182,10 @@ class AddBookContribution(LoginRequiredMixin, CreateView):
         return initial
 
     def form_valid(self, form):
-        """ Method which creates instances after valid form data were POST"""
+        """
+            Method which creates instances after valid form data were POST
+            and show toast success on form submition
+        """
         try:
             # post username
             form.instance.user = self.request.user
@@ -172,6 +203,12 @@ class AddBookContribution(LoginRequiredMixin, CreateView):
             if self.request.user == user_owner:
                 form.instance.user_status = 'owner'
             item.save()
+
+            messages.success(
+                self.request,
+                'Successfully created new contribution'
+            )
+
             return super(AddBookContribution, self).form_valid(form)
         except IntegrityError:
             return TemplateResponse(
@@ -211,7 +248,8 @@ class EditBookContribution(
     def form_valid(self, form):
         try:
             """
-            Method which creates instances after valid form data were POST
+                Method which creates instances after valid form data were POST
+                and show toast success on form submit
             """
             # post username
             form.instance.user = self.request.user
@@ -230,6 +268,12 @@ class EditBookContribution(
             if self.request.user == user_owner:
                 form.instance.user_status = 'owner'
             item.save()
+
+            messages.success(
+                self.request,
+                'Successfully edited contribution'
+            )
+
             return super(EditBookContribution, self).form_valid(form)
         except IntegrityError:
             return TemplateResponse(
@@ -248,6 +292,15 @@ class DeleteBookContribution(
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+    def delete(self, request, *args, **kwargs):
+        """ Display toast success on form submit """
+
+        messages.success(
+            self.request,
+            'Successfully deleted contribution'
+        )
+        return super().delete(request, *args, **kwargs)
 
 
 class InsertKey(CreateView):
