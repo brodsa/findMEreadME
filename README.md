@@ -306,7 +306,7 @@ The ER Diagram shows the relations between four tables. In addition, two tables 
 - [Chrome WAVE Evaluation Tool extension](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) was used to evaluate accessibility of the webpage.
 
 # Testing & Validation (Manual Testing)
-  - Responsivness Testing
+  - Responsiveness Testing
   - Browser Compatibility Testing
   - User Stories Testing
   - Features Testing
