@@ -10,9 +10,8 @@ The side is a django-based webpage with all CRUD functionalities. To keep the MV
 
 Deployed site: [findMEreadME](https://findme-readme-10d0bfb3ba28.herokuapp.com/)
 
-**Content**
+# Content
 - [UX Design](#ux-design)
-- [Agile Development](#agile-development)
 - [Features](#features)
 - [Structure](#structure)
 - [Testing & Validation](#testing--validation)
@@ -22,15 +21,18 @@ Deployed site: [findMEreadME](https://findme-readme-10d0bfb3ba28.herokuapp.com/)
 
 
 # UX Design
-The plan all the features and functionalities of the webpage, the agile methodology was considered. The core was to create epics and user stories, which were used through the development. 
+The side goal is to gather readers or other people to share their books around the world and to share their reactions. The platform offers reading with no cost and having a fun while searching for books. The additional goal is to have a user-friendly web app with all CRUD functionalities to manage books and readers reactions. 
 
 ## User Stories
+To plan all the features and functionalities of the webpage, the agile methodology was considered. The core was to create epics and user stories, which were used through the development. 
 
 ### EPIC 1: Preparation & Planning
 | US ID  | US Name                             | User Story (US)                                                      |
 | --- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
  | #1  | Planning                                  | As a side owner, I want to plan the project carefully, so that the web app meets MVP.                                                                     |
 | #2  | Initial Setup                             | As a side owner, I want to setup my workspace so that I can develop and deploy the web app easily.                                                        |
+
+[Back to the overview](#content)
 
 ### EPIC 2: General Information
 
@@ -43,6 +45,7 @@ The plan all the features and functionalities of the webpage, the agile methodol
 | #19 | Limited Access    | As a developer, I want that the first (not registered) user has limited access to the webpage content, so that I can encourage them to register |
 | #10 | Extended Homepage | As a first user, I want to read general information about the procedure.    
 
+[Back to the overview](#content)
 
 ### EPIC 3: User Registration
 | US ID  | US Name                             | User Story (US)                                                      |
@@ -53,6 +56,7 @@ The plan all the features and functionalities of the webpage, the agile methodol
 | #37 | Delete User                  | As a user, I want to delete my user account information, so that I can unregister.                                                 |
 | #38 | Edit User                    | As a user, I want to edit my user account information, so that I can change some of it.                                            |
 
+[Back to the overview](#content)
 
 ### EPIC 4: Registered Users
 
@@ -68,6 +72,8 @@ The plan all the features and functionalities of the webpage, the agile methodol
 | #49 | Create messages on successful form submit | As a user I want to get a feedback when doing CRUD so that I know the changes were successfully made.                                      |
 | #35 | Search Book | As a user, I want to search on the page a book according to the book name                                      |
 
+[Back to the overview](#content)
+
 ### EPIC 5: Book Registration
 | US ID  | US Name                             | User Story (US)                                                      |
 | --- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -79,6 +85,9 @@ The plan all the features and functionalities of the webpage, the agile methodol
 | #13 | Book Registration  | As a user, I want to add a new book, so that it can start its journey.                                                                                    |
 | #29 | Book card detailed | As a user I want see the details about the book, so that I can make a better picture about the book and its journey                                       |
 | #41 | Form Validation | As a developer, I want to validate the user input, so that the inputs for database are correct and the page is not broken                                       |
+
+[Back to the overview](#content)
+
 
 ### EPIC 6: Book Contribution
 
@@ -92,6 +101,8 @@ The plan all the features and functionalities of the webpage, the agile methodol
 | #48 | Cities                  | As a want to find my city in the Contribution Form so that I can fill it.                                                                   |
 | #47 | Display current location | As a registered user I want to know where the book is so that i can find it if it is nearby                         |
 
+[Back to the overview](#content)
+
 
 ### EPIC 7: Error Pages
 
@@ -102,11 +113,17 @@ The plan all the features and functionalities of the webpage, the agile methodol
 | #31 | Error 500 | As a developer, I need to implement a 500 error page to alert users when an internal server error occurs.             |
 
 
+[Back to the overview](#content)
+
+
 ### EPIC 8: Contact
 
-
+| US ID  | US Name                             | User Story (US)                                                      |
+| --- | --------- | --------------------------------------------------------------------------------------------------------------------- |
 | #39 | Contact Form  | As a developer, I want to provide users and visitors with a contact form, so that I can control what information they provide. |
 | #30 | Contact Link | As a user, i want ot have a possibility to contact a developer so that I can provide my feedback. |
+
+[Back to the overview](#content)
 
 
 ### EPIC 9: Documenting & Testing
@@ -117,11 +134,16 @@ The plan all the features and functionalities of the webpage, the agile methodol
 | #33 | Manual Testing      | As a developer, I want to test the webpage, so that the webpage reacts appropriately on users request. |
 | #32 | Final Documentation | As a developer, I want to document the development of the webpage.                                     |
 
+[Back to the overview](#content)
+
 
 ### EPIC 10: Deployments
 | US ID  | US Name                             | User Story (US)                                                      |
 | --- | --------- | --------------------------------------------------------------------------------------------------------------------- |
 | #40 | Final Deployment     | As a developer, I wan to the final page is deployed, so that user can use all implemented features                   |
+
+[Back to the overview](#content)
+
 
 To manage user stories and epics, a Kanban board was created as GitHub Project, see [here](https://github.com/users/brodsa/projects/4). The board is split into three columns, where the user stories are categorized into groups:  Todo, In progress, or Done. Each user story was prioritize and implement in 2 weeks long iterations. The iteration are defined as Milestones. Each epic and priority is defined as a label. ![UX board](./docs/ux/ux_board.png) 
 
@@ -224,11 +246,20 @@ member area should be in drop down
 
 
 # Structures
-## Database model
-- book
-- contributionBook
 
 ## Webpage structure
+The findMEreadME project was created using the python django framework. The project currently consists of three applications including one default authentication app. Two newly created apps includes books and contact applications.
+
+## Database model
+The user inputs from all forms are stored in [elephantSQL](https://www.elephantsql.com/) cloud-based database. There are six data tables which were created using django db.model class:
+- `auth_user` is to store and manage all registered users
+- `books_book` is store and manage all books and its information created by registered users  
+- `books_bookcontribution` is to store and manage all book reactions and contribution of users. 
+- `books_city` is to store cities which users can select from.
+- `contact_contact` is to store contact message send by users via contact form.
+- `books_insertedkey` is to keep track of all inserted keys.
+
+The ER Diagram shows the relations between four tables. In addition, two tables have no relations to others as they have own separated purpose. ![ED Diagramm](./docs/db_er_diagram.png)
 
 
 
@@ -294,15 +325,22 @@ The following steps were follow to make the initial deployment:
     - `SECRET_KEY` 
     - `DATABASE_URL`
     - `CLOUDINARY_URL`
-    - `DEVELOPMENT`
+    - `os.environ["DEVELOPMENT"] = "True"`
+    - `os.environ["DEBUG"] = "True""`
 2. In `settings.py`, import env only if env.py exists and set the following keys: 
     - `DEBUG = 'DEBUG' in os.environ` 
     - `SECRET_KEY = os.environ.get('SECRET_KEY')`
+    - `DATABASE` such that db.sqlite3 will be active in local env, i.e. if DEVELOPMENT exists, otherwise production elephantSQL database is running.
 4. Set the directories for template, static and media files.
-5. Set up the DATABASE key for ElephantSQL Database
+5. Set up the DATABASE key for ElephantSQL Database and assign it to the `DATABASE_URL` in env.py
 6. Set ALLOWED_HOST for your local and heroku apps in the list.
-7. Create a Profile with the command to migrate automatically for Heroku and to start the web app.
-8. Make initial migrations, create super user and load the city data set in development database.
+8. Make initial migrations, create super user and load the city data set in development database. Use following commands for it: 
+``` 
+python3 manage.py makemigrations  
+python3 manage.py migrate  
+python3 manage.py createsuperuser  
+python3 manage.py loaddata app/fixture/data.json
+```
 
 ### Heroku (production) environment
 1. Login to Heroku
@@ -310,8 +348,10 @@ The following steps were follow to make the initial deployment:
 3. Type a unique project name, i.e. findMEreadME. Select a region, i.e. Europe.
 4. After the Heroku app is created, navigate to the 'Settings' Tab > 'Config Vars'. Following variables were configured: `SECRET_KEY, DATABASE_URL, CLOUDINARY_URL`, `PORT`
 4. After the Heroku app is created, go to the Deploy Tab of the app and connect the app with app GitHub repository.
+7. Create a Procfile file with the command to migrate automatically for Heroku and to start the web app.
 5. Make initial migrations, create super user and load the city data set in production database.
 5. Deploy the app manually. After successful deployment, click on 'Enable automatic deployments'.
+
 
 ### Forking the repository
 To fork the repository to propose changes or use the code, follow the steps bellow:
