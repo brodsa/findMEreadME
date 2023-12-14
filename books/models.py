@@ -15,9 +15,9 @@ LANGUAGE_TYPE = [
     ]
 
 LOCATION = [
-    ('by a friend', 'by a friend '),
-    ('at a hidden place', 'at a hidden place'),
-    ('it is my book','it is my book')
+    ('at a friend', 'by a friend '),
+    ('in a hidden place', 'at a hidden place'),
+    ('it is my book', 'it is my book')
     ]
 
 USER_STATUS = [
@@ -32,6 +32,10 @@ class City(models.Model):
     """
     city = models.CharField(max_length=200, null=True, blank=True)
     country = models.CharField(max_length=200, null=True, blank=True)
+
+    class Meta:
+        """ Order by city"""
+        ordering = ['-city', ]
 
     def __str__(self):
         return str(self.city)
@@ -182,7 +186,10 @@ class Book(models.Model):
             .objects
             .select_related('user')
             .prefetch_related('book_contribution')
-            .values('title','user__username', 'book_contribution__user__username')
+            .values(
+                'title',
+                'user__username',
+                'book_contribution__user__username')
         )
         print(q)
         return q
