@@ -69,6 +69,19 @@ footer{
     color:#000;
 }
 
+.toasts{
+    position: fixed;
+    top: 15%;
+    left: 40%;
+    z-index: 2;
+}
+
+.toasts .toast {
+    background:var(--primary-color-light);
+    color:var(--black);
+
+}
+
 /* ++++++++++++++ Header ++++++++++++++ */
 .navbar{
     background-color: var(--primary-color-light);
