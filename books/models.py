@@ -115,10 +115,10 @@ class Book(models.Model):
             BookContribution
             .objects
             .filter(book_key_id=self.id)
-            .values('city')
-            .annotate(num=models.Count("city"))
+            .values('city__city')
+            .annotate(num=models.Count("city__city"))
         )
-        cities_ls = [city['city'] for city in list(cities)]
+        cities_ls = [city['city__city'] for city in list(cities)]
         return cities_ls
 
     def get_list_comments(self):
