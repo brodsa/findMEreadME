@@ -37,14 +37,14 @@ def convert_geonames():
         Is called only once and manually convert_geonames()
     """
     # open source data
-    with open("./books/data/geonames.json") as file:
+    with open("./data/geonames.json") as file:
         data_js = json.load(file)
         records = []
         i = 0
 
         # create records for django json format
         for item in data_js:
-            if item["cou_name_en"] in ('Ireland', 'Czech Republic', 'Austria'):
+            if item["cou_name_en"] in ('Ireland', 'Czech Republic', 'Austria') and int(item["population"])>30000:
                 record = {
                     'model': 'books.city',
                     'pk': i,
@@ -57,5 +57,6 @@ def convert_geonames():
                 records.append(record)
 
         # write the new json into new json file
-        with open('./books/fixtures/cities.json', 'w') as django_js:
+        print(i)
+        with open('./fixtures/cities.json', 'w') as django_js:
             django_js.write(json.dumps(records))
