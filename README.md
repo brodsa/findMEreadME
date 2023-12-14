@@ -348,8 +348,9 @@ python3 manage.py loaddata app/fixture/data.json
 3. Type a unique project name, i.e. findMEreadME. Select a region, i.e. Europe.
 4. After the Heroku app is created, navigate to the 'Settings' Tab > 'Config Vars'. Following variables were configured: `SECRET_KEY, DATABASE_URL, CLOUDINARY_URL`, `PORT`
 4. After the Heroku app is created, go to the Deploy Tab of the app and connect the app with app GitHub repository.
-7. Create a Procfile file with the command to migrate automatically for Heroku and to start the web app.
+5. Switch your database on local environment to production database, i.e delete `DEVELOPMENT` from env.py.
 5. Make initial migrations, create super user and load the city data set in production database.
+7. Create a Procfile file with the command to migrate automatically for Heroku and to start the web app.
 5. Deploy the app manually. After successful deployment, click on 'Enable automatic deployments'.
 
 

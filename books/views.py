@@ -39,7 +39,6 @@ class BooksSearch(LoginRequiredMixin, ListView):
     paginate_by = 8
 
     def get_queryset(self, **kwargs):
-        print('search')
         """ Searching books by title or author """
         query = self.request.GET.get('q')
         if query:

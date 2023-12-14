@@ -191,7 +191,6 @@ class Book(models.Model):
                 'user__username',
                 'book_contribution__user__username')
         )
-        print(q)
         return q
 
     def clean(self):
