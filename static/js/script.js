@@ -1,4 +1,6 @@
 
+
+const btnAll = document.querySelector('#btnAll');
 const addListenerOnButtons = () => {
     // Function to filter the books based on the button which is clicked on
     // options are all, created, contributed
@@ -7,7 +9,7 @@ const addListenerOnButtons = () => {
     const bookCreator = document.querySelector('[data-book="creator"]');
     const bookVisitor = document.querySelector('[data-book="visitor"]');
     
-    const btnAll = document.querySelector('#btnAll');
+    
     const btnContributor = document.querySelector('#btnContributor');
     const btnCreator = document.querySelector('#btnCreator');
 
@@ -126,4 +128,6 @@ const addListenerOnButtons = () => {
     });
 };
 
-addListenerOnButtons();
+if (btnAll != null){
+    addListenerOnButtons();
+}
