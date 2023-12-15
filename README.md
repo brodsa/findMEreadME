@@ -151,8 +151,19 @@ To manage user stories and epics, a Kanban board was created as GitHub Project, 
 ## Wireframes
 The wireframes of the website were designed using [Balsamiq](https://balsamiq.com/wireframes/?gad=1&gclid=CjwKCAjwg-GjBhBnEiwAMUvNW8jCWKFMpgnd5PZlvwNQGIt7xJ05Fes_JeSsBSzyr7ToVpReN5VdOBoC80UQAvD_BwE). 
 Two different layouts were mainly considered:
-- [Desktop Wireframe](./docs/ux/wireframe_desktop.png)
-- [Mobile Wireframe](./docs/ux/wireframe_mobile.png)
+
+| Page | Desktop | Mobile |
+|------|---------|--------|
+| Home & How It Works| <img src="./docs/ux/ux_desktop_home.png" alt="ux_desktop_home" width="300"/> <img src="./docs/ux/ux_desktop_how.png" alt="ux_desktop_how" width="200"/> | <img src="./docs/ux/ux_mobile_home.png" alt="ux_mobile_home" width="200"/> |
+| Books | <img src="./docs/ux/ux_dekstop_books.png" alt="ux_desktop_books" width="300"/> | <img src="./docs/ux/ux_mobile_books.png" alt="ux_mobile_books" width="200"/> |
+| Book Detail | <img src="./docs/ux/ux_desktop_book_detail.png" alt="ux_desktop_book_detail" width="200"/> | <img src="./docs/ux/ux_mobile_book_detail.png" alt="ux_mobile_book_detail" width="200"/>
+| Book Registration | <img src="./docs/ux/ux_desktop_new_book.png" alt="ux_desktop_new_book" width="300"/> | <img src="./docs/ux/ux_mobile_new_book.png" alt="ux_mobile_new_book" width="200"/>
+| Book Contributions | <img src="./docs/ux/ux_desktop_new_contribution.png" alt="ux_desktop_new_contribution" width="300"/> | <img src="./docs/ux/ux_mobile_new_contribution.png" alt="ux_mobile_new_contribution" width="200"/>
+| CRUD | <img src="./docs/ux/ux_crud_contribution.png" alt="ux_desktop_crud" width="200"/> | <img src="./docs/ux/ux_mobile_crud_contribution.png" alt="ux_mobile_crud" width="200"/>
+| User Registration  | <img src="./docs/ux/ux_desktop_user_registration.png" alt="ux_desktop_user_registration" width="200"/> | <img src="./docs/ux/ux_mobile_registration.png" alt="ux_mobile_user_registration" width="200"/>
+| Profile | <img src="./docs/ux/ux_desktop_profile.png" alt="ux_desktop_profile" width="200"/> | <img src="./docs/ux/ux_mobile_profile.png" alt="ux_mobile_profile" width="200"/>
+
+
 
 ## Fonts
 The following two family fonts were chosen based on the [blog post](https://www.nichepursuits.com/best-fonts-for-blogs/).The selected fonts were taken from Google Fonts and imported into the style sheet.
@@ -235,14 +246,8 @@ Book pages include:
 - **Error Invalid Contribution** informs the user in case of contributing to the book the user has already contributed. The user can use the Home Button to return to the homepage. ![Error Invalid Contribution](./docs/features/features_error_invalid_contribution.png)
 
 ## Future & Left Features
-- Successful Registration: The user is redirected to homepage and informed via displayed username in the navigation bar as this is by default. - changed acceptance criteria
-- Overview of filled in information in the form to register a new book - next iteration - not needed for MVP. - changed acceptance criteria
-
-
-## Added Features - goes in Agile
-new feature: Validation of user input in form: check the year, check the length of description field, same book for the one user.
-
-member area should be in drop down
+Several features have been not yet implemented, they can be found in [backlog](https://github.com/brodsa/findMEreadME/milestone/5). During the development, several features were added, such as Contact Pages to contact findMEreadME team or developer. 
+It would be make sense to translate the page in more languages. Another interesting feature to implement, would be dependent fields in the Add Contribution Page: country and city field. This would be even more user-friendly with autocomplete functionality. Last future features is to include an interactive map to better see the journey of the book.
 
 
 # Structures
@@ -305,7 +310,8 @@ The ER Diagram shows the relations between four tables. In addition, two tables 
 - Chrome LightHouse extension  was used for validating the webpage.
 - [Chrome WAVE Evaluation Tool extension](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) was used to evaluate accessibility of the webpage.
 
-# Testing & Validation (Manual Testing)
+# Testing & Validation
+Several aspects of the web page were tested and evaluated, see below the list. The detailed report can be viewed in [Testing Report](https://github.com/brodsa/findMEreadME/blob/main/README_testing.md)
   - Responsiveness Testing
   - Browser Compatibility Testing
   - User Stories Testing
