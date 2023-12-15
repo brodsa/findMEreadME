@@ -1,5 +1,4 @@
 {% load static %}
-{% if request.user|stringformat:"s" not in book.get_contribution_users %}
 <a href="{% url 'book_detail' book.id %}" class="book" data-book="visitor" aria-label="Click to see more details for {{ book.title }}">
 
     <div class="card">

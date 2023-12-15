@@ -378,9 +378,11 @@ To clone (the fork) repository or to collaborate, following steps are required:
 
 # References & Credits
 - [Stackoverflow](https://stackoverflow.com/) for all contribution related to django.
-- [django official documentation](https://docs.djangoproject.com/en/3.2/) for all the documentation which was helpful.
-- [daisy tutorial] for creating such a great tutorial which was easily to follow and well explained.
+- [django official documentation](https://docs.djangoproject.com/en/3.2/) for all the documentation which was very helpful.
+- [learn django with Dee Mc](https://www.youtube.com/playlist?list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy) for creating such a great tutorial which was easily to follow and well explained.
 - [opendatasoft](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/export/?disjunctive.cou_name_en&sort=name&refine.timezone=Europe) for making its data about world cities publicly available.
+- [w3schools](https://www.w3schools.com/css/css_tooltip.asp) for code inspiration for info hover affect.
+- [freefrontend](https://freefrontend.com/css-speech-bubbles/) for the design of chat bubbles by Temani Affif, which was used to style user comments.
 
 
 # Acknowledgements
