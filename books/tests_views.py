@@ -50,14 +50,6 @@ class TestBookViewsLoggedUser(TestCase):
         print(response)
         self.assertTemplateUsed(response, 'books/register_book.html')
 
-    # def test_book_key(self):
-    #     """ Test request and used template for book key"""
-    #     print("Testing Book Key template and request")
-    #     self.client.force_login(self.user)
-    #     response = self.client.get('/books/key/1')
-    #     print(response)
-    #     self.assertEqual(response.status_code, 202)
-
     def test_book_list(self):
         """ Test request and used template for Latest Book Page"""
         print("Testing Latest Book template and request")

@@ -120,7 +120,6 @@ WSGI_APPLICATION = 'findmereadme.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 if 'DEVELOPMENT' in os.environ:
-    print('dev')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
