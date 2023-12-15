@@ -179,19 +179,6 @@ class Book(models.Model):
         )
         return location
 
-    def get_user_status(self):
-        q = (
-            Book
-            .objects
-            .select_related('user')
-            .prefetch_related('book_contribution')
-            .values(
-                'title',
-                'user__username',
-                'book_contribution__user__username')
-        )
-        return q
-
     def clean(self):
         """
             Evaluate the user inputs before saving in the database.

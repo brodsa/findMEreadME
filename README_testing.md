@@ -259,11 +259,7 @@ The [Nu Html Checker](https://validator.w3.org/nu/) web-based tool by W3 was use
 | | [Invalid contribution Error Page](./docs/testing/html/html_error_invalid_contribution.png) | no error |
 
 ### Javascript
-The [JShint](https://jshint.com/) static tool was considered to check the code rules of the Javascript source code. The report for `script.js` did not reveal any errors.
-
-![report js](./docs/js/js_script.png) 
-
-However, the code needs to be refactor, by splitting up the function into small functions. This will be done in next iteration, see [backlog](https://github.com/brodsa/findMEreadME/milestone/5).
+The [JShint](https://jshint.com/) static tool was considered to check the code rules of the Javascript source code. The report for `script.js` did not reveal any errors, see [report js](./docs/js/js_script.png). However, a bug was found in the logic to set the user status. The code was removed so that the web stays clean. Everything was documented and an issue was created, see [BUG: Filter by user status](https://github.com/brodsa/findMEreadME/issues/50). The bug will be resolved in next iteration as well as the refactoring of the code. Splitting hte function into small pieces is needed, see [backlog](https://github.com/brodsa/findMEreadME/milestone/5).
 
 ### CSS
 The [jigsaw](https://jigsaw.w3.org/css-validator/) web-based tool by W3 was used to validate the CSS of the webpage. The core `base.css` file was directly uploaded on [the webpage](https://jigsaw.w3.org/css-validator/#validate_by_upload). 
@@ -364,6 +360,8 @@ In Add Contribution Page, there is a prefilled field Book. The initial plan was 
 Server error 500 on production database after submitting the form to register the book. The error was caused by the wrongly defined field for key. The initial char length was set to 10 however the real key length can be 14. The field length was set to 20. SOLVED
 
 The comparison in `{% if request.user in item.user__username %}` returns always `False` even if the users are equal. Solution: Add a jinja filter `request.user|stringformat:"s"` to be able to compare it with the username from the book.get_slug(). SOLVED
+
+A bug was found in the logic of filtering the books according to the user status. Everything was documented and an issue was created, see [BUG: Filter by user status](https://github.com/brodsa/findMEreadME/issues/50). The bug will be resolved in next iteration. UNSOLVED 
 
 
 

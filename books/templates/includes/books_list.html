@@ -1,19 +1,7 @@
 {% load static %}
-<!-- data-book: creator or contributor -->
-{% for item in book.get_user_status %}
-
-  {% if request.user|stringformat:"s" == item.user__username and book.title == item.title and item.book_contribution__user__username == item.user__username %}
-  <a href="{% url 'book_detail' book.id %}" class="book" data-book="creator" aria-label="Click to see more details for {{ book.title }}">
-  {% else %}
-    {% if request.user|stringformat:"s" == item.book_contribution__user__username and book.title == item.title and item.book_contribution__user__username != item.user__username %}
-    <a href="{% url 'book_detail' book.id %}" class="book" data-book="contributor" aria-label="Click to see more details for {{ book.title }}"> 
-    {% endif %}
-  {% endif %}
-{% endfor %}
-<!-- data-book: visitor -->
 {% if request.user|stringformat:"s" not in book.get_contribution_users %}
 <a href="{% url 'book_detail' book.id %}" class="book" data-book="visitor" aria-label="Click to see more details for {{ book.title }}">
-{% endif %}
+
     <div class="card">
 
         <!-- Book Image: Default Image has to be set manually due to cloudinary -->
